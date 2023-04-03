@@ -490,7 +490,7 @@ int local_search(const Data& data, std::vector<int>& items) {
     //cout << min_bins << ": min bins; num bins: " << num_bins << endl;
     if (num_bins > min_bins) {
         //min_bins = num_bins;
-        cout << "Hiiiiii";
+        //cout << "Hiiiiii";
         return min_bins;
     }
     //cout << min_bins << ": min bins; num bins: " << num_bins << endl;
