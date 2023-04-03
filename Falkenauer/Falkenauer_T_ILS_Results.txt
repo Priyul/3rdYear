@@ -1,0 +1,403 @@
+Algorithm used: Iterated Local Search
+Heuristics used: Simulated annealing and first fit
+
+File: Falkenauer_t249_07
+Runtime: 0.126585 ms
+Calculated Optimal: Bad solution found :( - 93
+Known Optimal: 83
+
+File: Falkenauer_t120_09
+Runtime: 0.0488615 ms
+Calculated Optimal: Bad solution found :( - 45
+Known Optimal: 40
+
+File: Falkenauer_t249_13
+Runtime: 0.126258 ms
+Calculated Optimal: Bad solution found :( - 94
+Known Optimal: 83
+
+File: Falkenauer_t249_12
+Runtime: 0.125497 ms
+Calculated Optimal: Bad solution found :( - 93
+Known Optimal: 83
+
+File: Falkenauer_t249_06
+Runtime: 0.125933 ms
+Calculated Optimal: Bad solution found :( - 93
+Known Optimal: 83
+
+File: Falkenauer_t120_08
+Runtime: 0.0489537 ms
+Calculated Optimal: Bad solution found :( - 45
+Known Optimal: 40
+
+File: Falkenauer_t501_19
+Runtime: 0.363 ms
+Calculated Optimal: Bad solution found :( - 185
+Known Optimal: 167
+
+File: Falkenauer_t249_10
+Runtime: 0.126484 ms
+Calculated Optimal: Bad solution found :( - 91
+Known Optimal: 83
+
+File: Falkenauer_t249_04
+Runtime: 0.126285 ms
+Calculated Optimal: Bad solution found :( - 92
+Known Optimal: 83
+
+File: Falkenauer_t249_05
+Runtime: 0.126044 ms
+Calculated Optimal: Bad solution found :( - 93
+Known Optimal: 83
+
+File: Falkenauer_t249_11
+Runtime: 0.1258 ms
+Calculated Optimal: Bad solution found :( - 92
+Known Optimal: 83
+
+File: Falkenauer_t501_18
+Runtime: 0.36082 ms
+Calculated Optimal: Bad solution found :( - 183
+Known Optimal: 167
+
+File: Falkenauer_t501_08
+Runtime: 0.361967 ms
+Calculated Optimal: Bad solution found :( - 188
+Known Optimal: 167
+
+File: Falkenauer_t249_15
+Runtime: 0.126049 ms
+Calculated Optimal: Bad solution found :( - 93
+Known Optimal: 83
+
+File: Falkenauer_t249_01
+Runtime: 0.126244 ms
+Calculated Optimal: Bad solution found :( - 92
+Known Optimal: 83
+
+File: Falkenauer_t249_00
+Runtime: 0.126161 ms
+Calculated Optimal: Bad solution found :( - 93
+Known Optimal: 83
+
+File: Falkenauer_t249_14
+Runtime: 0.125193 ms
+Calculated Optimal: Bad solution found :( - 94
+Known Optimal: 83
+
+File: Falkenauer_t501_09
+Runtime: 0.358673 ms
+Calculated Optimal: Bad solution found :( - 186
+Known Optimal: 167
+
+File: Falkenauer_t249_02
+Runtime: 0.129202 ms
+Calculated Optimal: Bad solution found :( - 92
+Known Optimal: 83
+
+File: Falkenauer_t249_16
+Runtime: 0.128138 ms
+Calculated Optimal: Bad solution found :( - 92
+Known Optimal: 83
+
+File: Falkenauer_t120_18
+Runtime: 0.0483916 ms
+Calculated Optimal: Bad solution found :( - 45
+Known Optimal: 40
+
+File: Falkenauer_t249_17
+Runtime: 0.125309 ms
+Calculated Optimal: Bad solution found :( - 92
+Known Optimal: 83
+
+File: Falkenauer_t120_19
+Runtime: 0.0496441 ms
+Calculated Optimal: Bad solution found :( - 45
+Known Optimal: 40
+
+File: Falkenauer_t249_03
+Runtime: 0.126962 ms
+Calculated Optimal: Bad solution found :( - 93
+Known Optimal: 83
+
+File: Falkenauer_t60_08
+Runtime: 0.0221469 ms
+Calculated Optimal: Bad solution found :( - 22
+Known Optimal: 20
+
+File: Falkenauer_t60_09
+Runtime: 0.0222229 ms
+Calculated Optimal: Bad solution found :( - 22
+Known Optimal: 20
+
+File: Falkenauer_t60_19
+Runtime: 0.022177 ms
+Calculated Optimal: Bad solution found :( - 22
+Known Optimal: 20
+
+File: Falkenauer_t60_18
+Runtime: 0.0223542 ms
+Calculated Optimal: Bad solution found :( - 22
+Known Optimal: 20
+
+File: Falkenauer_t60_15
+Runtime: 0.0220325 ms
+Calculated Optimal: Bad solution found :( - 22
+Known Optimal: 20
+
+File: Falkenauer_t60_01
+Runtime: 0.0216764 ms
+Calculated Optimal: Bad solution found :( - 22
+Known Optimal: 20
+
+File: Falkenauer_t60_00
+Runtime: 0.0219507 ms
+Calculated Optimal: Bad solution found :( - 22
+Known Optimal: 20
+
+File: Falkenauer_t60_14
+Runtime: 0.0221266 ms
+Calculated Optimal: Bad solution found :( - 22
+Known Optimal: 20
+
+File: Falkenauer_t60_02
+Runtime: 0.0222059 ms
+Calculated Optimal: Bad solution found :( - 23
+Known Optimal: 20
+
+File: Falkenauer_t60_16
+Runtime: 0.0221887 ms
+Calculated Optimal: Bad solution found :( - 22
+Known Optimal: 20
+
+File: Falkenauer_t60_17
+Runtime: 0.0221658 ms
+Calculated Optimal: Bad solution found :( - 22
+Known Optimal: 20
+
+File: Falkenauer_t60_03
+Runtime: 0.0221685 ms
+Calculated Optimal: Bad solution found :( - 23
+Known Optimal: 20
+
+File: Falkenauer_t60_07
+Runtime: 0.0223075 ms
+Calculated Optimal: Bad solution found :( - 22
+Known Optimal: 20
+
+File: Falkenauer_t60_13
+Runtime: 0.0222648 ms
+Calculated Optimal: Bad solution found :( - 23
+Known Optimal: 20
+
+File: Falkenauer_t60_12
+Runtime: 0.0220972 ms
+Calculated Optimal: Bad solution found :( - 23
+Known Optimal: 20
+
+File: Falkenauer_t60_06
+Runtime: 0.0228218 ms
+Calculated Optimal: Bad solution found :( - 22
+Known Optimal: 20
+
+File: Falkenauer_t60_10
+Runtime: 0.0222234 ms
+Calculated Optimal: Bad solution found :( - 23
+Known Optimal: 20
+
+File: Falkenauer_t60_04
+Runtime: 0.021969 ms
+Calculated Optimal: Bad solution found :( - 23
+Known Optimal: 20
+
+File: Falkenauer_t60_05
+Runtime: 0.0222366 ms
+Calculated Optimal: Bad solution found :( - 22
+Known Optimal: 20
+
+File: Falkenauer_t60_11
+Runtime: 0.022489 ms
+Calculated Optimal: Bad solution found :( - 23
+Known Optimal: 20
+
+File: Falkenauer_t501_13
+Runtime: 0.360867 ms
+Calculated Optimal: Bad solution found :( - 183
+Known Optimal: 167
+
+File: Falkenauer_t501_07
+Runtime: 0.362032 ms
+Calculated Optimal: Bad solution found :( - 186
+Known Optimal: 167
+
+File: Falkenauer_t120_14
+Runtime: 0.0487756 ms
+Calculated Optimal: Bad solution found :( - 44
+Known Optimal: 40
+
+File: Falkenauer_t120_00
+Runtime: 0.048827 ms
+Calculated Optimal: Bad solution found :( - 45
+Known Optimal: 40
+
+File: Falkenauer_t120_01
+Runtime: 0.0512601 ms
+Calculated Optimal: Bad solution found :( - 45
+Known Optimal: 40
+
+File: Falkenauer_t120_15
+Runtime: 0.048689 ms
+Calculated Optimal: Bad solution found :( - 45
+Known Optimal: 40
+
+File: Falkenauer_t501_06
+Runtime: 0.359299 ms
+Calculated Optimal: Bad solution found :( - 186
+Known Optimal: 167
+
+File: Falkenauer_t501_12
+Runtime: 0.360667 ms
+Calculated Optimal: Bad solution found :( - 186
+Known Optimal: 167
+
+File: Falkenauer_t501_04
+Runtime: 0.366682 ms
+Calculated Optimal: Bad solution found :( - 188
+Known Optimal: 167
+
+File: Falkenauer_t501_10
+Runtime: 0.362224 ms
+Calculated Optimal: Bad solution found :( - 186
+Known Optimal: 167
+
+File: Falkenauer_t120_03
+Runtime: 0.0483563 ms
+Calculated Optimal: Bad solution found :( - 45
+Known Optimal: 40
+
+File: Falkenauer_t120_17
+Runtime: 0.0489889 ms
+Calculated Optimal: Bad solution found :( - 45
+Known Optimal: 40
+
+File: Falkenauer_t249_19
+Runtime: 0.127028 ms
+Calculated Optimal: Bad solution found :( - 92
+Known Optimal: 83
+
+File: Falkenauer_t120_16
+Runtime: 0.0488844 ms
+Calculated Optimal: Bad solution found :( - 45
+Known Optimal: 40
+
+File: Falkenauer_t249_18
+Runtime: 0.126195 ms
+Calculated Optimal: Bad solution found :( - 92
+Known Optimal: 83
+
+File: Falkenauer_t120_02
+Runtime: 0.0490568 ms
+Calculated Optimal: Bad solution found :( - 45
+Known Optimal: 40
+
+File: Falkenauer_t501_11
+Runtime: 0.36236 ms
+Calculated Optimal: Bad solution found :( - 185
+Known Optimal: 167
+
+File: Falkenauer_t501_05
+Runtime: 0.361203 ms
+Calculated Optimal: Bad solution found :( - 186
+Known Optimal: 167
+
+File: Falkenauer_t501_01
+Runtime: 0.360938 ms
+Calculated Optimal: Bad solution found :( - 185
+Known Optimal: 167
+
+File: Falkenauer_t501_15
+Runtime: 0.360602 ms
+Calculated Optimal: Bad solution found :( - 184
+Known Optimal: 167
+
+File: Falkenauer_t120_06
+Runtime: 0.0488738 ms
+Calculated Optimal: Bad solution found :( - 46
+Known Optimal: 40
+
+File: Falkenauer_t249_08
+Runtime: 0.126517 ms
+Calculated Optimal: Bad solution found :( - 92
+Known Optimal: 83
+
+File: Falkenauer_t120_12
+Runtime: 0.048958 ms
+Calculated Optimal: Bad solution found :( - 45
+Known Optimal: 40
+
+File: Falkenauer_t120_13
+Runtime: 0.0485082 ms
+Calculated Optimal: Bad solution found :( - 44
+Known Optimal: 40
+
+File: Falkenauer_t120_07
+Runtime: 0.0534961 ms
+Calculated Optimal: Bad solution found :( - 45
+Known Optimal: 40
+
+File: Falkenauer_t249_09
+Runtime: 0.126309 ms
+Calculated Optimal: Bad solution found :( - 93
+Known Optimal: 83
+
+File: Falkenauer_t501_14
+Runtime: 0.357712 ms
+Calculated Optimal: Bad solution found :( - 186
+Known Optimal: 167
+
+File: Falkenauer_t501_00
+Runtime: 0.361698 ms
+Calculated Optimal: Bad solution found :( - 186
+Known Optimal: 167
+
+File: Falkenauer_t501_16
+Runtime: 0.361418 ms
+Calculated Optimal: Bad solution found :( - 186
+Known Optimal: 167
+
+File: Falkenauer_t501_02
+Runtime: 0.360367 ms
+Calculated Optimal: Bad solution found :( - 187
+Known Optimal: 167
+
+File: Falkenauer_t120_11
+Runtime: 0.0491367 ms
+Calculated Optimal: Bad solution found :( - 45
+Known Optimal: 40
+
+File: Falkenauer_t120_05
+Runtime: 0.0487893 ms
+Calculated Optimal: Bad solution found :( - 45
+Known Optimal: 40
+
+File: Falkenauer_t120_04
+Runtime: 0.0491987 ms
+Calculated Optimal: Bad solution found :( - 44
+Known Optimal: 40
+
+File: Falkenauer_t120_10
+Runtime: 0.0485294 ms
+Calculated Optimal: Bad solution found :( - 45
+Known Optimal: 40
+
+File: Falkenauer_t501_03
+Runtime: 0.360267 ms
+Calculated Optimal: Bad solution found :( - 186
+Known Optimal: 167
+
+File: Falkenauer_t501_17
+Runtime: 0.360641 ms
+Calculated Optimal: Bad solution found :( - 186
+Known Optimal: 167
+

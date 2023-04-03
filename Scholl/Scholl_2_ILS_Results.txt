@@ -1,0 +1,2403 @@
+Algorithm used: Iterated Local Search
+Heuristics used: Simulated annealing and first fit
+
+File: N2W4B3R4
+Runtime: 0.020704 ms
+Calculated Optimal: Optimal solution found :) - 12
+Known Optimal: 12
+
+File: N3W4B2R7
+Runtime: 0.0440652 ms
+Calculated Optimal: Optimal solution found :) - 22
+Known Optimal: 22
+
+File: N2W4B1R6
+Runtime: 0.0203282 ms
+Calculated Optimal: Near-optimal solution found :| - 12
+Known Optimal: 11
+
+File: N4W4B3R3
+Runtime: 0.146985 ms
+Calculated Optimal: Optimal solution found :) - 56
+Known Optimal: 56
+
+File: N1W2B2R1
+Runtime: 0.0135617 ms
+Calculated Optimal: Optimal solution found :) - 11
+Known Optimal: 11
+
+File: N1W1B3R1
+Runtime: 0.0187229 ms
+Calculated Optimal: Bad solution found :( - 19
+Known Optimal: 17
+
+File: N2W2B2R9
+Runtime: 0.0284184 ms
+Calculated Optimal: Near-optimal solution found :| - 21
+Known Optimal: 20
+
+File: N4W4B1R1
+Runtime: 0.14504 ms
+Calculated Optimal: Bad solution found :( - 58
+Known Optimal: 56
+
+File: N3W2B1R8
+Runtime: 0.0653396 ms
+Calculated Optimal: Bad solution found :( - 43
+Known Optimal: 40
+
+File: N1W3B2R4
+Runtime: 0.0102908 ms
+Calculated Optimal: Optimal solution found :) - 7
+Known Optimal: 7
+
+File: N2W1B3R9
+Runtime: 0.0326979 ms
+Calculated Optimal: Near-optimal solution found :| - 30
+Known Optimal: 29
+
+File: N1W1B1R3
+Runtime: 0.0190538 ms
+Calculated Optimal: Near-optimal solution found :| - 19
+Known Optimal: 18
+
+File: N1W1B1R2
+Runtime: 0.0190555 ms
+Calculated Optimal: Bad solution found :( - 21
+Known Optimal: 19
+
+File: N2W1B3R8
+Runtime: 0.0393566 ms
+Calculated Optimal: Near-optimal solution found :| - 35
+Known Optimal: 34
+
+File: N3W2B1R9
+Runtime: 0.065342 ms
+Calculated Optimal: Bad solution found :( - 44
+Known Optimal: 41
+
+File: N1W3B2R5
+Runtime: 0.0103452 ms
+Calculated Optimal: Optimal solution found :) - 7
+Known Optimal: 7
+
+File: N4W4B1R0
+Runtime: 0.145162 ms
+Calculated Optimal: Bad solution found :( - 58
+Known Optimal: 56
+
+File: N2W2B2R8
+Runtime: 0.0286016 ms
+Calculated Optimal: Near-optimal solution found :| - 22
+Known Optimal: 21
+
+File: N1W1B3R0
+Runtime: 0.0183753 ms
+Calculated Optimal: Optimal solution found :) - 17
+Known Optimal: 17
+
+File: N1W2B2R0
+Runtime: 0.0135408 ms
+Calculated Optimal: Near-optimal solution found :| - 11
+Known Optimal: 10
+
+File: N4W4B3R2
+Runtime: 0.14612 ms
+Calculated Optimal: Optimal solution found :) - 57
+Known Optimal: 57
+
+File: N2W4B1R7
+Runtime: 0.0202646 ms
+Calculated Optimal: Optimal solution found :) - 12
+Known Optimal: 12
+
+File: N3W4B2R6
+Runtime: 0.0443303 ms
+Calculated Optimal: Near-optimal solution found :| - 23
+Known Optimal: 22
+
+File: N2W4B3R5
+Runtime: 0.0196355 ms
+Calculated Optimal: Near-optimal solution found :| - 11
+Known Optimal: 10
+
+File: N2W4B3R7
+Runtime: 0.0199995 ms
+Calculated Optimal: Optimal solution found :) - 11
+Known Optimal: 11
+
+File: N4W3B2R8
+Runtime: 0.178862 ms
+Calculated Optimal: Near-optimal solution found :| - 73
+Known Optimal: 72
+
+File: N3W4B2R4
+Runtime: 0.0442632 ms
+Calculated Optimal: Near-optimal solution found :| - 23
+Known Optimal: 22
+
+File: N2W4B1R5
+Runtime: 0.0202817 ms
+Calculated Optimal: Optimal solution found :) - 12
+Known Optimal: 12
+
+File: N4W4B3R0
+Runtime: 0.144251 ms
+Calculated Optimal: Optimal solution found :) - 55
+Known Optimal: 55
+
+File: N3W2B3R9
+Runtime: 0.0632085 ms
+Calculated Optimal: Near-optimal solution found :| - 40
+Known Optimal: 39
+
+File: N1W2B2R2
+Runtime: 0.0133353 ms
+Calculated Optimal: Optimal solution found :) - 10
+Known Optimal: 10
+
+File: N2W1B1R8
+Runtime: 0.0397457 ms
+Calculated Optimal: Bad solution found :( - 37
+Known Optimal: 34
+
+File: N3W1B2R9
+Runtime: 0.0935348 ms
+Calculated Optimal: Bad solution found :( - 71
+Known Optimal: 66
+
+File: N1W1B3R2
+Runtime: 0.0155324 ms
+Calculated Optimal: Near-optimal solution found :| - 16
+Known Optimal: 15
+
+File: N4W4B1R2
+Runtime: 0.143433 ms
+Calculated Optimal: Bad solution found :( - 58
+Known Optimal: 56
+
+File: N1W3B2R7
+Runtime: 0.0106931 ms
+Calculated Optimal: Optimal solution found :) - 8
+Known Optimal: 8
+
+File: N1W1B1R0
+Runtime: 0.0186588 ms
+Calculated Optimal: Near-optimal solution found :| - 19
+Known Optimal: 18
+
+File: N1W1B1R1
+Runtime: 0.0189364 ms
+Calculated Optimal: Bad solution found :( - 20
+Known Optimal: 18
+
+File: N1W3B2R6
+Runtime: 0.0107443 ms
+Calculated Optimal: Optimal solution found :) - 8
+Known Optimal: 8
+
+File: N4W4B1R3
+Runtime: 0.144709 ms
+Calculated Optimal: Bad solution found :( - 58
+Known Optimal: 56
+
+File: N1W1B3R3
+Runtime: 0.0183489 ms
+Calculated Optimal: Near-optimal solution found :| - 17
+Known Optimal: 16
+
+File: N3W1B2R8
+Runtime: 0.0937195 ms
+Calculated Optimal: Bad solution found :( - 71
+Known Optimal: 66
+
+File: N2W1B1R9
+Runtime: 0.0401976 ms
+Calculated Optimal: Bad solution found :( - 36
+Known Optimal: 34
+
+File: N1W2B2R3
+Runtime: 0.0136041 ms
+Calculated Optimal: Optimal solution found :) - 11
+Known Optimal: 11
+
+File: N3W2B3R8
+Runtime: 0.0634233 ms
+Calculated Optimal: Optimal solution found :) - 39
+Known Optimal: 39
+
+File: N4W4B3R1
+Runtime: 0.144506 ms
+Calculated Optimal: Near-optimal solution found :| - 55
+Known Optimal: 54
+
+File: N2W4B1R4
+Runtime: 0.020227 ms
+Calculated Optimal: Optimal solution found :) - 12
+Known Optimal: 12
+
+File: N3W4B2R5
+Runtime: 0.0442275 ms
+Calculated Optimal: Near-optimal solution found :| - 24
+Known Optimal: 23
+
+File: N2W4B3R6
+Runtime: 0.0196808 ms
+Calculated Optimal: Optimal solution found :) - 11
+Known Optimal: 11
+
+File: N4W3B2R9
+Runtime: 0.177824 ms
+Calculated Optimal: Bad solution found :( - 72
+Known Optimal: 70
+
+File: N2W4B3R2
+Runtime: 0.0207065 ms
+Calculated Optimal: Optimal solution found :) - 12
+Known Optimal: 12
+
+File: N1W4B1R8
+Runtime: 0.00983679 ms
+Calculated Optimal: Optimal solution found :) - 6
+Known Optimal: 6
+
+File: N4W1B3R8
+Runtime: 0.333958 ms
+Calculated Optimal: Bad solution found :( - 175
+Known Optimal: 170
+
+File: N2W4B1R0
+Runtime: 0.0201913 ms
+Calculated Optimal: Optimal solution found :) - 12
+Known Optimal: 12
+
+File: N4W2B2R8
+Runtime: 0.225612 ms
+Calculated Optimal: Bad solution found :( - 103
+Known Optimal: 100
+
+File: N3W4B2R1
+Runtime: 0.0440805 ms
+Calculated Optimal: Near-optimal solution found :| - 23
+Known Optimal: 22
+
+File: N1W2B2R7
+Runtime: 0.013575 ms
+Calculated Optimal: Near-optimal solution found :| - 11
+Known Optimal: 10
+
+File: N4W4B3R5
+Runtime: 0.144816 ms
+Calculated Optimal: Optimal solution found :) - 55
+Known Optimal: 55
+
+File: N1W1B3R7
+Runtime: 0.0187898 ms
+Calculated Optimal: Near-optimal solution found :| - 19
+Known Optimal: 18
+
+File: N1W3B2R2
+Runtime: 0.0105618 ms
+Calculated Optimal: Optimal solution found :) - 8
+Known Optimal: 8
+
+File: N3W3B3R9
+Runtime: 0.049852 ms
+Calculated Optimal: Near-optimal solution found :| - 30
+Known Optimal: 29
+
+File: N4W4B1R7
+Runtime: 0.145307 ms
+Calculated Optimal: Bad solution found :( - 58
+Known Optimal: 56
+
+File: N1W1B1R5
+Runtime: 0.018706 ms
+Calculated Optimal: Near-optimal solution found :| - 18
+Known Optimal: 17
+
+File: N1W1B1R4
+Runtime: 0.0186916 ms
+Calculated Optimal: Near-optimal solution found :| - 18
+Known Optimal: 17
+
+File: N4W4B1R6
+Runtime: 0.144994 ms
+Calculated Optimal: Bad solution found :( - 58
+Known Optimal: 56
+
+File: N3W3B3R8
+Runtime: 0.0502107 ms
+Calculated Optimal: Near-optimal solution found :| - 30
+Known Optimal: 29
+
+File: N1W3B2R3
+Runtime: 0.0106498 ms
+Calculated Optimal: Optimal solution found :) - 7
+Known Optimal: 7
+
+File: N1W1B3R6
+Runtime: 0.0163358 ms
+Calculated Optimal: Optimal solution found :) - 16
+Known Optimal: 16
+
+File: N4W4B3R4
+Runtime: 0.144983 ms
+Calculated Optimal: Optimal solution found :) - 55
+Known Optimal: 55
+
+File: N1W2B2R6
+Runtime: 0.0133038 ms
+Calculated Optimal: Optimal solution found :) - 10
+Known Optimal: 10
+
+File: N3W4B2R0
+Runtime: 0.0445985 ms
+Calculated Optimal: Optimal solution found :) - 23
+Known Optimal: 23
+
+File: N4W2B2R9
+Runtime: 0.228371 ms
+Calculated Optimal: Bad solution found :( - 106
+Known Optimal: 102
+
+File: N2W4B1R1
+Runtime: 0.0199645 ms
+Calculated Optimal: Optimal solution found :) - 12
+Known Optimal: 12
+
+File: N4W1B3R9
+Runtime: 0.326281 ms
+Calculated Optimal: Bad solution found :( - 166
+Known Optimal: 162
+
+File: N1W4B1R9
+Runtime: 0.00985912 ms
+Calculated Optimal: Optimal solution found :) - 6
+Known Optimal: 6
+
+File: N2W4B3R3
+Runtime: 0.020394 ms
+Calculated Optimal: Near-optimal solution found :| - 12
+Known Optimal: 11
+
+File: N4W1B1R9
+Runtime: 0.35128 ms
+Calculated Optimal: Bad solution found :( - 180
+Known Optimal: 168
+
+File: N2W4B3R1
+Runtime: 0.0206035 ms
+Calculated Optimal: Optimal solution found :) - 12
+Known Optimal: 12
+
+File: N2W4B1R3
+Runtime: 0.0203102 ms
+Calculated Optimal: Optimal solution found :) - 12
+Known Optimal: 12
+
+File: N3W4B2R2
+Runtime: 0.043632 ms
+Calculated Optimal: Optimal solution found :) - 22
+Known Optimal: 22
+
+File: N1W4B3R9
+Runtime: 0.00988467 ms
+Calculated Optimal: Optimal solution found :) - 6
+Known Optimal: 6
+
+File: N1W2B2R4
+Runtime: 0.0134868 ms
+Calculated Optimal: Near-optimal solution found :| - 11
+Known Optimal: 10
+
+File: N3W3B1R8
+Runtime: 0.048567 ms
+Calculated Optimal: Near-optimal solution found :| - 30
+Known Optimal: 29
+
+File: N2W3B2R9
+Runtime: 0.0220155 ms
+Calculated Optimal: Optimal solution found :) - 15
+Known Optimal: 15
+
+File: N4W4B3R6
+Runtime: 0.150604 ms
+Calculated Optimal: Optimal solution found :) - 58
+Known Optimal: 58
+
+File: N1W1B3R4
+Runtime: 0.0190023 ms
+Calculated Optimal: Near-optimal solution found :| - 20
+Known Optimal: 19
+
+File: N1W3B2R1
+Runtime: 0.0108627 ms
+Calculated Optimal: Optimal solution found :) - 8
+Known Optimal: 8
+
+File: N4W4B1R4
+Runtime: 0.145672 ms
+Calculated Optimal: Bad solution found :( - 58
+Known Optimal: 56
+
+File: N1W1B1R6
+Runtime: 0.0189072 ms
+Calculated Optimal: Bad solution found :( - 19
+Known Optimal: 17
+
+File: N1W1B1R7
+Runtime: 0.018608 ms
+Calculated Optimal: Bad solution found :( - 19
+Known Optimal: 17
+
+File: N4W4B1R5
+Runtime: 0.145 ms
+Calculated Optimal: Bad solution found :( - 58
+Known Optimal: 56
+
+File: N1W3B2R0
+Runtime: 0.0107703 ms
+Calculated Optimal: Optimal solution found :) - 8
+Known Optimal: 8
+
+File: N1W1B3R5
+Runtime: 0.0180367 ms
+Calculated Optimal: Near-optimal solution found :| - 17
+Known Optimal: 16
+
+File: N2W3B2R8
+Runtime: 0.0217734 ms
+Calculated Optimal: Optimal solution found :) - 14
+Known Optimal: 14
+
+File: N4W4B3R7
+Runtime: 0.147226 ms
+Calculated Optimal: Optimal solution found :) - 57
+Known Optimal: 57
+
+File: N1W2B2R5
+Runtime: 0.0136354 ms
+Calculated Optimal: Near-optimal solution found :| - 11
+Known Optimal: 10
+
+File: N3W3B1R9
+Runtime: 0.0480441 ms
+Calculated Optimal: Near-optimal solution found :| - 30
+Known Optimal: 29
+
+File: N1W4B3R8
+Runtime: 0.0097955 ms
+Calculated Optimal: Optimal solution found :) - 6
+Known Optimal: 6
+
+File: N3W4B2R3
+Runtime: 0.0439848 ms
+Calculated Optimal: Near-optimal solution found :| - 23
+Known Optimal: 22
+
+File: N2W4B1R2
+Runtime: 0.0197315 ms
+Calculated Optimal: Optimal solution found :) - 12
+Known Optimal: 12
+
+File: N2W4B3R0
+Runtime: 0.0202214 ms
+Calculated Optimal: Optimal solution found :) - 12
+Known Optimal: 12
+
+File: N4W1B1R8
+Runtime: 0.345193 ms
+Calculated Optimal: Bad solution found :( - 175
+Known Optimal: 167
+
+File: N1W3B3R7
+Runtime: 0.011096 ms
+Calculated Optimal: Optimal solution found :) - 8
+Known Optimal: 8
+
+File: N1W2B1R0
+Runtime: 0.0136131 ms
+Calculated Optimal: Optimal solution found :) - 11
+Known Optimal: 11
+
+File: N4W4B2R0
+Runtime: 0.144175 ms
+Calculated Optimal: Near-optimal solution found :| - 56
+Known Optimal: 55
+
+File: N2W2B1R8
+Runtime: 0.0286961 ms
+Calculated Optimal: Near-optimal solution found :| - 22
+Known Optimal: 21
+
+File: N1W3B1R5
+Runtime: 0.0107101 ms
+Calculated Optimal: Optimal solution found :) - 8
+Known Optimal: 8
+
+File: N3W2B2R9
+Runtime: 0.0645471 ms
+Calculated Optimal: Near-optimal solution found :| - 41
+Known Optimal: 40
+
+File: N1W2B3R2
+Runtime: 0.0137018 ms
+Calculated Optimal: Near-optimal solution found :| - 11
+Known Optimal: 10
+
+File: N3W1B3R9
+Runtime: 0.0923003 ms
+Calculated Optimal: Bad solution found :( - 72
+Known Optimal: 70
+
+File: N1W1B2R2
+Runtime: 0.0183545 ms
+Calculated Optimal: Near-optimal solution found :| - 18
+Known Optimal: 17
+
+File: N3W4B3R4
+Runtime: 0.045083 ms
+Calculated Optimal: Optimal solution found :) - 23
+Known Optimal: 23
+
+File: N3W4B1R6
+Runtime: 0.0445347 ms
+Calculated Optimal: Near-optimal solution found :| - 24
+Known Optimal: 23
+
+File: N4W3B3R8
+Runtime: 0.182782 ms
+Calculated Optimal: Near-optimal solution found :| - 73
+Known Optimal: 72
+
+File: N2W4B2R7
+Runtime: 0.0201628 ms
+Calculated Optimal: Optimal solution found :) - 11
+Known Optimal: 11
+
+File: N4W3B3R9
+Runtime: 0.181474 ms
+Calculated Optimal: Optimal solution found :) - 71
+Known Optimal: 71
+
+File: N2W4B2R6
+Runtime: 0.0201508 ms
+Calculated Optimal: Optimal solution found :) - 12
+Known Optimal: 12
+
+File: N3W4B1R7
+Runtime: 0.0446264 ms
+Calculated Optimal: Optimal solution found :) - 23
+Known Optimal: 23
+
+File: N3W4B3R5
+Runtime: 0.0444623 ms
+Calculated Optimal: Optimal solution found :) - 23
+Known Optimal: 23
+
+File: N1W1B2R3
+Runtime: 0.0184106 ms
+Calculated Optimal: Near-optimal solution found :| - 17
+Known Optimal: 16
+
+File: N3W1B3R8
+Runtime: 0.0891996 ms
+Calculated Optimal: Bad solution found :( - 67
+Known Optimal: 65
+
+File: N1W2B3R3
+Runtime: 0.0134784 ms
+Calculated Optimal: Optimal solution found :) - 11
+Known Optimal: 11
+
+File: N1W3B1R4
+Runtime: 0.0104023 ms
+Calculated Optimal: Optimal solution found :) - 8
+Known Optimal: 8
+
+File: N3W2B2R8
+Runtime: 0.0652577 ms
+Calculated Optimal: Bad solution found :( - 44
+Known Optimal: 42
+
+File: N2W2B1R9
+Runtime: 0.0284646 ms
+Calculated Optimal: Bad solution found :( - 22
+Known Optimal: 20
+
+File: N4W4B2R1
+Runtime: 0.146154 ms
+Calculated Optimal: Near-optimal solution found :| - 58
+Known Optimal: 57
+
+File: N1W2B1R1
+Runtime: 0.0136332 ms
+Calculated Optimal: Optimal solution found :) - 11
+Known Optimal: 11
+
+File: N1W3B3R6
+Runtime: 0.0109779 ms
+Calculated Optimal: Near-optimal solution found :| - 8
+Known Optimal: 7
+
+File: N2W2B3R9
+Runtime: 0.0281543 ms
+Calculated Optimal: Optimal solution found :) - 20
+Known Optimal: 20
+
+File: N1W2B1R3
+Runtime: 0.0134787 ms
+Calculated Optimal: Near-optimal solution found :| - 12
+Known Optimal: 11
+
+File: N1W3B3R4
+Runtime: 0.0107978 ms
+Calculated Optimal: Optimal solution found :) - 8
+Known Optimal: 8
+
+File: N2W1B2R9
+Runtime: 0.0392508 ms
+Calculated Optimal: Bad solution found :( - 36
+Known Optimal: 33
+
+File: N3W1B1R8
+Runtime: 0.0936556 ms
+Calculated Optimal: Bad solution found :( - 73
+Known Optimal: 67
+
+File: N4W4B2R3
+Runtime: 0.146038 ms
+Calculated Optimal: Near-optimal solution found :| - 58
+Known Optimal: 57
+
+File: N1W2B3R1
+Runtime: 0.0137419 ms
+Calculated Optimal: Optimal solution found :) - 11
+Known Optimal: 11
+
+File: N1W3B1R6
+Runtime: 0.0107943 ms
+Calculated Optimal: Optimal solution found :) - 8
+Known Optimal: 8
+
+File: N1W1B2R1
+Runtime: 0.0187914 ms
+Calculated Optimal: Bad solution found :( - 19
+Known Optimal: 17
+
+File: N3W4B3R7
+Runtime: 0.0428489 ms
+Calculated Optimal: Optimal solution found :) - 21
+Known Optimal: 21
+
+File: N4W3B1R9
+Runtime: 0.178125 ms
+Calculated Optimal: Bad solution found :( - 74
+Known Optimal: 71
+
+File: N3W4B1R5
+Runtime: 0.044193 ms
+Calculated Optimal: Near-optimal solution found :| - 24
+Known Optimal: 23
+
+File: N2W4B2R4
+Runtime: 0.0202817 ms
+Calculated Optimal: Optimal solution found :) - 12
+Known Optimal: 12
+
+File: N2W4B2R5
+Runtime: 0.0203041 ms
+Calculated Optimal: Optimal solution found :) - 12
+Known Optimal: 12
+
+File: N3W4B1R4
+Runtime: 0.0447925 ms
+Calculated Optimal: Optimal solution found :) - 23
+Known Optimal: 23
+
+File: N4W3B1R8
+Runtime: 0.176264 ms
+Calculated Optimal: Bad solution found :( - 74
+Known Optimal: 71
+
+File: N3W4B3R6
+Runtime: 0.044737 ms
+Calculated Optimal: Optimal solution found :) - 23
+Known Optimal: 23
+
+File: N1W1B2R0
+Runtime: 0.0187402 ms
+Calculated Optimal: Near-optimal solution found :| - 18
+Known Optimal: 17
+
+File: N1W3B1R7
+Runtime: 0.0104981 ms
+Calculated Optimal: Optimal solution found :) - 8
+Known Optimal: 8
+
+File: N1W2B3R0
+Runtime: 0.0137073 ms
+Calculated Optimal: Optimal solution found :) - 10
+Known Optimal: 10
+
+File: N4W4B2R2
+Runtime: 0.145611 ms
+Calculated Optimal: Near-optimal solution found :| - 58
+Known Optimal: 57
+
+File: N3W1B1R9
+Runtime: 0.0943545 ms
+Calculated Optimal: Bad solution found :( - 70
+Known Optimal: 67
+
+File: N2W1B2R8
+Runtime: 0.0404258 ms
+Calculated Optimal: Bad solution found :( - 37
+Known Optimal: 34
+
+File: N1W3B3R5
+Runtime: 0.0103667 ms
+Calculated Optimal: Optimal solution found :) - 7
+Known Optimal: 7
+
+File: N1W2B1R2
+Runtime: 0.0134048 ms
+Calculated Optimal: Optimal solution found :) - 11
+Known Optimal: 11
+
+File: N2W2B3R8
+Runtime: 0.0280395 ms
+Calculated Optimal: Near-optimal solution found :| - 21
+Known Optimal: 20
+
+File: N1W2B1R6
+Runtime: 0.0134974 ms
+Calculated Optimal: Optimal solution found :) - 11
+Known Optimal: 11
+
+File: N1W3B3R1
+Runtime: 0.0108084 ms
+Calculated Optimal: Optimal solution found :) - 8
+Known Optimal: 8
+
+File: N1W2B3R4
+Runtime: 0.0131098 ms
+Calculated Optimal: Optimal solution found :) - 10
+Known Optimal: 10
+
+File: N1W3B1R3
+Runtime: 0.0106291 ms
+Calculated Optimal: Optimal solution found :) - 8
+Known Optimal: 8
+
+File: N4W4B2R6
+Runtime: 0.143913 ms
+Calculated Optimal: Near-optimal solution found :| - 57
+Known Optimal: 56
+
+File: N2W3B3R9
+Runtime: 0.0215312 ms
+Calculated Optimal: Optimal solution found :) - 14
+Known Optimal: 14
+
+File: N1W1B2R4
+Runtime: 0.0185528 ms
+Calculated Optimal: Bad solution found :( - 19
+Known Optimal: 17
+
+File: N3W4B3R2
+Runtime: 0.0442731 ms
+Calculated Optimal: Optimal solution found :) - 23
+Known Optimal: 23
+
+File: N1W4B2R9
+Runtime: 0.00975958 ms
+Calculated Optimal: Optimal solution found :) - 6
+Known Optimal: 6
+
+File: N4W2B1R9
+Runtime: 0.228709 ms
+Calculated Optimal: Bad solution found :( - 108
+Known Optimal: 101
+
+File: N2W4B2R1
+Runtime: 0.0194415 ms
+Calculated Optimal: Optimal solution found :) - 11
+Known Optimal: 11
+
+File: N3W4B1R0
+Runtime: 0.0438138 ms
+Calculated Optimal: Near-optimal solution found :| - 24
+Known Optimal: 23
+
+File: N3W4B1R1
+Runtime: 0.044191 ms
+Calculated Optimal: Near-optimal solution found :| - 24
+Known Optimal: 23
+
+File: N2W4B2R0
+Runtime: 0.0197891 ms
+Calculated Optimal: Optimal solution found :) - 11
+Known Optimal: 11
+
+File: N4W2B1R8
+Runtime: 0.227393 ms
+Calculated Optimal: Bad solution found :( - 107
+Known Optimal: 101
+
+File: N1W4B2R8
+Runtime: 0.0101992 ms
+Calculated Optimal: Near-optimal solution found :| - 7
+Known Optimal: 6
+
+File: N3W4B3R3
+Runtime: 0.0454491 ms
+Calculated Optimal: Near-optimal solution found :| - 25
+Known Optimal: 24
+
+File: N1W1B2R5
+Runtime: 0.0184668 ms
+Calculated Optimal: Bad solution found :( - 19
+Known Optimal: 17
+
+File: N4W4B2R7
+Runtime: 0.144498 ms
+Calculated Optimal: Near-optimal solution found :| - 58
+Known Optimal: 57
+
+File: N2W3B3R8
+Runtime: 0.021879 ms
+Calculated Optimal: Optimal solution found :) - 15
+Known Optimal: 15
+
+File: N1W3B1R2
+Runtime: 0.010399 ms
+Calculated Optimal: Near-optimal solution found :| - 8
+Known Optimal: 7
+
+File: N1W2B3R5
+Runtime: 0.0131748 ms
+Calculated Optimal: Optimal solution found :) - 10
+Known Optimal: 10
+
+File: N1W3B3R0
+Runtime: 0.0107513 ms
+Calculated Optimal: Optimal solution found :) - 7
+Known Optimal: 7
+
+File: N1W2B1R7
+Runtime: 0.0135502 ms
+Calculated Optimal: Optimal solution found :) - 11
+Known Optimal: 11
+
+File: N1W3B3R2
+Runtime: 0.0102954 ms
+Calculated Optimal: Optimal solution found :) - 7
+Known Optimal: 7
+
+File: N3W3B2R9
+Runtime: 0.0491514 ms
+Calculated Optimal: Near-optimal solution found :| - 30
+Known Optimal: 29
+
+File: N1W2B1R5
+Runtime: 0.0136311 ms
+Calculated Optimal: Near-optimal solution found :| - 11
+Known Optimal: 10
+
+File: N2W3B1R8
+Runtime: 0.0217516 ms
+Calculated Optimal: Optimal solution found :) - 15
+Known Optimal: 15
+
+File: N1W3B1R0
+Runtime: 0.0104777 ms
+Calculated Optimal: Near-optimal solution found :| - 8
+Known Optimal: 7
+
+File: N1W2B3R7
+Runtime: 0.0133315 ms
+Calculated Optimal: Optimal solution found :) - 10
+Known Optimal: 10
+
+File: N4W4B2R5
+Runtime: 0.144374 ms
+Calculated Optimal: Bad solution found :( - 57
+Known Optimal: 55
+
+File: N1W1B2R7
+Runtime: 0.018888 ms
+Calculated Optimal: Near-optimal solution found :| - 19
+Known Optimal: 18
+
+File: N4W1B2R8
+Runtime: 0.34684 ms
+Calculated Optimal: Bad solution found :( - 179
+Known Optimal: 167
+
+File: N4W2B3R8
+Runtime: 0.220743 ms
+Calculated Optimal: Near-optimal solution found :| - 100
+Known Optimal: 99
+
+File: N3W4B3R1
+Runtime: 0.0438968 ms
+Calculated Optimal: Optimal solution found :) - 22
+Known Optimal: 22
+
+File: N2W4B2R2
+Runtime: 0.0202454 ms
+Calculated Optimal: Near-optimal solution found :| - 12
+Known Optimal: 11
+
+File: N3W4B1R3
+Runtime: 0.0440762 ms
+Calculated Optimal: Optimal solution found :) - 23
+Known Optimal: 23
+
+File: N3W4B1R2
+Runtime: 0.0438943 ms
+Calculated Optimal: Near-optimal solution found :| - 24
+Known Optimal: 23
+
+File: N2W4B2R3
+Runtime: 0.0199311 ms
+Calculated Optimal: Optimal solution found :) - 11
+Known Optimal: 11
+
+File: N3W4B3R0
+Runtime: 0.0462912 ms
+Calculated Optimal: Near-optimal solution found :| - 25
+Known Optimal: 24
+
+File: N4W2B3R9
+Runtime: 0.225081 ms
+Calculated Optimal: Near-optimal solution found :| - 103
+Known Optimal: 102
+
+File: N4W1B2R9
+Runtime: 0.347562 ms
+Calculated Optimal: Bad solution found :( - 179
+Known Optimal: 169
+
+File: N1W1B2R6
+Runtime: 0.0186435 ms
+Calculated Optimal: Near-optimal solution found :| - 18
+Known Optimal: 17
+
+File: N4W4B2R4
+Runtime: 0.145259 ms
+Calculated Optimal: Near-optimal solution found :| - 57
+Known Optimal: 56
+
+File: N1W2B3R6
+Runtime: 0.0137777 ms
+Calculated Optimal: Optimal solution found :) - 11
+Known Optimal: 11
+
+File: N1W3B1R1
+Runtime: 0.01083 ms
+Calculated Optimal: Optimal solution found :) - 8
+Known Optimal: 8
+
+File: N2W3B1R9
+Runtime: 0.0219606 ms
+Calculated Optimal: Optimal solution found :) - 15
+Known Optimal: 15
+
+File: N3W3B2R8
+Runtime: 0.0489562 ms
+Calculated Optimal: Near-optimal solution found :| - 29
+Known Optimal: 28
+
+File: N1W2B1R4
+Runtime: 0.0136173 ms
+Calculated Optimal: Near-optimal solution found :| - 12
+Known Optimal: 11
+
+File: N1W3B3R3
+Runtime: 0.0109573 ms
+Calculated Optimal: Optimal solution found :) - 8
+Known Optimal: 8
+
+File: N3W3B2R5
+Runtime: 0.0489218 ms
+Calculated Optimal: Near-optimal solution found :| - 30
+Known Optimal: 29
+
+File: N1W2B1R9
+Runtime: 0.0136029 ms
+Calculated Optimal: Optimal solution found :) - 11
+Known Optimal: 11
+
+File: N2W2B3R3
+Runtime: 0.0278585 ms
+Calculated Optimal: Optimal solution found :) - 19
+Known Optimal: 19
+
+File: N2W3B1R4
+Runtime: 0.0219069 ms
+Calculated Optimal: Optimal solution found :) - 15
+Known Optimal: 15
+
+File: N3W1B1R2
+Runtime: 0.0944052 ms
+Calculated Optimal: Bad solution found :( - 70
+Known Optimal: 67
+
+File: N2W1B2R3
+Runtime: 0.0405438 ms
+Calculated Optimal: Bad solution found :( - 37
+Known Optimal: 35
+
+File: N3W2B2R0
+Runtime: 0.0646722 ms
+Calculated Optimal: Bad solution found :( - 42
+Known Optimal: 40
+
+File: N2W2B1R1
+Runtime: 0.0284001 ms
+Calculated Optimal: Near-optimal solution found :| - 21
+Known Optimal: 20
+
+File: N2W3B3R6
+Runtime: 0.0222646 ms
+Calculated Optimal: Optimal solution found :) - 15
+Known Optimal: 15
+
+File: N4W4B2R9
+Runtime: 0.143746 ms
+Calculated Optimal: Near-optimal solution found :| - 57
+Known Optimal: 56
+
+File: N3W1B3R0
+Runtime: 0.0924092 ms
+Calculated Optimal: Bad solution found :( - 70
+Known Optimal: 68
+
+File: N4W1B2R4
+Runtime: 0.343804 ms
+Calculated Optimal: Bad solution found :( - 176
+Known Optimal: 165
+
+File: N4W2B3R4
+Runtime: 0.223832 ms
+Calculated Optimal: Near-optimal solution found :| - 101
+Known Optimal: 100
+
+File: N4W3B1R3
+Runtime: 0.176194 ms
+Calculated Optimal: Bad solution found :( - 73
+Known Optimal: 71
+
+File: N1W4B2R6
+Runtime: 0.00976029 ms
+Calculated Optimal: Optimal solution found :) - 6
+Known Optimal: 6
+
+File: N4W2B1R6
+Runtime: 0.230307 ms
+Calculated Optimal: Bad solution found :( - 107
+Known Optimal: 102
+
+File: N4W3B3R1
+Runtime: 0.180256 ms
+Calculated Optimal: Optimal solution found :) - 71
+Known Optimal: 71
+
+File: N4W3B3R0
+Runtime: 0.183031 ms
+Calculated Optimal: Near-optimal solution found :| - 73
+Known Optimal: 72
+
+File: N4W2B1R7
+Runtime: 0.228261 ms
+Calculated Optimal: Bad solution found :( - 106
+Known Optimal: 101
+
+File: N1W4B2R7
+Runtime: 0.00983692 ms
+Calculated Optimal: Optimal solution found :) - 6
+Known Optimal: 6
+
+File: N4W3B1R2
+Runtime: 0.178313 ms
+Calculated Optimal: Bad solution found :( - 74
+Known Optimal: 71
+
+File: N4W2B3R5
+Runtime: 0.226019 ms
+Calculated Optimal: Near-optimal solution found :| - 102
+Known Optimal: 101
+
+File: N4W1B2R5
+Runtime: 0.339762 ms
+Calculated Optimal: Bad solution found :( - 172
+Known Optimal: 161
+
+File: N3W1B3R1
+Runtime: 0.0913964 ms
+Calculated Optimal: Bad solution found :( - 69
+Known Optimal: 66
+
+File: N2W3B3R7
+Runtime: 0.0213723 ms
+Calculated Optimal: Optimal solution found :) - 13
+Known Optimal: 13
+
+File: N4W4B2R8
+Runtime: 0.14432 ms
+Calculated Optimal: Bad solution found :( - 57
+Known Optimal: 55
+
+File: N2W2B1R0
+Runtime: 0.0283951 ms
+Calculated Optimal: Near-optimal solution found :| - 21
+Known Optimal: 20
+
+File: N3W2B2R1
+Runtime: 0.0644605 ms
+Calculated Optimal: Near-optimal solution found :| - 41
+Known Optimal: 40
+
+File: N2W1B2R2
+Runtime: 0.0404673 ms
+Calculated Optimal: Bad solution found :( - 37
+Known Optimal: 35
+
+File: N3W1B1R3
+Runtime: 0.094621 ms
+Calculated Optimal: Bad solution found :( - 71
+Known Optimal: 67
+
+File: N2W3B1R5
+Runtime: 0.0217936 ms
+Calculated Optimal: Optimal solution found :) - 15
+Known Optimal: 15
+
+File: N2W2B3R2
+Runtime: 0.0289025 ms
+Calculated Optimal: Optimal solution found :) - 21
+Known Optimal: 21
+
+File: N3W3B2R4
+Runtime: 0.0500412 ms
+Calculated Optimal: Optimal solution found :) - 30
+Known Optimal: 30
+
+File: N1W2B1R8
+Runtime: 0.0136071 ms
+Calculated Optimal: Near-optimal solution found :| - 11
+Known Optimal: 10
+
+File: N3W3B2R6
+Runtime: 0.049504 ms
+Calculated Optimal: Near-optimal solution found :| - 30
+Known Optimal: 29
+
+File: N2W3B1R7
+Runtime: 0.0217718 ms
+Calculated Optimal: Near-optimal solution found :| - 15
+Known Optimal: 14
+
+File: N2W2B3R0
+Runtime: 0.0288865 ms
+Calculated Optimal: Optimal solution found :) - 21
+Known Optimal: 21
+
+File: N3W1B1R1
+Runtime: 0.0952344 ms
+Calculated Optimal: Bad solution found :( - 71
+Known Optimal: 67
+
+File: N2W1B2R0
+Runtime: 0.0408455 ms
+Calculated Optimal: Bad solution found :( - 38
+Known Optimal: 36
+
+File: N3W2B2R3
+Runtime: 0.0636074 ms
+Calculated Optimal: Bad solution found :( - 41
+Known Optimal: 39
+
+File: N1W2B3R8
+Runtime: 0.0138053 ms
+Calculated Optimal: Optimal solution found :) - 11
+Known Optimal: 11
+
+File: N2W3B3R5
+Runtime: 0.0222683 ms
+Calculated Optimal: Optimal solution found :) - 15
+Known Optimal: 15
+
+File: N2W2B1R2
+Runtime: 0.0284198 ms
+Calculated Optimal: Near-optimal solution found :| - 22
+Known Optimal: 21
+
+File: N3W1B3R3
+Runtime: 0.0905494 ms
+Calculated Optimal: Bad solution found :( - 68
+Known Optimal: 66
+
+File: N1W1B2R8
+Runtime: 0.018339 ms
+Calculated Optimal: Near-optimal solution found :| - 17
+Known Optimal: 16
+
+File: N4W1B2R7
+Runtime: 0.346487 ms
+Calculated Optimal: Bad solution found :( - 178
+Known Optimal: 168
+
+File: N4W3B1R0
+Runtime: 0.176474 ms
+Calculated Optimal: Bad solution found :( - 74
+Known Optimal: 71
+
+File: N4W2B3R7
+Runtime: 0.223526 ms
+Calculated Optimal: Near-optimal solution found :| - 102
+Known Optimal: 101
+
+File: N1W4B2R5
+Runtime: 0.00995683 ms
+Calculated Optimal: Optimal solution found :) - 6
+Known Optimal: 6
+
+File: N4W3B3R2
+Runtime: 0.183207 ms
+Calculated Optimal: Optimal solution found :) - 72
+Known Optimal: 72
+
+File: N4W2B1R5
+Runtime: 0.231763 ms
+Calculated Optimal: Bad solution found :( - 109
+Known Optimal: 103
+
+File: N4W2B1R4
+Runtime: 0.229019 ms
+Calculated Optimal: Bad solution found :( - 106
+Known Optimal: 101
+
+File: N4W3B3R3
+Runtime: 0.1807 ms
+Calculated Optimal: Optimal solution found :) - 71
+Known Optimal: 71
+
+File: N1W4B2R4
+Runtime: 0.00978888 ms
+Calculated Optimal: Optimal solution found :) - 6
+Known Optimal: 6
+
+File: N4W2B3R6
+Runtime: 0.221921 ms
+Calculated Optimal: Near-optimal solution found :| - 100
+Known Optimal: 99
+
+File: N4W3B1R1
+Runtime: 0.176152 ms
+Calculated Optimal: Bad solution found :( - 74
+Known Optimal: 71
+
+File: N4W1B2R6
+Runtime: 0.350201 ms
+Calculated Optimal: Bad solution found :( - 179
+Known Optimal: 168
+
+File: N1W1B2R9
+Runtime: 0.0189603 ms
+Calculated Optimal: Near-optimal solution found :| - 19
+Known Optimal: 18
+
+File: N3W1B3R2
+Runtime: 0.0915595 ms
+Calculated Optimal: Bad solution found :( - 70
+Known Optimal: 67
+
+File: N2W2B1R3
+Runtime: 0.0285129 ms
+Calculated Optimal: Near-optimal solution found :| - 22
+Known Optimal: 21
+
+File: N2W3B3R4
+Runtime: 0.0224723 ms
+Calculated Optimal: Optimal solution found :) - 15
+Known Optimal: 15
+
+File: N1W2B3R9
+Runtime: 0.013491 ms
+Calculated Optimal: Optimal solution found :) - 10
+Known Optimal: 10
+
+File: N3W2B2R2
+Runtime: 0.0638401 ms
+Calculated Optimal: Bad solution found :( - 41
+Known Optimal: 39
+
+File: N2W1B2R1
+Runtime: 0.0398072 ms
+Calculated Optimal: Bad solution found :( - 36
+Known Optimal: 33
+
+File: N3W1B1R0
+Runtime: 0.0945455 ms
+Calculated Optimal: Bad solution found :( - 73
+Known Optimal: 67
+
+File: N2W2B3R1
+Runtime: 0.0281257 ms
+Calculated Optimal: Optimal solution found :) - 20
+Known Optimal: 20
+
+File: N2W3B1R6
+Runtime: 0.02188 ms
+Calculated Optimal: Optimal solution found :) - 15
+Known Optimal: 15
+
+File: N3W3B2R7
+Runtime: 0.0485638 ms
+Calculated Optimal: Near-optimal solution found :| - 29
+Known Optimal: 28
+
+File: N2W3B1R2
+Runtime: 0.0222174 ms
+Calculated Optimal: Optimal solution found :) - 15
+Known Optimal: 15
+
+File: N2W2B3R5
+Runtime: 0.0288098 ms
+Calculated Optimal: Optimal solution found :) - 21
+Known Optimal: 21
+
+File: N1W3B3R8
+Runtime: 0.010448 ms
+Calculated Optimal: Optimal solution found :) - 7
+Known Optimal: 7
+
+File: N3W3B2R3
+Runtime: 0.0492209 ms
+Calculated Optimal: Near-optimal solution found :| - 30
+Known Optimal: 29
+
+File: N2W1B2R5
+Runtime: 0.0402449 ms
+Calculated Optimal: Bad solution found :( - 37
+Known Optimal: 34
+
+File: N3W1B1R4
+Runtime: 0.0946 ms
+Calculated Optimal: Bad solution found :( - 72
+Known Optimal: 67
+
+File: N2W3B3R0
+Runtime: 0.0224057 ms
+Calculated Optimal: Optimal solution found :) - 15
+Known Optimal: 15
+
+File: N2W2B1R7
+Runtime: 0.0286818 ms
+Calculated Optimal: Near-optimal solution found :| - 22
+Known Optimal: 21
+
+File: N3W2B2R6
+Runtime: 0.0646244 ms
+Calculated Optimal: Bad solution found :( - 42
+Known Optimal: 40
+
+File: N3W1B3R6
+Runtime: 0.0904862 ms
+Calculated Optimal: Bad solution found :( - 68
+Known Optimal: 66
+
+File: N4W1B2R2
+Runtime: 0.342974 ms
+Calculated Optimal: Bad solution found :( - 174
+Known Optimal: 164
+
+File: N1W4B2R0
+Runtime: 0.00977308 ms
+Calculated Optimal: Optimal solution found :) - 6
+Known Optimal: 6
+
+File: N4W3B1R5
+Runtime: 0.175502 ms
+Calculated Optimal: Bad solution found :( - 74
+Known Optimal: 71
+
+File: N4W2B3R2
+Runtime: 0.223747 ms
+Calculated Optimal: Near-optimal solution found :| - 101
+Known Optimal: 100
+
+File: N3W4B1R9
+Runtime: 0.044339 ms
+Calculated Optimal: Optimal solution found :) - 23
+Known Optimal: 23
+
+File: N2W4B2R8
+Runtime: 0.0203619 ms
+Calculated Optimal: Optimal solution found :) - 12
+Known Optimal: 12
+
+File: N4W3B3R7
+Runtime: 0.185295 ms
+Calculated Optimal: Optimal solution found :) - 74
+Known Optimal: 74
+
+File: N4W2B1R0
+Runtime: 0.229854 ms
+Calculated Optimal: Bad solution found :( - 107
+Known Optimal: 101
+
+File: N4W2B1R1
+Runtime: 0.229974 ms
+Calculated Optimal: Bad solution found :( - 107
+Known Optimal: 101
+
+File: N2W4B2R9
+Runtime: 0.0201611 ms
+Calculated Optimal: Near-optimal solution found :| - 12
+Known Optimal: 11
+
+File: N4W3B3R6
+Runtime: 0.183018 ms
+Calculated Optimal: Near-optimal solution found :| - 74
+Known Optimal: 73
+
+File: N3W4B1R8
+Runtime: 0.0439572 ms
+Calculated Optimal: Near-optimal solution found :| - 24
+Known Optimal: 23
+
+File: N4W2B3R3
+Runtime: 0.223524 ms
+Calculated Optimal: Bad solution found :( - 102
+Known Optimal: 100
+
+File: N4W3B1R4
+Runtime: 0.176445 ms
+Calculated Optimal: Bad solution found :( - 74
+Known Optimal: 71
+
+File: N1W4B2R1
+Runtime: 0.0096805 ms
+Calculated Optimal: Optimal solution found :) - 6
+Known Optimal: 6
+
+File: N4W1B2R3
+Runtime: 0.346317 ms
+Calculated Optimal: Bad solution found :( - 176
+Known Optimal: 166
+
+File: N3W1B3R7
+Runtime: 0.0776557 ms
+Calculated Optimal: Bad solution found :( - 63
+Known Optimal: 61
+
+File: N3W2B2R7
+Runtime: 0.0644714 ms
+Calculated Optimal: Bad solution found :( - 42
+Known Optimal: 40
+
+File: N2W2B1R6
+Runtime: 0.0285988 ms
+Calculated Optimal: Near-optimal solution found :| - 22
+Known Optimal: 21
+
+File: N2W3B3R1
+Runtime: 0.0213063 ms
+Calculated Optimal: Optimal solution found :) - 13
+Known Optimal: 13
+
+File: N3W1B1R5
+Runtime: 0.0946492 ms
+Calculated Optimal: Bad solution found :( - 72
+Known Optimal: 67
+
+File: N2W1B2R4
+Runtime: 0.0395541 ms
+Calculated Optimal: Bad solution found :( - 35
+Known Optimal: 33
+
+File: N3W3B2R2
+Runtime: 0.048765 ms
+Calculated Optimal: Near-optimal solution found :| - 29
+Known Optimal: 28
+
+File: N1W3B3R9
+Runtime: 0.0105995 ms
+Calculated Optimal: Optimal solution found :) - 7
+Known Optimal: 7
+
+File: N2W2B3R4
+Runtime: 0.028636 ms
+Calculated Optimal: Optimal solution found :) - 21
+Known Optimal: 21
+
+File: N2W3B1R3
+Runtime: 0.021254 ms
+Calculated Optimal: Near-optimal solution found :| - 15
+Known Optimal: 14
+
+File: N2W2B3R6
+Runtime: 0.0278784 ms
+Calculated Optimal: Near-optimal solution found :| - 21
+Known Optimal: 20
+
+File: N2W3B1R1
+Runtime: 0.0218296 ms
+Calculated Optimal: Optimal solution found :) - 15
+Known Optimal: 15
+
+File: N3W3B2R0
+Runtime: 0.0490463 ms
+Calculated Optimal: Optimal solution found :) - 29
+Known Optimal: 29
+
+File: N2W1B2R6
+Runtime: 0.0406963 ms
+Calculated Optimal: Bad solution found :( - 38
+Known Optimal: 35
+
+File: N3W1B1R7
+Runtime: 0.0933492 ms
+Calculated Optimal: Bad solution found :( - 70
+Known Optimal: 67
+
+File: N2W2B1R4
+Runtime: 0.0286594 ms
+Calculated Optimal: Near-optimal solution found :| - 22
+Known Optimal: 21
+
+File: N2W3B3R3
+Runtime: 0.0220112 ms
+Calculated Optimal: Optimal solution found :) - 14
+Known Optimal: 14
+
+File: N1W3B1R9
+Runtime: 0.0105668 ms
+Calculated Optimal: Optimal solution found :) - 8
+Known Optimal: 8
+
+File: N3W2B2R5
+Runtime: 0.0646529 ms
+Calculated Optimal: Bad solution found :( - 42
+Known Optimal: 40
+
+File: N3W1B3R5
+Runtime: 0.0897002 ms
+Calculated Optimal: Bad solution found :( - 67
+Known Optimal: 65
+
+File: N4W1B2R1
+Runtime: 0.349222 ms
+Calculated Optimal: Bad solution found :( - 182
+Known Optimal: 170
+
+File: N3W4B3R8
+Runtime: 0.0445879 ms
+Calculated Optimal: Optimal solution found :) - 23
+Known Optimal: 23
+
+File: N1W4B2R3
+Runtime: 0.00971454 ms
+Calculated Optimal: Optimal solution found :) - 6
+Known Optimal: 6
+
+File: N4W2B3R1
+Runtime: 0.22541 ms
+Calculated Optimal: Bad solution found :( - 103
+Known Optimal: 101
+
+File: N4W3B1R6
+Runtime: 0.175667 ms
+Calculated Optimal: Bad solution found :( - 73
+Known Optimal: 71
+
+File: N4W2B1R3
+Runtime: 0.228603 ms
+Calculated Optimal: Bad solution found :( - 107
+Known Optimal: 100
+
+File: N4W3B3R4
+Runtime: 0.182587 ms
+Calculated Optimal: Optimal solution found :) - 73
+Known Optimal: 73
+
+File: N4W3B3R5
+Runtime: 0.183612 ms
+Calculated Optimal: Near-optimal solution found :| - 74
+Known Optimal: 73
+
+File: N4W2B1R2
+Runtime: 0.228972 ms
+Calculated Optimal: Bad solution found :( - 108
+Known Optimal: 101
+
+File: N4W3B1R7
+Runtime: 0.175252 ms
+Calculated Optimal: Bad solution found :( - 74
+Known Optimal: 71
+
+File: N4W2B3R0
+Runtime: 0.224277 ms
+Calculated Optimal: Near-optimal solution found :| - 102
+Known Optimal: 101
+
+File: N1W4B2R2
+Runtime: 0.00981883 ms
+Calculated Optimal: Optimal solution found :) - 6
+Known Optimal: 6
+
+File: N3W4B3R9
+Runtime: 0.0447092 ms
+Calculated Optimal: Optimal solution found :) - 23
+Known Optimal: 23
+
+File: N4W1B2R0
+Runtime: 0.343734 ms
+Calculated Optimal: Bad solution found :( - 176
+Known Optimal: 164
+
+File: N3W1B3R4
+Runtime: 0.091819 ms
+Calculated Optimal: Bad solution found :( - 72
+Known Optimal: 68
+
+File: N1W3B1R8
+Runtime: 0.0105133 ms
+Calculated Optimal: Near-optimal solution found :| - 8
+Known Optimal: 7
+
+File: N3W2B2R4
+Runtime: 0.064871 ms
+Calculated Optimal: Near-optimal solution found :| - 42
+Known Optimal: 41
+
+File: N2W3B3R2
+Runtime: 0.0219825 ms
+Calculated Optimal: Optimal solution found :) - 14
+Known Optimal: 14
+
+File: N2W2B1R5
+Runtime: 0.0284816 ms
+Calculated Optimal: Near-optimal solution found :| - 22
+Known Optimal: 21
+
+File: N3W1B1R6
+Runtime: 0.094924 ms
+Calculated Optimal: Bad solution found :( - 73
+Known Optimal: 68
+
+File: N2W1B2R7
+Runtime: 0.0397377 ms
+Calculated Optimal: Bad solution found :( - 35
+Known Optimal: 33
+
+File: N3W3B2R1
+Runtime: 0.0480492 ms
+Calculated Optimal: Optimal solution found :) - 29
+Known Optimal: 29
+
+File: N2W3B1R0
+Runtime: 0.0217488 ms
+Calculated Optimal: Optimal solution found :) - 15
+Known Optimal: 15
+
+File: N2W2B3R7
+Runtime: 0.0290173 ms
+Calculated Optimal: Near-optimal solution found :| - 22
+Known Optimal: 21
+
+File: N4W1B1R5
+Runtime: 0.343635 ms
+Calculated Optimal: Bad solution found :( - 174
+Known Optimal: 167
+
+File: N4W3B2R2
+Runtime: 0.178255 ms
+Calculated Optimal: Bad solution found :( - 73
+Known Optimal: 71
+
+File: N1W4B1R7
+Runtime: 0.00973737 ms
+Calculated Optimal: Optimal solution found :) - 6
+Known Optimal: 6
+
+File: N4W1B3R7
+Runtime: 0.326525 ms
+Calculated Optimal: Bad solution found :( - 167
+Known Optimal: 163
+
+File: N4W2B2R7
+Runtime: 0.227423 ms
+Calculated Optimal: Bad solution found :( - 105
+Known Optimal: 101
+
+File: N1W4B3R5
+Runtime: 0.0102834 ms
+Calculated Optimal: Optimal solution found :) - 7
+Known Optimal: 7
+
+File: N3W2B3R3
+Runtime: 0.0627807 ms
+Calculated Optimal: Near-optimal solution found :| - 40
+Known Optimal: 39
+
+File: N1W2B2R8
+Runtime: 0.0134023 ms
+Calculated Optimal: Optimal solution found :) - 11
+Known Optimal: 11
+
+File: N3W3B1R4
+Runtime: 0.0487201 ms
+Calculated Optimal: Near-optimal solution found :| - 30
+Known Optimal: 29
+
+File: N2W3B2R5
+Runtime: 0.0215292 ms
+Calculated Optimal: Near-optimal solution found :| - 15
+Known Optimal: 14
+
+File: N3W1B2R3
+Runtime: 0.0929034 ms
+Calculated Optimal: Bad solution found :( - 69
+Known Optimal: 65
+
+File: N1W1B3R8
+Runtime: 0.0181787 ms
+Calculated Optimal: Near-optimal solution found :| - 17
+Known Optimal: 16
+
+File: N2W1B1R2
+Runtime: 0.0399632 ms
+Calculated Optimal: Near-optimal solution found :| - 35
+Known Optimal: 34
+
+File: N3W2B1R1
+Runtime: 0.0652671 ms
+Calculated Optimal: Bad solution found :( - 43
+Known Optimal: 41
+
+File: N3W3B3R6
+Runtime: 0.051057 ms
+Calculated Optimal: Optimal solution found :) - 29
+Known Optimal: 29
+
+File: N4W4B1R8
+Runtime: 0.145264 ms
+Calculated Optimal: Bad solution found :( - 58
+Known Optimal: 56
+
+File: N2W2B2R0
+Runtime: 0.0286211 ms
+Calculated Optimal: Near-optimal solution found :| - 22
+Known Optimal: 21
+
+File: N2W1B3R0
+Runtime: 0.039933 ms
+Calculated Optimal: Near-optimal solution found :| - 36
+Known Optimal: 35
+
+File: N2W1B3R1
+Runtime: 0.0385477 ms
+Calculated Optimal: Near-optimal solution found :| - 33
+Known Optimal: 32
+
+File: N2W2B2R1
+Runtime: 0.0283123 ms
+Calculated Optimal: Optimal solution found :) - 21
+Known Optimal: 21
+
+File: N4W4B1R9
+Runtime: 0.144104 ms
+Calculated Optimal: Bad solution found :( - 57
+Known Optimal: 55
+
+File: N3W3B3R7
+Runtime: 0.0491312 ms
+Calculated Optimal: Near-optimal solution found :| - 29
+Known Optimal: 28
+
+File: N3W2B1R0
+Runtime: 0.0654467 ms
+Calculated Optimal: Bad solution found :( - 43
+Known Optimal: 41
+
+File: N2W1B1R3
+Runtime: 0.0403528 ms
+Calculated Optimal: Bad solution found :( - 37
+Known Optimal: 34
+
+File: N1W1B3R9
+Runtime: 0.0184731 ms
+Calculated Optimal: Near-optimal solution found :| - 18
+Known Optimal: 17
+
+File: N3W1B2R2
+Runtime: 0.0917249 ms
+Calculated Optimal: Bad solution found :( - 69
+Known Optimal: 65
+
+File: N2W3B2R4
+Runtime: 0.0215597 ms
+Calculated Optimal: Optimal solution found :) - 15
+Known Optimal: 15
+
+File: N1W2B2R9
+Runtime: 0.013567 ms
+Calculated Optimal: Optimal solution found :) - 11
+Known Optimal: 11
+
+File: N3W3B1R5
+Runtime: 0.0486551 ms
+Calculated Optimal: Near-optimal solution found :| - 30
+Known Optimal: 29
+
+File: N3W2B3R2
+Runtime: 0.0637017 ms
+Calculated Optimal: Near-optimal solution found :| - 40
+Known Optimal: 39
+
+File: N1W4B3R4
+Runtime: 0.00993658 ms
+Calculated Optimal: Optimal solution found :) - 6
+Known Optimal: 6
+
+File: N4W2B2R6
+Runtime: 0.229958 ms
+Calculated Optimal: Bad solution found :( - 106
+Known Optimal: 103
+
+File: N4W1B3R6
+Runtime: 0.33692 ms
+Calculated Optimal: Bad solution found :( - 173
+Known Optimal: 169
+
+File: N1W4B1R6
+Runtime: 0.0098185 ms
+Calculated Optimal: Optimal solution found :) - 6
+Known Optimal: 6
+
+File: N4W3B2R3
+Runtime: 0.175618 ms
+Calculated Optimal: Bad solution found :( - 73
+Known Optimal: 71
+
+File: N4W1B1R4
+Runtime: 0.345894 ms
+Calculated Optimal: Bad solution found :( - 176
+Known Optimal: 167
+
+File: N4W1B1R6
+Runtime: 0.352385 ms
+Calculated Optimal: Bad solution found :( - 180
+Known Optimal: 167
+
+File: N4W3B2R1
+Runtime: 0.176455 ms
+Calculated Optimal: Near-optimal solution found :| - 72
+Known Optimal: 71
+
+File: N1W4B1R4
+Runtime: 0.00956692 ms
+Calculated Optimal: Optimal solution found :) - 6
+Known Optimal: 6
+
+File: N4W1B3R4
+Runtime: 0.3201 ms
+Calculated Optimal: Bad solution found :( - 162
+Known Optimal: 158
+
+File: N4W2B2R4
+Runtime: 0.224818 ms
+Calculated Optimal: Bad solution found :( - 103
+Known Optimal: 100
+
+File: N1W4B3R6
+Runtime: 0.010021 ms
+Calculated Optimal: Optimal solution found :) - 6
+Known Optimal: 6
+
+File: N3W3B1R7
+Runtime: 0.048133 ms
+Calculated Optimal: Near-optimal solution found :| - 30
+Known Optimal: 29
+
+File: N3W2B3R0
+Runtime: 0.0651551 ms
+Calculated Optimal: Near-optimal solution found :| - 43
+Known Optimal: 42
+
+File: N4W4B3R9
+Runtime: 0.144899 ms
+Calculated Optimal: Optimal solution found :) - 56
+Known Optimal: 56
+
+File: N2W3B2R6
+Runtime: 0.021635 ms
+Calculated Optimal: Near-optimal solution found :| - 15
+Known Optimal: 14
+
+File: N3W1B2R0
+Runtime: 0.0931592 ms
+Calculated Optimal: Bad solution found :( - 72
+Known Optimal: 67
+
+File: N2W1B1R1
+Runtime: 0.0396694 ms
+Calculated Optimal: Bad solution found :( - 37
+Known Optimal: 34
+
+File: N3W3B3R5
+Runtime: 0.0487555 ms
+Calculated Optimal: Optimal solution found :) - 28
+Known Optimal: 28
+
+File: N3W2B1R2
+Runtime: 0.0652278 ms
+Calculated Optimal: Bad solution found :( - 43
+Known Optimal: 41
+
+File: N2W2B2R3
+Runtime: 0.0289251 ms
+Calculated Optimal: Optimal solution found :) - 22
+Known Optimal: 22
+
+File: N1W1B1R9
+Runtime: 0.0189367 ms
+Calculated Optimal: Near-optimal solution found :| - 18
+Known Optimal: 17
+
+File: N2W1B3R3
+Runtime: 0.0389031 ms
+Calculated Optimal: Near-optimal solution found :| - 34
+Known Optimal: 33
+
+File: N2W1B3R2
+Runtime: 0.0403418 ms
+Calculated Optimal: Bad solution found :( - 37
+Known Optimal: 35
+
+File: N1W1B1R8
+Runtime: 0.018938 ms
+Calculated Optimal: Near-optimal solution found :| - 19
+Known Optimal: 18
+
+File: N2W2B2R2
+Runtime: 0.0283849 ms
+Calculated Optimal: Near-optimal solution found :| - 22
+Known Optimal: 21
+
+File: N3W2B1R3
+Runtime: 0.0651185 ms
+Calculated Optimal: Bad solution found :( - 43
+Known Optimal: 41
+
+File: N3W3B3R4
+Runtime: 0.0497192 ms
+Calculated Optimal: Optimal solution found :) - 29
+Known Optimal: 29
+
+File: N2W1B1R0
+Runtime: 0.0399289 ms
+Calculated Optimal: Near-optimal solution found :| - 35
+Known Optimal: 34
+
+File: N3W1B2R1
+Runtime: 0.09413 ms
+Calculated Optimal: Bad solution found :( - 73
+Known Optimal: 68
+
+File: N4W4B3R8
+Runtime: 0.148862 ms
+Calculated Optimal: Near-optimal solution found :| - 58
+Known Optimal: 57
+
+File: N2W3B2R7
+Runtime: 0.022132 ms
+Calculated Optimal: Optimal solution found :) - 15
+Known Optimal: 15
+
+File: N3W2B3R1
+Runtime: 0.0639166 ms
+Calculated Optimal: Optimal solution found :) - 40
+Known Optimal: 40
+
+File: N3W3B1R6
+Runtime: 0.0487385 ms
+Calculated Optimal: Near-optimal solution found :| - 30
+Known Optimal: 29
+
+File: N1W4B3R7
+Runtime: 0.00993746 ms
+Calculated Optimal: Optimal solution found :) - 6
+Known Optimal: 6
+
+File: N4W2B2R5
+Runtime: 0.229043 ms
+Calculated Optimal: Bad solution found :( - 106
+Known Optimal: 102
+
+File: N4W1B3R5
+Runtime: 0.32743 ms
+Calculated Optimal: Bad solution found :( - 166
+Known Optimal: 162
+
+File: N1W4B1R5
+Runtime: 0.00982958 ms
+Calculated Optimal: Optimal solution found :) - 6
+Known Optimal: 6
+
+File: N4W3B2R0
+Runtime: 0.179431 ms
+Calculated Optimal: Bad solution found :( - 73
+Known Optimal: 71
+
+File: N4W1B1R7
+Runtime: 0.346818 ms
+Calculated Optimal: Bad solution found :( - 177
+Known Optimal: 167
+
+File: N4W1B1R3
+Runtime: 0.350833 ms
+Calculated Optimal: Bad solution found :( - 177
+Known Optimal: 167
+
+File: N1W4B1R1
+Runtime: 0.00970017 ms
+Calculated Optimal: Optimal solution found :) - 6
+Known Optimal: 6
+
+File: N4W3B2R4
+Runtime: 0.181773 ms
+Calculated Optimal: Bad solution found :( - 75
+Known Optimal: 73
+
+File: N4W1B3R1
+Runtime: 0.338871 ms
+Calculated Optimal: Bad solution found :( - 176
+Known Optimal: 171
+
+File: N3W4B2R8
+Runtime: 0.044383 ms
+Calculated Optimal: Optimal solution found :) - 23
+Known Optimal: 23
+
+File: N1W4B3R3
+Runtime: 0.00993563 ms
+Calculated Optimal: Optimal solution found :) - 6
+Known Optimal: 6
+
+File: N4W2B2R1
+Runtime: 0.225493 ms
+Calculated Optimal: Bad solution found :( - 104
+Known Optimal: 100
+
+File: N2W4B1R9
+Runtime: 0.0200423 ms
+Calculated Optimal: Near-optimal solution found :| - 12
+Known Optimal: 11
+
+File: N2W3B2R3
+Runtime: 0.0216954 ms
+Calculated Optimal: Optimal solution found :) - 15
+Known Optimal: 15
+
+File: N3W3B1R2
+Runtime: 0.0482621 ms
+Calculated Optimal: Near-optimal solution found :| - 30
+Known Optimal: 29
+
+File: N3W2B3R5
+Runtime: 0.0644393 ms
+Calculated Optimal: Near-optimal solution found :| - 41
+Known Optimal: 40
+
+File: N2W1B1R4
+Runtime: 0.040022 ms
+Calculated Optimal: Bad solution found :( - 36
+Known Optimal: 34
+
+File: N3W1B2R5
+Runtime: 0.0933077 ms
+Calculated Optimal: Bad solution found :( - 70
+Known Optimal: 65
+
+File: N2W2B2R6
+Runtime: 0.0286119 ms
+Calculated Optimal: Near-optimal solution found :| - 22
+Known Optimal: 21
+
+File: N3W3B3R0
+Runtime: 0.0482975 ms
+Calculated Optimal: Optimal solution found :) - 27
+Known Optimal: 27
+
+File: N3W2B1R7
+Runtime: 0.0651192 ms
+Calculated Optimal: Bad solution found :( - 43
+Known Optimal: 41
+
+File: N2W1B3R6
+Runtime: 0.0346 ms
+Calculated Optimal: Near-optimal solution found :| - 32
+Known Optimal: 31
+
+File: N2W1B3R7
+Runtime: 0.032971 ms
+Calculated Optimal: Near-optimal solution found :| - 31
+Known Optimal: 30
+
+File: N3W2B1R6
+Runtime: 0.0652272 ms
+Calculated Optimal: Bad solution found :( - 44
+Known Optimal: 41
+
+File: N3W3B3R1
+Runtime: 0.0481739 ms
+Calculated Optimal: Optimal solution found :) - 27
+Known Optimal: 27
+
+File: N2W2B2R7
+Runtime: 0.0281453 ms
+Calculated Optimal: Near-optimal solution found :| - 21
+Known Optimal: 20
+
+File: N3W1B2R4
+Runtime: 0.0948938 ms
+Calculated Optimal: Bad solution found :( - 73
+Known Optimal: 68
+
+File: N2W1B1R5
+Runtime: 0.0398852 ms
+Calculated Optimal: Near-optimal solution found :| - 35
+Known Optimal: 34
+
+File: N3W2B3R4
+Runtime: 0.0657903 ms
+Calculated Optimal: Near-optimal solution found :| - 43
+Known Optimal: 42
+
+File: N3W3B1R3
+Runtime: 0.0490193 ms
+Calculated Optimal: Near-optimal solution found :| - 30
+Known Optimal: 29
+
+File: N2W3B2R2
+Runtime: 0.022216 ms
+Calculated Optimal: Optimal solution found :) - 15
+Known Optimal: 15
+
+File: N2W4B1R8
+Runtime: 0.0204432 ms
+Calculated Optimal: Near-optimal solution found :| - 12
+Known Optimal: 11
+
+File: N4W2B2R0
+Runtime: 0.226997 ms
+Calculated Optimal: Bad solution found :( - 104
+Known Optimal: 101
+
+File: N1W4B3R2
+Runtime: 0.0104686 ms
+Calculated Optimal: Optimal solution found :) - 7
+Known Optimal: 7
+
+File: N3W4B2R9
+Runtime: 0.0435986 ms
+Calculated Optimal: Optimal solution found :) - 22
+Known Optimal: 22
+
+File: N4W1B3R0
+Runtime: 0.330992 ms
+Calculated Optimal: Bad solution found :( - 169
+Known Optimal: 166
+
+File: N4W3B2R5
+Runtime: 0.179546 ms
+Calculated Optimal: Near-optimal solution found :| - 73
+Known Optimal: 72
+
+File: N1W4B1R0
+Runtime: 0.00977683 ms
+Calculated Optimal: Optimal solution found :) - 6
+Known Optimal: 6
+
+File: N4W1B1R2
+Runtime: 0.346961 ms
+Calculated Optimal: Bad solution found :( - 176
+Known Optimal: 167
+
+File: N4W1B1R0
+Runtime: 0.348175 ms
+Calculated Optimal: Bad solution found :( - 176
+Known Optimal: 167
+
+File: N1W4B1R2
+Runtime: 0.009806 ms
+Calculated Optimal: Optimal solution found :) - 6
+Known Optimal: 6
+
+File: N4W3B2R7
+Runtime: 0.178869 ms
+Calculated Optimal: Bad solution found :( - 72
+Known Optimal: 70
+
+File: N2W4B3R8
+Runtime: 0.0202588 ms
+Calculated Optimal: Optimal solution found :) - 11
+Known Optimal: 11
+
+File: N4W1B3R2
+Runtime: 0.34079 ms
+Calculated Optimal: Bad solution found :( - 177
+Known Optimal: 172
+
+File: N1W4B3R0
+Runtime: 0.00976075 ms
+Calculated Optimal: Optimal solution found :) - 6
+Known Optimal: 6
+
+File: N4W2B2R2
+Runtime: 0.229538 ms
+Calculated Optimal: Bad solution found :( - 107
+Known Optimal: 102
+
+File: N2W3B2R0
+Runtime: 0.0218842 ms
+Calculated Optimal: Optimal solution found :) - 15
+Known Optimal: 15
+
+File: N3W2B3R6
+Runtime: 0.0647137 ms
+Calculated Optimal: Near-optimal solution found :| - 41
+Known Optimal: 40
+
+File: N3W3B1R1
+Runtime: 0.0490947 ms
+Calculated Optimal: Bad solution found :( - 30
+Known Optimal: 28
+
+File: N2W1B1R7
+Runtime: 0.0401901 ms
+Calculated Optimal: Bad solution found :( - 36
+Known Optimal: 34
+
+File: N3W1B2R6
+Runtime: 0.0939873 ms
+Calculated Optimal: Bad solution found :( - 71
+Known Optimal: 66
+
+File: N2W2B2R5
+Runtime: 0.0283902 ms
+Calculated Optimal: Near-optimal solution found :| - 21
+Known Optimal: 20
+
+File: N3W2B1R4
+Runtime: 0.0648685 ms
+Calculated Optimal: Bad solution found :( - 42
+Known Optimal: 40
+
+File: N1W3B2R8
+Runtime: 0.0108218 ms
+Calculated Optimal: Optimal solution found :) - 8
+Known Optimal: 8
+
+File: N3W3B3R3
+Runtime: 0.049893 ms
+Calculated Optimal: Optimal solution found :) - 29
+Known Optimal: 29
+
+File: N2W1B3R5
+Runtime: 0.0391842 ms
+Calculated Optimal: Near-optimal solution found :| - 35
+Known Optimal: 34
+
+File: N2W1B3R4
+Runtime: 0.0393475 ms
+Calculated Optimal: Near-optimal solution found :| - 35
+Known Optimal: 34
+
+File: N3W3B3R2
+Runtime: 0.0503557 ms
+Calculated Optimal: Near-optimal solution found :| - 30
+Known Optimal: 29
+
+File: N3W2B1R5
+Runtime: 0.0653688 ms
+Calculated Optimal: Bad solution found :( - 44
+Known Optimal: 41
+
+File: N1W3B2R9
+Runtime: 0.0107315 ms
+Calculated Optimal: Optimal solution found :) - 8
+Known Optimal: 8
+
+File: N2W2B2R4
+Runtime: 0.0288426 ms
+Calculated Optimal: Near-optimal solution found :| - 23
+Known Optimal: 22
+
+File: N3W1B2R7
+Runtime: 0.093266 ms
+Calculated Optimal: Bad solution found :( - 70
+Known Optimal: 66
+
+File: N2W1B1R6
+Runtime: 0.0404676 ms
+Calculated Optimal: Bad solution found :( - 37
+Known Optimal: 34
+
+File: N3W3B1R0
+Runtime: 0.0488261 ms
+Calculated Optimal: Near-optimal solution found :| - 29
+Known Optimal: 28
+
+File: N3W2B3R7
+Runtime: 0.0650727 ms
+Calculated Optimal: Near-optimal solution found :| - 43
+Known Optimal: 42
+
+File: N2W3B2R1
+Runtime: 0.0218473 ms
+Calculated Optimal: Near-optimal solution found :| - 15
+Known Optimal: 14
+
+File: N4W2B2R3
+Runtime: 0.229108 ms
+Calculated Optimal: Bad solution found :( - 105
+Known Optimal: 102
+
+File: N1W4B3R1
+Runtime: 0.0101759 ms
+Calculated Optimal: Optimal solution found :) - 6
+Known Optimal: 6
+
+File: N4W1B3R3
+Runtime: 0.33817 ms
+Calculated Optimal: Bad solution found :( - 174
+Known Optimal: 170
+
+File: N4W3B2R6
+Runtime: 0.178808 ms
+Calculated Optimal: Bad solution found :( - 73
+Known Optimal: 71
+
+File: N2W4B3R9
+Runtime: 0.0205975 ms
+Calculated Optimal: Optimal solution found :) - 12
+Known Optimal: 12
+
+File: N1W4B1R3
+Runtime: 0.00975679 ms
+Calculated Optimal: Optimal solution found :) - 6
+Known Optimal: 6
+
+File: N4W1B1R1
+Runtime: 0.345329 ms
+Calculated Optimal: Bad solution found :( - 176
+Known Optimal: 167
+

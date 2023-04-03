@@ -1,0 +1,36 @@
+Folder: Waescher
+Optimal solutions: 2
+Near-optimal solutions: 15
+
+Folder: Hard28
+Optimal solutions: 5
+Near-optimal solutions: 23
+
+Folder: Scholl/Scholl_1
+Optimal solutions: 547
+Near-optimal solutions: 114
+
+Folder: Scholl/Scholl_2
+Optimal solutions: 245
+Near-optimal solutions: 129
+
+Folder: Scholl/Scholl_3
+Optimal solutions: 0
+Near-optimal solutions: 0
+
+Folder: Schwerin/Schwerin_1
+Optimal solutions: 0
+Near-optimal solutions: 100
+
+Folder: Schwerin/Schwerin_2
+Optimal solutions: 0
+Near-optimal solutions: 94
+
+Folder: Falkenauer/Falkenauer_T
+Optimal solutions: 0
+Near-optimal solutions: 0
+
+Folder: Falkenauer/Falkenauer_U
+Optimal solutions: 6
+Near-optimal solutions: 26
+
