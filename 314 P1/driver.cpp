@@ -634,12 +634,28 @@ int main() {
     string heuristicList = generateHeuristicList();
     // string parameterList = genera
     int arrResults[10][5];
-    string strResults[9] = {"Waescher", "Hard28", "Scholl_1", "Scholl_2", "Scholl_3", "Schwerin_1", "Schwerin_2", "Falkenauer_T", "Falkenauer_U"};
+    std::vector<std::string> strResults;
+    strResults.push_back("Waescher");
+    strResults.push_back("Hard28");
+    strResults.push_back("Scholl_1");
+    strResults.push_back("Scholl_2");
+    strResults.push_back("Scholl_3");
+    strResults.push_back("Schwerin_1");
+    strResults.push_back("Schwerin_2");
+    strResults.push_back("Falkenauer_T");
+    strResults.push_back("Falkenauer_U");
+
+    //string strResults[9] = {"Waescher", "Hard28", "Scholl_1", "Scholl_2", "Scholl_3", "Schwerin_1", "Schwerin_2", "Falkenauer_T", "Falkenauer_U"};
     int arrRowCount = 0; //increases as folders change.....
     double arrTime[10][2];
     for (int i = 0; i < 10; i++) {
         for (int j = 0; j < 12; j++) {
             arrTime[i][j] = 0;
+        }
+    }
+    for (int i = 0; i < 10; i++) {
+        for (int j = 0; j < 5; j++) {
+            arrResults[i][j] = 0;
         }
     }
 
@@ -657,6 +673,17 @@ int main() {
     std::ofstream final_results_Tabu("TabuResults.txt");
     std::ofstream final_results_table_1("Results1.txt");
     std::ofstream final_results_table_2("Results2.txt");
+
+    //compute totals in 2d array -> add rows 
+    for (int j = 0; j < 2; j++) {
+        for (int i = 0; i < 9; i++) {
+            //goes from row 0 to 8, sum goes in row 9
+            sum += arrTime[i][j];
+        }
+        arrTime[9][j] = sum;
+        sum = 0;
+    }
+    sum = 0;
 
     /* ILS SEARCH */
     {
@@ -767,6 +794,22 @@ int main() {
     }
     optimal_count = 0;
     near_optimal_count = 0;
+
+    use_best_first_search = true;
+    use_hill_climbing = false;
+    use_simulated_annealing = true;
+    use_greedy_algorithm = false;
+
+
+    use_first_fit = false;
+    use_next_fit = false;
+    use_best_fit = false;
+
+    //good for 1D bin packing algorithm apparently
+    use_first_fit_decreasing = false;
+    use_best_fit_decreasing = true;   
+    use_next_fit_decreasing = false;
+    use_worst_fit_decreasing = false;  //try a different combo for tabu...
 
     /* TABU SEARCH ... */
     {
@@ -889,7 +932,8 @@ int main() {
     final_results_table_1 << "Folder" << "\t\t\t" << "ILS Optimal" << "\t\t" << "ILS Near Optimal" << "\t\t" << "Tabu Optimal" << "\t\t" << "Tabu Near Optimal" << endl;
     final_results_table_1 << "-----------------------------------------------------------------------------------------------------------------------------" << endl;
     for (int i = 0; i < 9; i++) {
-        strResult += strResults[i];
+        strResult = strResult+ strResults[i];
+        cout << "i is: " << i << " and :::: " << strResults[i] << " helloooo " << endl;
         if (i == 1) {
             strResult += "\t\t\t";
             for (int j = 0; j < 4; j++) {
@@ -911,28 +955,22 @@ int main() {
     final_results_table_1 << strResult << endl;
     cout << strResult << endl;
     strResult = "";
-
-    //compute totals in 2d array -> add rows 
-    for (int j = 0; j < 2; j++) {
-        for (int i = 0; i < 9; i++) {
-            //goes from row 0 to 8, sum goes in row 9
-            sum += arrTime[i][j];
-        }
-        arrTime[9][j] = sum;
-        sum = 0;
-    }
-    sum = 0;
         
     final_results_table_2 << "Folder" << "\t\t\t" << "ILS Runtime" << "\t\t\t" << "Tabu Runtime" << endl;
     final_results_table_2 << "-----------------------------------------------------------------------------------------------------------------" << endl;
     for (int i = 0; i < 9; i++) {
         strResult += strResults[i]; 
         cout << strResult << endl;  
-        if (i == 0 || i == 1 || i == 2 || i == 3) {
+        if (i == 1) {
             for (int j = 0; j < 2; j++) {
                 strResult += "\t\t\t" + to_string(arrTime[i][j]);
             }
-        } else {
+        } else if (i == 0 || i == 2 || i == 3) {
+            for (int j = 0; j < 2; j++) {
+                strResult += "\t\t" + to_string(arrTime[i][j]) + "\t";
+            }
+        } 
+        else {
             for (int j = 0; j < 2; j++) {
                 if (j == 0) {
                     strResult += "\t\t" + to_string(arrTime[i][j]);
