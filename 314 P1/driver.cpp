@@ -487,10 +487,13 @@ int local_search(const Data& data, std::vector<int>& items) {
     }
 
     int num_bins = static_cast<int>(bins.size());
-    if (num_bins < min_bins) {
-        min_bins = num_bins;
+    //cout << min_bins << ": min bins; num bins: " << num_bins << endl;
+    if (num_bins > min_bins) {
+        //min_bins = num_bins;
+        cout << "Hiiiiii";
+        return min_bins;
     }
-
+    //cout << min_bins << ": min bins; num bins: " << num_bins << endl;
     return min_bins;
 }
 
@@ -515,6 +518,7 @@ int iterated_local_search( Data& data, int num_iterations, int num_perturbations
         perturbation(items, num_perturbations);
         int new_bins = local_search(data, items);
         if (new_bins < data.num_items) {
+            cout << "helloooooooooo";
             data.num_items = new_bins;
         }
         double progress = static_cast<double>(i + 1) / num_iterations;
