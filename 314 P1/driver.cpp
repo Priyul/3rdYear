@@ -208,7 +208,7 @@ std::vector<int> hill_climbing(const Data& data) {
     return sorted_items;
 } 
 
-std::vector<int> simulated_annealing( Data &data, double start_temp, double end_temp, double cooling_rate) {
+std::vector<int> simulated_annealing( Data data, double start_temp, double end_temp, double cooling_rate) {
     std::vector<int> items = data.item_sizes;
     std::random_device rd;
     std::mt19937 g(rd());
@@ -229,7 +229,10 @@ std::vector<int> simulated_annealing( Data &data, double start_temp, double end_
         int new_bins = first_fit(new_data);
         int delta = new_bins - data.num_items;
         if (delta < 0 || std::exp(-delta / temperature) > (double)g() / g.max()) {
+            // cout << "data.num_items = " << data.num_items << endl; 
+            // cout << "new_bins = " << new_bins << endl;
             data.num_items = new_bins;
+            //cout << "hellooo 1234556" << endl;
         } else {
             std::swap(items[index1], items[index2]); // Undo the swap
         }
@@ -532,7 +535,74 @@ int iterated_local_search( Data& data, int num_iterations, int num_perturbations
 
 /* BASE TABU SEARCH ALGORITHM ::: */
 
-int tabu_search(Data& data, int num_iterations, int tabu_list_size, int aspiration) {
+// Calculate the delta between two solutions
+int delta(const std::vector<int>& a, const std::vector<int>& b) {
+    int count = 0;
+    for (size_t i = 0; i < a.size(); ++i) {
+        if (a[i] != b[i]) {
+            count++;
+        }
+    }
+    return count;
+}
+
+int evaluate_solution(const Data& data, const std::vector<int>& item_order) {
+    std::vector<Bin> bins;
+
+    for (int item_size : item_order) {
+        bool found_bin = false;
+        for (Bin& bin : bins) {
+            if (bin.can_fit(item_size)) {
+                bin.add_item(item_size);
+                found_bin = true;
+                break;
+            }
+        }
+        if (!found_bin) {
+            Bin new_bin(data.bin_capacity);
+            new_bin.add_item(item_size);
+            bins.push_back(new_bin);
+        }
+    }
+    return static_cast<int>(bins.size());
+}
+
+std::vector<int> neighborhood_search_tabu(const Data& data, const std::vector<int>& items, const std::deque<std::vector<int> >& tabu_list, int k, int best_result) {
+    std::vector<int> candidate_items;
+    int min_bins = INT_MAX;
+    std::random_device rd;
+    std::mt19937 g(rd());
+
+    for (int i = 0; i < k; ++i) {
+        std::vector<int> temp_items = items;
+        int num_swaps = g() % (items.size() / 2) + 1;
+
+        for (int j = 0; j < num_swaps; ++j) {
+            int index1 = g() % items.size();
+            int index2 = g() % items.size();
+            while (index1 == index2) {
+                index2 = g() % items.size();
+            }
+            std::swap(temp_items[index1], temp_items[index2]);
+        }
+
+        int current_bins = evaluate_solution(data, temp_items);
+        bool is_tabu = std::find(tabu_list.begin(), tabu_list.end(), temp_items) != tabu_list.end();
+        bool aspiration_criterion = current_bins < best_result;
+
+        if (!is_tabu || aspiration_criterion) {
+            if (current_bins < min_bins) {
+                min_bins = current_bins;
+                candidate_items = temp_items;
+            }
+        }
+    }
+
+    return candidate_items;
+}
+
+
+int tabu_search(Data& data, int num_iterations, int tabu_list_size, int k) {
     std::vector<int> items = data.item_sizes;
 
     if (use_best_first_search) {
@@ -549,26 +619,24 @@ int tabu_search(Data& data, int num_iterations, int tabu_list_size, int aspirati
         items = greedy_algorithm(data);
     }
 
-    int best_result = first_fit(data);
+    int best_result = evaluate_solution(data, items);
     std::vector<int> best_items = items;
 
     std::deque<std::vector<int> > tabu_list;
     tabu_list.push_back(items);
 
     for (int i = 0; i < num_iterations; ++i) {
-        perturbation(items, 1);
-        int new_result = local_search(data, items);
+        std::vector<int> candidate_items = neighborhood_search_tabu(data, items, tabu_list, k, best_result);
+
+
+        int new_result = evaluate_solution(data, candidate_items);
 
         if (new_result < best_result) {
             best_result = new_result;
-            best_items = items;
-        } else if (new_result == best_result + aspiration) {
-            if (std::find(tabu_list.begin(), tabu_list.end(), items) == tabu_list.end()) {
-                best_result = new_result;
-                best_items = items;
-            }
+            best_items = candidate_items;
         }
 
+        items = candidate_items;
         if (tabu_list.size() >= tabu_list_size) {
             tabu_list.pop_front();
         }
@@ -597,8 +665,9 @@ int main() {
     //std::vector<std::string> folder_names = {"Waescher", "Hard28", "Scholl/Scholl_1", "Scholl/Scholl_2", "Scholl/Scholl_3", "Schwerin/Schwerin_1", "Schwerin/Schwerin_2", "Falkenauer/Falkenauer_T", "Falkenauer/Falkenauer_U"};
     std::vector<std::string> folder_names;
 
-    folder_names.push_back("Waescher");
     folder_names.push_back("Hard28");
+    folder_names.push_back("Waescher");
+    //folder_names.push_back("Hard28");
     folder_names.push_back("Scholl/Scholl_1");
     folder_names.push_back("Scholl/Scholl_2");
     folder_names.push_back("Scholl/Scholl_3");
@@ -610,8 +679,9 @@ int main() {
     //std::vector<std::string> csv_files = {"CSV/Waescher.csv", "CSV/Hard28.csv", "CSV/Scholl_1.csv", "CSV/Scholl_2.csv", "CSV/Scholl_3.csv", "CSV/Schwerin_1.csv", "CSV/Schwerin_2.csv", "CSV/Falkenauer_T.csv", "CSV/Falkenauer_U.csv"};
     std::vector<std::string> csv_files;
 
-    csv_files.push_back("CSV/Waescher.csv");
     csv_files.push_back("CSV/Hard28.csv");
+    csv_files.push_back("CSV/Waescher.csv");
+    // csv_files.push_back("CSV/Hard28.csv");
     csv_files.push_back("CSV/Scholl_1.csv");
     csv_files.push_back("CSV/Scholl_2.csv");
     csv_files.push_back("CSV/Scholl_3.csv");
@@ -620,9 +690,9 @@ int main() {
     csv_files.push_back("CSV/Falkenauer_T.csv");
     csv_files.push_back("CSV/Falkenauer_U.csv");
 
-    use_best_first_search = true;
+    use_best_first_search = false;
     use_hill_climbing = false;
-    use_simulated_annealing = true;
+    use_simulated_annealing = false;
     use_greedy_algorithm = false;
 
 
@@ -632,8 +702,8 @@ int main() {
 
     //good for 1D bin packing algorithm apparently
     use_first_fit_decreasing = false;
-    use_best_fit_decreasing = true;   
-    use_next_fit_decreasing = false;
+    use_best_fit_decreasing = false;   
+    use_next_fit_decreasing = true;
     use_worst_fit_decreasing = false; 
     string heuristicList = generateHeuristicList();
     // string parameterList = genera
@@ -688,6 +758,113 @@ int main() {
         sum = 0;
     }
     sum = 0;
+
+
+        /* TABU SEARCH ... */
+     {
+        for (int folder_index = 0; folder_index < folder_names.size(); ++folder_index) {
+            std::string folder_name = folder_names[folder_index];
+            std::string csv_file = csv_files[folder_index];
+            read_known_optimal_solutions(csv_file);
+
+            // Open the results file for writing
+            //std::ofstream results_file(folder_name + "_Tabu" + "_Results.txt");
+
+            for (const auto &entry : known_optimal_solutions) {
+                std::cout << "File: " << entry.first << ", Known optimal value: " << entry.second << std::endl;
+            } std::cout << "Known optimal solutions read. Running the algorithm now... " << std::endl << std::endl;
+            count = 0;
+
+            cout << "Heuristics used: " << heuristicList << endl;
+            //results_file << "Algorithm used: Tabu Search" << endl;
+            //results_file << "Heuristics used: " << heuristicList << endl << endl;
+
+            std::vector<std::string> text_files = get_text_files(folder_name);
+
+            for (int file_index = 0; file_index < text_files.size(); ++file_index) {
+                count++;
+                cout << "iteration #" << count << " out of " << text_files.size() << endl;
+                std::string file_path = folder_name + "/" + text_files[file_index];
+                Data data = read_file_data(file_path);
+
+                auto start_time = std::chrono::high_resolution_clock::now();
+                int num_iterations = 1000;  // Adjust as needed
+                int tabu_list_size = 250;
+                int k = 15;
+                int result = tabu_search(data, num_iterations, tabu_list_size, k);
+                auto end_time = std::chrono::high_resolution_clock::now();
+                std::chrono::duration<double> runtime = end_time - start_time;
+
+                std::string optimal_value_color;
+                optStatus = "";
+                if (result == known_optimal_solutions[text_files[file_index].substr(0, text_files[file_index].size() - 4)]) {
+                    optimal_value_color = "\033[32m";  // Green
+                    optStatus += "Optimal solution found :)";
+                    optimal_count++;
+                } else if (result == known_optimal_solutions[text_files[file_index].substr(0, text_files[file_index].size() - 4)]+1) {
+                    optimal_value_color = "\033[33m";  // Yellow
+                    optStatus += "Near-optimal solution found :|";
+                    near_optimal_count++;
+                } else {
+                    optimal_value_color = "\033[31m";  // Red
+                    optStatus += "Bad solution found :(";
+                }
+
+                //results_file << "File: " << text_files[file_index] << std::endl;
+                //results_file << "Runtime: " << runtime.count() << " s" << std::endl;
+                //results_file << "Calculated Optimal: " << optStatus << " - " << result << std::endl;
+                //results_file << "Known Optimal: " << known_optimal_solutions[text_files[file_index]] << std::endl << std::endl;
+
+
+                std::cout << "File: " << text_files[file_index] << endl;
+                cout<< "Runtime: \033[34m" << runtime.count() << "s\033[0m " << endl;
+                totTimePerFolder += runtime.count();
+                cout << optimal_value_color << optStatus << "\033[0m " << endl;
+                cout << "Calculated Optimal: " << optimal_value_color << result << "\033[0m " << endl;
+                cout << "Known Optimal: " << known_optimal_solutions[text_files[file_index].substr(0, text_files[file_index].size() - 4)] << std::endl << endl;
+
+                //print_progress_bar(static_cast<double>(file_index) / text_files.size());
+            }
+            //text_files.clear();
+
+            //results_file.close();
+
+            // Reopen the results file for reading
+            std::ifstream input_file(folder_name + "_Results.txt");
+            std::string line;
+            // optimal_count = 0;
+            // near_optimal_count = 0;
+
+            // while (std::getline(input_file, line)) {
+            //     if (line.find("Optimal solution found") != std::string::npos) {
+            //         optimal_count++;
+            //     } else if (line.find("Near-optimal solution found") != std::string::npos) {
+            //         near_optimal_count++;
+            //     }
+            // }
+
+            input_file.close();
+
+            // Print the number of optimal and near-optimal solutions for the current folder
+            std::cout << "Folder: " << folder_name << std::endl;
+            std::cout << "Optimal solutions: " << optimal_count << std::endl;
+            std::cout << "Near-optimal solutions: " << near_optimal_count << std::endl << std::endl;
+            final_results_Tabu << "Folder: " << folder_name << std::endl;
+            final_results_Tabu << "Optimal solutions: " << optimal_count << std::endl;
+            final_results_Tabu << "Near-optimal solutions: " << near_optimal_count << std::endl << std::endl;
+
+            arrResults[arrRowCount][2] = optimal_count; // ILS optimal results for folder
+            arrResults[arrRowCount][3] = near_optimal_count; //ILS near optimal results for folder
+
+            arrTime[arrRowCount][1] = totTimePerFolder; // ILS runtime for folder
+            totTimePerFolder = 0;
+            arrRowCount++;
+            
+            optimal_count = 0;
+            near_optimal_count = 0;
+        }
+        arrRowCount = 0;
+    }
 
     /* ILS SEARCH */
     {
@@ -815,111 +992,8 @@ int main() {
     use_next_fit_decreasing = false;
     use_worst_fit_decreasing = false;  //try a different combo for tabu...
 
-    /* TABU SEARCH ... */
-    {
-        for (int folder_index = 0; folder_index < folder_names.size(); ++folder_index) {
-            std::string folder_name = folder_names[folder_index];
-            std::string csv_file = csv_files[folder_index];
-            read_known_optimal_solutions(csv_file);
 
-            // Open the results file for writing
-            //std::ofstream results_file(folder_name + "_Tabu" + "_Results.txt");
-
-            for (const auto &entry : known_optimal_solutions) {
-                std::cout << "File: " << entry.first << ", Known optimal value: " << entry.second << std::endl;
-            } std::cout << "Known optimal solutions read. Running the algorithm now... " << std::endl << std::endl;
-            count = 0;
-
-            cout << "Heuristics used: " << heuristicList << endl;
-            //results_file << "Algorithm used: Tabu Search" << endl;
-            //results_file << "Heuristics used: " << heuristicList << endl << endl;
-
-            std::vector<std::string> text_files = get_text_files(folder_name);
-
-            for (int file_index = 0; file_index < text_files.size(); ++file_index) {
-                count++;
-                cout << "iteration #" << count << " out of " << text_files.size() << endl;
-                std::string file_path = folder_name + "/" + text_files[file_index];
-                Data data = read_file_data(file_path);
-
-                auto start_time = std::chrono::high_resolution_clock::now();
-                int num_iterations = 1000;  // Adjust as needed
-                int tabu_list_size = 50;
-                int aspiration = 10;
-                int result = tabu_search(data, num_iterations, tabu_list_size, aspiration);
-                auto end_time = std::chrono::high_resolution_clock::now();
-                std::chrono::duration<double> runtime = end_time - start_time;
-
-                std::string optimal_value_color;
-                optStatus = "";
-                if (result == known_optimal_solutions[text_files[file_index].substr(0, text_files[file_index].size() - 4)]) {
-                    optimal_value_color = "\033[32m";  // Green
-                    optStatus += "Optimal solution found :)";
-                    optimal_count++;
-                } else if (result == known_optimal_solutions[text_files[file_index].substr(0, text_files[file_index].size() - 4)]+1) {
-                    optimal_value_color = "\033[33m";  // Yellow
-                    optStatus += "Near-optimal solution found :|";
-                    near_optimal_count++;
-                } else {
-                    optimal_value_color = "\033[31m";  // Red
-                    optStatus += "Bad solution found :(";
-                }
-
-                //results_file << "File: " << text_files[file_index] << std::endl;
-                //results_file << "Runtime: " << runtime.count() << " s" << std::endl;
-                //results_file << "Calculated Optimal: " << optStatus << " - " << result << std::endl;
-                //results_file << "Known Optimal: " << known_optimal_solutions[text_files[file_index]] << std::endl << std::endl;
-
-
-                std::cout << "File: " << text_files[file_index] << endl;
-                cout<< "Runtime: \033[34m" << runtime.count() << "s\033[0m " << endl;
-                totTimePerFolder += runtime.count();
-                cout << optimal_value_color << optStatus << "\033[0m " << endl;
-                cout << "Calculated Optimal: " << optimal_value_color << result << "\033[0m " << endl;
-                cout << "Known Optimal: " << known_optimal_solutions[text_files[file_index].substr(0, text_files[file_index].size() - 4)] << std::endl << endl;
-
-                //print_progress_bar(static_cast<double>(file_index) / text_files.size());
-            }
-            //text_files.clear();
-
-            //results_file.close();
-
-            // Reopen the results file for reading
-            std::ifstream input_file(folder_name + "_Results.txt");
-            std::string line;
-            // optimal_count = 0;
-            // near_optimal_count = 0;
-
-            // while (std::getline(input_file, line)) {
-            //     if (line.find("Optimal solution found") != std::string::npos) {
-            //         optimal_count++;
-            //     } else if (line.find("Near-optimal solution found") != std::string::npos) {
-            //         near_optimal_count++;
-            //     }
-            // }
-
-            input_file.close();
-
-            // Print the number of optimal and near-optimal solutions for the current folder
-            std::cout << "Folder: " << folder_name << std::endl;
-            std::cout << "Optimal solutions: " << optimal_count << std::endl;
-            std::cout << "Near-optimal solutions: " << near_optimal_count << std::endl << std::endl;
-            final_results_Tabu << "Folder: " << folder_name << std::endl;
-            final_results_Tabu << "Optimal solutions: " << optimal_count << std::endl;
-            final_results_Tabu << "Near-optimal solutions: " << near_optimal_count << std::endl << std::endl;
-
-            arrResults[arrRowCount][2] = optimal_count; // ILS optimal results for folder
-            arrResults[arrRowCount][3] = near_optimal_count; //ILS near optimal results for folder
-
-            arrTime[arrRowCount][1] = totTimePerFolder; // ILS runtime for folder
-            totTimePerFolder = 0;
-            arrRowCount++;
-            
-            optimal_count = 0;
-            near_optimal_count = 0;
-        }
-        arrRowCount = 0;
-    }
+   
 
     
     //compute totals in 2d array -> add rows 
