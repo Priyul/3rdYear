@@ -789,7 +789,7 @@ int main() {
                 Data data = read_file_data(file_path);
 
                 auto start_time = std::chrono::high_resolution_clock::now();
-                int num_iterations = 5000;  // Adjust as needed
+                int num_iterations = 500;  // Adjust as needed
                 int num_perturbations = 50;  // Adjust as needed
                 int result = iterated_local_search(data, num_iterations, num_perturbations);
                 auto end_time = std::chrono::high_resolution_clock::now();
@@ -917,9 +917,9 @@ int main() {
                 Data data = read_file_data(file_path);
 
                 auto start_time = std::chrono::high_resolution_clock::now();
-                int num_iterations = 1000;  // Adjust as needed
-                int tabu_list_size = 250;
-                int k = 15;
+                int num_iterations = 250;  // Adjust as needed
+                int tabu_list_size = 25;
+                int k = 10;
                 int result = tabu_search(data, num_iterations, tabu_list_size, k);
                 auto end_time = std::chrono::high_resolution_clock::now();
                 std::chrono::duration<double> runtime = end_time - start_time;
