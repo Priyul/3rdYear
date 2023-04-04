@@ -619,6 +619,8 @@ int tabu_search(Data& data, int num_iterations, int tabu_list_size, int k) {
         items = greedy_algorithm(data);
     }
 
+    items = greedy_algorithm(data);
+
     int best_result = evaluate_solution(data, items);
     std::vector<int> best_items = items;
 

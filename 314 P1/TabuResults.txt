@@ -3,6 +3,6 @@ Optimal solutions: 5
 Near-optimal solutions: 23
 
 Folder: Waescher
-Optimal solutions: 2
-Near-optimal solutions: 15
+Optimal solutions: 3
+Near-optimal solutions: 14
 
