@@ -521,7 +521,6 @@ int iterated_local_search( Data& data, int num_iterations, int num_perturbations
         perturbation(items, num_perturbations);
         int new_bins = local_search(data, items);
         if (new_bins < data.num_items) {
-            cout << "helloooooooooo";
             data.num_items = new_bins;
         }
         double progress = static_cast<double>(i + 1) / num_iterations;
@@ -605,20 +604,6 @@ std::vector<int> neighborhood_search_tabu(const Data& data, const std::vector<in
 int tabu_search(Data& data, int num_iterations, int tabu_list_size, int k) {
     std::vector<int> items = data.item_sizes;
 
-    if (use_best_first_search) {
-        items = best_first_search(data);
-    }
-
-    if (use_hill_climbing) {
-        items = hill_climbing(data);
-    }
-    if (use_simulated_annealing) {
-        items = simulated_annealing(data, 1000, 1, 0.99);
-    }
-    if (use_greedy_algorithm) {
-        items = greedy_algorithm(data);
-    }
-
     items = greedy_algorithm(data);
 
     int best_result = evaluate_solution(data, items);
@@ -669,32 +654,33 @@ int main() {
     double totalRunTimeILS = 0;
     double totalRunTimeTabu = 0;
 
-    folder_names.push_back("Waescher");
-    folder_names.push_back("Hard28");
+    folder_names.push_back("Falkenauer/Falkenauer_T");
+    folder_names.push_back("Falkenauer/Falkenauer_U");
     folder_names.push_back("Scholl/Scholl_1");
     folder_names.push_back("Scholl/Scholl_2");
     folder_names.push_back("Scholl/Scholl_3");
     folder_names.push_back("Schwerin/Schwerin_1");
     folder_names.push_back("Schwerin/Schwerin_2");
-    folder_names.push_back("Falkenauer/Falkenauer_T");
-    folder_names.push_back("Falkenauer/Falkenauer_U");
+    folder_names.push_back("Hard28");
+    folder_names.push_back("Waescher");
     
     //std::vector<std::string> csv_files = {"CSV/Waescher.csv", "CSV/Hard28.csv", "CSV/Scholl_1.csv", "CSV/Scholl_2.csv", "CSV/Scholl_3.csv", "CSV/Schwerin_1.csv", "CSV/Schwerin_2.csv", "CSV/Falkenauer_T.csv", "CSV/Falkenauer_U.csv"};
     std::vector<std::string> csv_files;
 
-    csv_files.push_back("CSV/Waescher.csv");
-    csv_files.push_back("CSV/Hard28.csv");
+    csv_files.push_back("CSV/Falkenauer_T.csv");
+    csv_files.push_back("CSV/Falkenauer_U.csv");
     csv_files.push_back("CSV/Scholl_1.csv");
     csv_files.push_back("CSV/Scholl_2.csv");
     csv_files.push_back("CSV/Scholl_3.csv");
     csv_files.push_back("CSV/Schwerin_1.csv");
     csv_files.push_back("CSV/Schwerin_2.csv");
-    csv_files.push_back("CSV/Falkenauer_T.csv");
-    csv_files.push_back("CSV/Falkenauer_U.csv");
+    csv_files.push_back("CSV/Hard28.csv");
+    csv_files.push_back("CSV/Waescher.csv");
+
 
     use_best_first_search = true;
     use_hill_climbing = false;
-    use_simulated_annealing = true;
+    use_simulated_annealing = false;
     use_greedy_algorithm = false;
 
 
@@ -711,15 +697,15 @@ int main() {
     // string parameterList = genera
     int arrResults[10][5];
     std::vector<std::string> strResults;
-    strResults.push_back("Waescher");
-    strResults.push_back("Hard28");
+    strResults.push_back("Falkenauer_T");
+    strResults.push_back("Falkenauer_U");
     strResults.push_back("Scholl_1");
     strResults.push_back("Scholl_2");
     strResults.push_back("Scholl_3");
     strResults.push_back("Schwerin_1");
     strResults.push_back("Schwerin_2");
-    strResults.push_back("Falkenauer_T");
-    strResults.push_back("Falkenauer_U");
+    strResults.push_back("Hard28");
+    strResults.push_back("Waescher");
 
     //string strResults[9] = {"Waescher", "Hard28", "Scholl_1", "Scholl_2", "Scholl_3", "Schwerin_1", "Schwerin_2", "Falkenauer_T", "Falkenauer_U"};
     int arrRowCount = 0; //increases as folders change.....
@@ -789,7 +775,7 @@ int main() {
                 Data data = read_file_data(file_path);
 
                 auto start_time = std::chrono::high_resolution_clock::now();
-                int num_iterations = 500;  // Adjust as needed
+                int num_iterations = 1000;  // Adjust as needed
                 int num_perturbations = 50;  // Adjust as needed
                 int result = iterated_local_search(data, num_iterations, num_perturbations);
                 auto end_time = std::chrono::high_resolution_clock::now();
@@ -859,6 +845,7 @@ int main() {
             arrResults[arrRowCount][0] = optimal_count; // ILS optimal results for folder
             arrResults[arrRowCount][1] = near_optimal_count; //ILS near optimal results for folder
 
+            totTimePerFolder = totTimePerFolder/text_files.size();
             arrTime[arrRowCount][0] = totTimePerFolder; // ILS runtime for folder
             totalRunTimeILS = totalRunTimeILS + totTimePerFolder;
             totTimePerFolder = 0;
@@ -874,7 +861,7 @@ int main() {
 
     use_best_first_search = true;
     use_hill_climbing = false;
-    use_simulated_annealing = true;
+    use_simulated_annealing = false;
     use_greedy_algorithm = false;
 
 
@@ -917,9 +904,9 @@ int main() {
                 Data data = read_file_data(file_path);
 
                 auto start_time = std::chrono::high_resolution_clock::now();
-                int num_iterations = 250;  // Adjust as needed
-                int tabu_list_size = 25;
-                int k = 10;
+                int num_iterations = 750;  // Adjust as needed
+                int tabu_list_size = 150;
+                int k = 15;
                 int result = tabu_search(data, num_iterations, tabu_list_size, k);
                 auto end_time = std::chrono::high_resolution_clock::now();
                 std::chrono::duration<double> runtime = end_time - start_time;
@@ -985,6 +972,7 @@ int main() {
             arrResults[arrRowCount][2] = optimal_count; // ILS optimal results for folder
             arrResults[arrRowCount][3] = near_optimal_count; //ILS near optimal results for folder
 
+            totTimePerFolder = totTimePerFolder/text_files.size();
             arrTime[arrRowCount][1] = totTimePerFolder; // ILS runtime for folder
             totalRunTimeTabu = totalRunTimeTabu + totTimePerFolder;
             totTimePerFolder = 0;

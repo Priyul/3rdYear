@@ -11,26 +11,26 @@ Optimal solutions: 554
 Near-optimal solutions: 108
 
 Folder: Scholl/Scholl_2
-Optimal solutions: 290
-Near-optimal solutions: 115
+Optimal solutions: 304
+Near-optimal solutions: 109
 
 Folder: Scholl/Scholl_3
 Optimal solutions: 0
 Near-optimal solutions: 0
 
 Folder: Schwerin/Schwerin_1
-Optimal solutions: 3
-Near-optimal solutions: 97
+Optimal solutions: 5
+Near-optimal solutions: 95
 
 Folder: Schwerin/Schwerin_2
-Optimal solutions: 12
-Near-optimal solutions: 88
+Optimal solutions: 15
+Near-optimal solutions: 85
 
 Folder: Falkenauer/Falkenauer_T
 Optimal solutions: 0
-Near-optimal solutions: 16
+Near-optimal solutions: 20
 
 Folder: Falkenauer/Falkenauer_U
 Optimal solutions: 6
-Near-optimal solutions: 27
+Near-optimal solutions: 26
 
