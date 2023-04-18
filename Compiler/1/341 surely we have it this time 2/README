@@ -1,0 +1,18 @@
+Make sure you have a C++ compiler installed on your machine, such as GCC or Clang. You can check if you have GCC installed by running gcc --version in your terminal or command prompt.
+
+Create a new file called driver.cpp in a directory of your choice and paste the provided code into the file.
+
+Open a terminal or command prompt and navigate to the directory where the driver.cpp file is located.
+
+Compile the program by running the following command:
+
+For GCC: g++ driver.cpp -o driver
+
+For Clang: clang++ driver.cpp -o driver
+
+This will create an executable called driver.
+
+Run the program by executing the following command in the terminal or command prompt:
+
+./driver
+

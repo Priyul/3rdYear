@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Vector and Matrix Operations</title>
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <h2>Vector Operations</h2>
+    <label for="vectorType">Select vector type:</label>
+    <input type="radio" id="rowVector" name="vectorType" value="rowVector" checked>
+    <label for="rowVector">Row vector</label>
+    <input type="radio" id="colVector" name="vectorType" value="colVector">
+    <label for="colVector">Column vector</label>
+    <br><br>
+    <label for="x">Enter vector x:</label>
+    <input type="text" id="x" name="x" placeholder="[1,2,3]">
+    <br><br>
+    <label for="y">Enter vector y:</label>
+    <input type="text" id="y" name="y" placeholder="[1,2,3]">
+    <br><br>
+    <label for="scalar">Enter scalar a:</label>
+    <input type="text" id="scalar" name="scalar" placeholder="8">
+    <br><br>
+    <button onclick="multiplyScalar()">Calculate a*x</button> <!-- done -->
+    <button onclick="addVectors()">Calculate x+y</button> <!-- done -->
+    <button onclick="subtractVectors()">Calculate x-y</button> <!-- done -->
+    <button onclick="dotProduct()">Calculate x*y</button> <!-- done -->
+    <button onclick="norm()">Calculate ||x||₂</button> <!-- done -->
+    <button onclick="multiplyMatrix()">Calculate a*M</button> <!-- done -->
+    <br><br>
+
+    <label for="matrixRows">Enter number of rows for matrix M:</label>
+    <input type="text" id="matrixRows" name="matrixRows" placeholder="3">
+    <br><br>
+    <label for="matrixCols">Enter number of columns for matrix M:</label>
+    <input type="text" id="matrixCols" name="matrixCols" placeholder="3">
+    <br><br>
+    <label for="matrix">Enter matrix M:</label>
+    <textarea id="matrix" name="matrix" placeholder="[1,2,3]"></textarea>
+    <br><br><br><br>
+
+    <label for="matrixRows">Enter number of rows for matrix G:</label>
+    <input type="text" id="matrixRowsG" name="matrixRowsG" placeholder="3">
+    <br><br>
+    <label for="matrixCols">Enter number of columns for matrix G:</label>
+    <input type="text" id="matrixColsG" name="matrixColsG" placeholder="3">
+    <br><br>
+    <label for="matrix">Enter matrix G:</label>
+    <textarea id="matrixG" name="matrixG" placeholder="[1,2,3]"></textarea>
+    <br><br><br><br>
+
+   <!--  <label for="vectorRows">Enter number of rows for vector v:</label>
+    <input type="text" id="vectorRows" name="vectorRows" placeholder="">
+    <br><br> -->
+    <label for="vector">Enter vector v:</label>
+    <input type="text" id="vector" name="vector" placeholder="[1,2,3]">
+    <br><br>
+    <button onclick="transposeMatrix()">Calculate M^T</button> <!-- done -->
+    <button onclick="matrixTimesVector()">Calculate M*x</button> <!-- done -->
+    <button onclick="multiplyMatrices()">Calculate M*G</button> <!-- done -->
+    <button onclick="determinant()">Calculate det(M)</button> <!-- done -->
+    <button onclick="solveMxV()">Solve Mx = v</button>
+    <br><br>
+    <p id="answer"></p>
+  </body>
+</html>

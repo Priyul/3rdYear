@@ -1,0 +1,18 @@
+To compile (using windows):
+1. Install a c++ compiler (WSL)
+2. Navigate into the folder directory
+3. Run the command:
+make
+
+To run:
+After typing make, run the program using:
+./main
+
+The program reads input from a file called '*.txt'
+The abstract syntax tree outputs into an xml file named 'output.xml'
+It also outputs in the terminal if the parse was successful.
+
+Appropriate errors are thrown, caught and displayed in the terminal if there are lexical or parse errors.
+Naturally, the xml file is not written if an error is caught.
+
+

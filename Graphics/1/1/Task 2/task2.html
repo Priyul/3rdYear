@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 2</title>
+</head>
+<body>
+    <h1>Task 2: Character Position and Direction</h1>
+    <form id="input-form">
+        <label for="p">p ∈ ℝ³ (character p's location):</label>
+        <input type="text" id="p" name="p" placeholder="x,y,z" required><br><br>
+        <label for="d">d ∈ ℝ³ (direction p is looking towards):</label>
+        <input type="text" id="d" name="d" placeholder="x,y,z" required><br><br>
+        <label for="u">u ∈ ℝ³ (character p's up vector):</label>
+        <input type="text" id="u" name="u" placeholder="x,y,z" required><br><br>
+        <label for="e">e ∈ ℝ³ (character e's location):</label>
+        <input type="text" id="e" name="e" placeholder="x,y,z" required><br><br>
+        <label for="configuration">Coordinate System:</label>
+        <select id="configuration" name="configuration">
+            <option value="right-handed">Right-handed</option>
+            <option value="left-handed">Left-handed</option>
+        </select><br><br>
+        <button type="submit">Submit</button>
+    </form>
+    <p id="result"></p>
+
+    <script src="task2.js"></script>
+</body>
+</html>
+

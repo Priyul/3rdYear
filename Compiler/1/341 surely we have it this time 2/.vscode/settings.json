@@ -1,0 +1,15 @@
+{
+    "files.associations": {
+        "stack": "cpp",
+        "ostream": "cpp",
+        "vector": "cpp",
+        "set": "cpp",
+        "iostream": "cpp",
+        "queue": "cpp",
+        "__tree": "cpp",
+        "bitset": "cpp",
+        "map": "cpp",
+        "new": "cpp",
+        "iosfwd": "cpp"
+    }
+}
