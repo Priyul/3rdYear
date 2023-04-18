@@ -1,0 +1,12 @@
+Folder: Falkenauer/Falkenauer_T
+Optimal solutions: 0
+Near-optimal solutions: 2
+
+Folder: Waescher
+Optimal solutions: 2
+Near-optimal solutions: 15
+
+Folder: Hard28
+Optimal solutions: 5
+Near-optimal solutions: 23
+

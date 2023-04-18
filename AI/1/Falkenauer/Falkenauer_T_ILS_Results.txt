@@ -1,0 +1,33 @@
+Algorithm used: Iterated Local Search
+Heuristics used: Hill climbing and simulated annealing and next fit
+
+File: Falkenauer_t249_07
+Runtime: 16.3599 ms
+Calculated Optimal: Bad solution found :( - 90
+Known Optimal: 83
+
+File: Falkenauer_t120_09
+Runtime: 1.50219 ms
+Calculated Optimal: Bad solution found :( - 44
+Known Optimal: 40
+
+File: Falkenauer_t249_13
+Runtime: 16.3747 ms
+Calculated Optimal: Bad solution found :( - 92
+Known Optimal: 83
+
+File: Falkenauer_t249_12
+Runtime: 16.1458 ms
+Calculated Optimal: Bad solution found :( - 89
+Known Optimal: 83
+
+File: Falkenauer_t249_06
+Runtime: 16.9026 ms
+Calculated Optimal: Bad solution found :( - 91
+Known Optimal: 83
+
+File: Falkenauer_t120_08
+Runtime: 1.5528 ms
+Calculated Optimal: Bad solution found :( - 43
+Known Optimal: 40
+

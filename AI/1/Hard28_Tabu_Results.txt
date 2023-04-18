@@ -1,0 +1,143 @@
+Algorithm used: Tabu Search
+Heuristics used: Hill climbing and simulated annealing and next fit
+
+File: Hard28_BPP716.txt
+Runtime: 6.11648 s
+Calculated Optimal: Optimal solution found :) - 76
+Known Optimal: 0
+
+File: Hard28_BPP40.txt
+Runtime: 3.61473 s
+Calculated Optimal: Near-optimal solution found :| - 60
+Known Optimal: 0
+
+File: Hard28_BPP47.txt
+Runtime: 6.03297 s
+Calculated Optimal: Near-optimal solution found :| - 72
+Known Optimal: 0
+
+File: Hard28_BPP561.txt
+Runtime: 8.1522 s
+Calculated Optimal: Near-optimal solution found :| - 73
+Known Optimal: 0
+
+File: Hard28_BPP359.txt
+Runtime: 6.18886 s
+Calculated Optimal: Optimal solution found :) - 76
+Known Optimal: 0
+
+File: Hard28_BPP832.txt
+Runtime: 3.66173 s
+Calculated Optimal: Near-optimal solution found :| - 61
+Known Optimal: 0
+
+File: Hard28_BPP360.txt
+Runtime: 3.92208 s
+Calculated Optimal: Near-optimal solution found :| - 63
+Known Optimal: 0
+
+File: Hard28_BPP175.txt
+Runtime: 8.49302 s
+Calculated Optimal: Optimal solution found :) - 84
+Known Optimal: 0
+
+File: Hard28_BPP766.txt
+Runtime: 4.18218 s
+Calculated Optimal: Near-optimal solution found :| - 63
+Known Optimal: 0
+
+File: Hard28_BPP14.txt
+Runtime: 3.89973 s
+Calculated Optimal: Optimal solution found :) - 62
+Known Optimal: 0
+
+File: Hard28_BPP742.txt
+Runtime: 4.25133 s
+Calculated Optimal: Near-optimal solution found :| - 65
+Known Optimal: 0
+
+File: Hard28_BPP781.txt
+Runtime: 7.83276 s
+Calculated Optimal: Near-optimal solution found :| - 72
+Known Optimal: 0
+
+File: Hard28_BPP144.txt
+Runtime: 8.09366 s
+Calculated Optimal: Near-optimal solution found :| - 74
+Known Optimal: 0
+
+File: Hard28_BPP178.txt
+Runtime: 8.40494 s
+Calculated Optimal: Near-optimal solution found :| - 81
+Known Optimal: 0
+
+File: Hard28_BPP13.txt
+Runtime: 5.89084 s
+Calculated Optimal: Near-optimal solution found :| - 68
+Known Optimal: 0
+
+File: Hard28_BPP181.txt
+Runtime: 5.99429 s
+Calculated Optimal: Near-optimal solution found :| - 73
+Known Optimal: 0
+
+File: Hard28_BPP195.txt
+Runtime: 5.7674 s
+Calculated Optimal: Near-optimal solution found :| - 65
+Known Optimal: 0
+
+File: Hard28_BPP785.txt
+Runtime: 5.93169 s
+Calculated Optimal: Near-optimal solution found :| - 69
+Known Optimal: 0
+
+File: Hard28_BPP814.txt
+Runtime: 8.41491 s
+Calculated Optimal: Near-optimal solution found :| - 82
+Known Optimal: 0
+
+File: Hard28_BPP419.txt
+Runtime: 8.41929 s
+Calculated Optimal: Near-optimal solution found :| - 81
+Known Optimal: 0
+
+File: Hard28_BPP640.txt
+Runtime: 6.11928 s
+Calculated Optimal: Near-optimal solution found :| - 75
+Known Optimal: 0
+
+File: Hard28_BPP709.txt
+Runtime: 5.93823 s
+Calculated Optimal: Near-optimal solution found :| - 68
+Known Optimal: 0
+
+File: Hard28_BPP119.txt
+Runtime: 8.34077 s
+Calculated Optimal: Optimal solution found :) - 77
+Known Optimal: 0
+
+File: Hard28_BPP60.txt
+Runtime: 4.28187 s
+Calculated Optimal: Near-optimal solution found :| - 64
+Known Optimal: 0
+
+File: Hard28_BPP531.txt
+Runtime: 8.49119 s
+Calculated Optimal: Near-optimal solution found :| - 84
+Known Optimal: 0
+
+File: Hard28_BPP900.txt
+Runtime: 8.24505 s
+Calculated Optimal: Near-optimal solution found :| - 76
+Known Optimal: 0
+
+File: Hard28_BPP645.txt
+Runtime: 3.54613 s
+Calculated Optimal: Near-optimal solution found :| - 59
+Known Optimal: 0
+
+File: Hard28_BPP485.txt
+Runtime: 5.94334 s
+Calculated Optimal: Near-optimal solution found :| - 72
+Known Optimal: 0
+

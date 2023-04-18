@@ -1,5 +1,7 @@
 {
     "files.associations": {
+        "iosfwd": "cpp",
+        "vector": "cpp",
         "__bit_reference": "cpp",
         "__bits": "cpp",
         "__config": "cpp",
@@ -41,7 +43,6 @@
         "initializer_list": "cpp",
         "iomanip": "cpp",
         "ios": "cpp",
-        "iosfwd": "cpp",
         "iostream": "cpp",
         "istream": "cpp",
         "limits": "cpp",
@@ -53,7 +54,6 @@
         "numeric": "cpp",
         "optional": "cpp",
         "ostream": "cpp",
-        "queue": "cpp",
         "random": "cpp",
         "ratio": "cpp",
         "sstream": "cpp",
@@ -68,7 +68,6 @@
         "typeinfo": "cpp",
         "unordered_map": "cpp",
         "variant": "cpp",
-        "vector": "cpp",
         "__functional_base": "cpp",
         "algorithm": "cpp",
         "functional": "cpp",

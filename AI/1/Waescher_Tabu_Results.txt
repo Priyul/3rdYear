@@ -1,0 +1,88 @@
+Algorithm used: Tabu Search
+Heuristics used: Hill climbing and simulated annealing and next fit
+
+File: Waescher_TEST0097.txt
+Runtime: 0.691251 s
+Calculated Optimal: Near-optimal solution found :| - 13
+Known Optimal: 0
+
+File: Waescher_TEST0068.txt
+Runtime: 1.51275 s
+Calculated Optimal: Near-optimal solution found :| - 13
+Known Optimal: 0
+
+File: Waescher_TEST0054.txt
+Runtime: 1.21481 s
+Calculated Optimal: Near-optimal solution found :| - 15
+Known Optimal: 0
+
+File: Waescher_TEST0082.txt
+Runtime: 0.457128 s
+Calculated Optimal: Near-optimal solution found :| - 25
+Known Optimal: 0
+
+File: Waescher_TEST0095.txt
+Runtime: 1.65478 s
+Calculated Optimal: Near-optimal solution found :| - 17
+Known Optimal: 0
+
+File: Waescher_TEST0084.txt
+Runtime: 0.473022 s
+Calculated Optimal: Near-optimal solution found :| - 17
+Known Optimal: 0
+
+File: Waescher_TEST0044.txt
+Runtime: 1.69385 s
+Calculated Optimal: Near-optimal solution found :| - 15
+Known Optimal: 0
+
+File: Waescher_TEST0022.txt
+Runtime: 0.125465 s
+Calculated Optimal: Optimal solution found :) - 15
+Known Optimal: 0
+
+File: Waescher_TEST0030.txt
+Runtime: 0.912472 s
+Calculated Optimal: Near-optimal solution found :| - 28
+Known Optimal: 0
+
+File: Waescher_TEST0014.txt
+Runtime: 0.597815 s
+Calculated Optimal: Near-optimal solution found :| - 24
+Known Optimal: 0
+
+File: Waescher_TEST0005.txt
+Runtime: 1.00276 s
+Calculated Optimal: Near-optimal solution found :| - 29
+Known Optimal: 0
+
+File: Waescher_TEST0049.txt
+Runtime: 1.02802 s
+Calculated Optimal: Near-optimal solution found :| - 12
+Known Optimal: 0
+
+File: Waescher_TEST0075.txt
+Runtime: 3.83779 s
+Calculated Optimal: Near-optimal solution found :| - 14
+Known Optimal: 0
+
+File: Waescher_TEST0055B.txt
+Runtime: 5.76249 s
+Calculated Optimal: Near-optimal solution found :| - 21
+Known Optimal: 0
+
+File: Waescher_TEST0055A.txt
+Runtime: 1.24379 s
+Calculated Optimal: Near-optimal solution found :| - 16
+Known Optimal: 0
+
+File: Waescher_TEST0058.txt
+Runtime: 0.496019 s
+Calculated Optimal: Near-optimal solution found :| - 21
+Known Optimal: 0
+
+File: Waescher_TEST0065.txt
+Runtime: 0.146339 s
+Calculated Optimal: Optimal solution found :) - 16
+Known Optimal: 0
+

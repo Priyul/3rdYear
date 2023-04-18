@@ -1,0 +1,403 @@
+Algorithm used: Tabu Search
+Heuristics used: Hill climbing and simulated annealing and next fit
+
+File: Falkenauer_t249_07.txt
+Runtime: 16.55 s
+Calculated Optimal: Bad solution found :( - 89
+Known Optimal: 0
+
+File: Falkenauer_t120_09.txt
+Runtime: 1.54564 s
+Calculated Optimal: Bad solution found :( - 44
+Known Optimal: 0
+
+File: Falkenauer_t249_13.txt
+Runtime: 16.7251 s
+Calculated Optimal: Bad solution found :( - 90
+Known Optimal: 0
+
+File: Falkenauer_t249_12.txt
+Runtime: 16.7215 s
+Calculated Optimal: Bad solution found :( - 91
+Known Optimal: 0
+
+File: Falkenauer_t249_06.txt
+Runtime: 16.7962 s
+Calculated Optimal: Bad solution found :( - 91
+Known Optimal: 0
+
+File: Falkenauer_t120_08.txt
+Runtime: 1.52225 s
+Calculated Optimal: Bad solution found :( - 43
+Known Optimal: 0
+
+File: Falkenauer_t501_19.txt
+Runtime: 189.001 s
+Calculated Optimal: Bad solution found :( - 183
+Known Optimal: 0
+
+File: Falkenauer_t249_10.txt
+Runtime: 16.7351 s
+Calculated Optimal: Bad solution found :( - 92
+Known Optimal: 0
+
+File: Falkenauer_t249_04.txt
+Runtime: 16.5552 s
+Calculated Optimal: Bad solution found :( - 92
+Known Optimal: 0
+
+File: Falkenauer_t249_05.txt
+Runtime: 16.5169 s
+Calculated Optimal: Bad solution found :( - 90
+Known Optimal: 0
+
+File: Falkenauer_t249_11.txt
+Runtime: 16.6862 s
+Calculated Optimal: Bad solution found :( - 91
+Known Optimal: 0
+
+File: Falkenauer_t501_18.txt
+Runtime: 188.178 s
+Calculated Optimal: Bad solution found :( - 183
+Known Optimal: 0
+
+File: Falkenauer_t501_08.txt
+Runtime: 188.908 s
+Calculated Optimal: Bad solution found :( - 181
+Known Optimal: 0
+
+File: Falkenauer_t249_15.txt
+Runtime: 16.7062 s
+Calculated Optimal: Bad solution found :( - 91
+Known Optimal: 0
+
+File: Falkenauer_t249_01.txt
+Runtime: 16.5116 s
+Calculated Optimal: Bad solution found :( - 90
+Known Optimal: 0
+
+File: Falkenauer_t249_00.txt
+Runtime: 16.606 s
+Calculated Optimal: Bad solution found :( - 92
+Known Optimal: 0
+
+File: Falkenauer_t249_14.txt
+Runtime: 16.6188 s
+Calculated Optimal: Bad solution found :( - 91
+Known Optimal: 0
+
+File: Falkenauer_t501_09.txt
+Runtime: 188.796 s
+Calculated Optimal: Bad solution found :( - 182
+Known Optimal: 0
+
+File: Falkenauer_t249_02.txt
+Runtime: 16.5023 s
+Calculated Optimal: Bad solution found :( - 90
+Known Optimal: 0
+
+File: Falkenauer_t249_16.txt
+Runtime: 16.5117 s
+Calculated Optimal: Bad solution found :( - 91
+Known Optimal: 0
+
+File: Falkenauer_t120_18.txt
+Runtime: 1.52668 s
+Calculated Optimal: Bad solution found :( - 44
+Known Optimal: 0
+
+File: Falkenauer_t249_17.txt
+Runtime: 16.6825 s
+Calculated Optimal: Bad solution found :( - 91
+Known Optimal: 0
+
+File: Falkenauer_t120_19.txt
+Runtime: 1.52203 s
+Calculated Optimal: Bad solution found :( - 43
+Known Optimal: 0
+
+File: Falkenauer_t249_03.txt
+Runtime: 16.462 s
+Calculated Optimal: Bad solution found :( - 91
+Known Optimal: 0
+
+File: Falkenauer_t60_08.txt
+Runtime: 0.186865 s
+Calculated Optimal: Bad solution found :( - 22
+Known Optimal: 0
+
+File: Falkenauer_t60_09.txt
+Runtime: 0.187852 s
+Calculated Optimal: Bad solution found :( - 22
+Known Optimal: 0
+
+File: Falkenauer_t60_19.txt
+Runtime: 0.186821 s
+Calculated Optimal: Bad solution found :( - 22
+Known Optimal: 0
+
+File: Falkenauer_t60_18.txt
+Runtime: 0.186422 s
+Calculated Optimal: Bad solution found :( - 22
+Known Optimal: 0
+
+File: Falkenauer_t60_15.txt
+Runtime: 0.186021 s
+Calculated Optimal: Bad solution found :( - 22
+Known Optimal: 0
+
+File: Falkenauer_t60_01.txt
+Runtime: 0.186918 s
+Calculated Optimal: Bad solution found :( - 22
+Known Optimal: 0
+
+File: Falkenauer_t60_00.txt
+Runtime: 0.18591 s
+Calculated Optimal: Bad solution found :( - 22
+Known Optimal: 0
+
+File: Falkenauer_t60_14.txt
+Runtime: 0.186709 s
+Calculated Optimal: Bad solution found :( - 22
+Known Optimal: 0
+
+File: Falkenauer_t60_02.txt
+Runtime: 0.187455 s
+Calculated Optimal: Bad solution found :( - 22
+Known Optimal: 0
+
+File: Falkenauer_t60_16.txt
+Runtime: 0.187595 s
+Calculated Optimal: Bad solution found :( - 22
+Known Optimal: 0
+
+File: Falkenauer_t60_17.txt
+Runtime: 0.187054 s
+Calculated Optimal: Bad solution found :( - 22
+Known Optimal: 0
+
+File: Falkenauer_t60_03.txt
+Runtime: 0.185753 s
+Calculated Optimal: Bad solution found :( - 22
+Known Optimal: 0
+
+File: Falkenauer_t60_07.txt
+Runtime: 0.185576 s
+Calculated Optimal: Near-optimal solution found :| - 21
+Known Optimal: 0
+
+File: Falkenauer_t60_13.txt
+Runtime: 0.187936 s
+Calculated Optimal: Bad solution found :( - 22
+Known Optimal: 0
+
+File: Falkenauer_t60_12.txt
+Runtime: 0.185929 s
+Calculated Optimal: Near-optimal solution found :| - 21
+Known Optimal: 0
+
+File: Falkenauer_t60_06.txt
+Runtime: 0.186651 s
+Calculated Optimal: Bad solution found :( - 22
+Known Optimal: 0
+
+File: Falkenauer_t60_10.txt
+Runtime: 0.186132 s
+Calculated Optimal: Bad solution found :( - 22
+Known Optimal: 0
+
+File: Falkenauer_t60_04.txt
+Runtime: 0.189146 s
+Calculated Optimal: Bad solution found :( - 23
+Known Optimal: 0
+
+File: Falkenauer_t60_05.txt
+Runtime: 0.18715 s
+Calculated Optimal: Bad solution found :( - 22
+Known Optimal: 0
+
+File: Falkenauer_t60_11.txt
+Runtime: 0.18674 s
+Calculated Optimal: Bad solution found :( - 22
+Known Optimal: 0
+
+File: Falkenauer_t501_13.txt
+Runtime: 188.172 s
+Calculated Optimal: Bad solution found :( - 182
+Known Optimal: 0
+
+File: Falkenauer_t501_07.txt
+Runtime: 188.562 s
+Calculated Optimal: Bad solution found :( - 182
+Known Optimal: 0
+
+File: Falkenauer_t120_14.txt
+Runtime: 1.51561 s
+Calculated Optimal: Bad solution found :( - 44
+Known Optimal: 0
+
+File: Falkenauer_t120_00.txt
+Runtime: 1.51692 s
+Calculated Optimal: Bad solution found :( - 44
+Known Optimal: 0
+
+File: Falkenauer_t120_01.txt
+Runtime: 1.52119 s
+Calculated Optimal: Bad solution found :( - 43
+Known Optimal: 0
+
+File: Falkenauer_t120_15.txt
+Runtime: 1.52217 s
+Calculated Optimal: Bad solution found :( - 44
+Known Optimal: 0
+
+File: Falkenauer_t501_06.txt
+Runtime: 187.668 s
+Calculated Optimal: Bad solution found :( - 183
+Known Optimal: 0
+
+File: Falkenauer_t501_12.txt
+Runtime: 185.557 s
+Calculated Optimal: Bad solution found :( - 182
+Known Optimal: 0
+
+File: Falkenauer_t501_04.txt
+Runtime: 188.738 s
+Calculated Optimal: Bad solution found :( - 184
+Known Optimal: 0
+
+File: Falkenauer_t501_10.txt
+Runtime: 189.296 s
+Calculated Optimal: Bad solution found :( - 182
+Known Optimal: 0
+
+File: Falkenauer_t120_03.txt
+Runtime: 1.51604 s
+Calculated Optimal: Bad solution found :( - 43
+Known Optimal: 0
+
+File: Falkenauer_t120_17.txt
+Runtime: 1.52659 s
+Calculated Optimal: Bad solution found :( - 43
+Known Optimal: 0
+
+File: Falkenauer_t249_19.txt
+Runtime: 16.4623 s
+Calculated Optimal: Bad solution found :( - 91
+Known Optimal: 0
+
+File: Falkenauer_t120_16.txt
+Runtime: 1.52806 s
+Calculated Optimal: Bad solution found :( - 44
+Known Optimal: 0
+
+File: Falkenauer_t249_18.txt
+Runtime: 16.5602 s
+Calculated Optimal: Bad solution found :( - 90
+Known Optimal: 0
+
+File: Falkenauer_t120_02.txt
+Runtime: 1.53652 s
+Calculated Optimal: Bad solution found :( - 44
+Known Optimal: 0
+
+File: Falkenauer_t501_11.txt
+Runtime: 188.187 s
+Calculated Optimal: Bad solution found :( - 181
+Known Optimal: 0
+
+File: Falkenauer_t501_05.txt
+Runtime: 190.097 s
+Calculated Optimal: Bad solution found :( - 183
+Known Optimal: 0
+
+File: Falkenauer_t501_01.txt
+Runtime: 188.394 s
+Calculated Optimal: Bad solution found :( - 182
+Known Optimal: 0
+
+File: Falkenauer_t501_15.txt
+Runtime: 190.943 s
+Calculated Optimal: Bad solution found :( - 183
+Known Optimal: 0
+
+File: Falkenauer_t120_06.txt
+Runtime: 1.52661 s
+Calculated Optimal: Bad solution found :( - 43
+Known Optimal: 0
+
+File: Falkenauer_t249_08.txt
+Runtime: 16.5717 s
+Calculated Optimal: Bad solution found :( - 91
+Known Optimal: 0
+
+File: Falkenauer_t120_12.txt
+Runtime: 1.60494 s
+Calculated Optimal: Bad solution found :( - 45
+Known Optimal: 0
+
+File: Falkenauer_t120_13.txt
+Runtime: 1.52356 s
+Calculated Optimal: Bad solution found :( - 43
+Known Optimal: 0
+
+File: Falkenauer_t120_07.txt
+Runtime: 1.57961 s
+Calculated Optimal: Bad solution found :( - 44
+Known Optimal: 0
+
+File: Falkenauer_t249_09.txt
+Runtime: 16.713 s
+Calculated Optimal: Bad solution found :( - 92
+Known Optimal: 0
+
+File: Falkenauer_t501_14.txt
+Runtime: 189.572 s
+Calculated Optimal: Bad solution found :( - 183
+Known Optimal: 0
+
+File: Falkenauer_t501_00.txt
+Runtime: 191.443 s
+Calculated Optimal: Bad solution found :( - 184
+Known Optimal: 0
+
+File: Falkenauer_t501_16.txt
+Runtime: 188.795 s
+Calculated Optimal: Bad solution found :( - 183
+Known Optimal: 0
+
+File: Falkenauer_t501_02.txt
+Runtime: 188.365 s
+Calculated Optimal: Bad solution found :( - 181
+Known Optimal: 0
+
+File: Falkenauer_t120_11.txt
+Runtime: 1.53108 s
+Calculated Optimal: Bad solution found :( - 44
+Known Optimal: 0
+
+File: Falkenauer_t120_05.txt
+Runtime: 1.53144 s
+Calculated Optimal: Bad solution found :( - 44
+Known Optimal: 0
+
+File: Falkenauer_t120_04.txt
+Runtime: 1.53457 s
+Calculated Optimal: Bad solution found :( - 44
+Known Optimal: 0
+
+File: Falkenauer_t120_10.txt
+Runtime: 1.55277 s
+Calculated Optimal: Bad solution found :( - 45
+Known Optimal: 0
+
+File: Falkenauer_t501_03.txt
+Runtime: 190.741 s
+Calculated Optimal: Bad solution found :( - 183
+Known Optimal: 0
+
+File: Falkenauer_t501_17.txt
+Runtime: 190.247 s
+Calculated Optimal: Bad solution found :( - 181
+Known Optimal: 0
+

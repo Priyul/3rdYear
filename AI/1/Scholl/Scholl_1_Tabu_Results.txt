@@ -1,0 +1,38 @@
+Algorithm used: Tabu Search
+Heuristics used: Hill climbing and simulated annealing and next fit
+
+File: N3C3W4_H.txt
+Runtime: 8.99438 s
+Calculated Optimal: Bad solution found :( - 86
+Known Optimal: 0
+
+File: N2C1W4_N.txt
+Runtime: 1.35928 s
+Calculated Optimal: Optimal solution found :) - 71
+Known Optimal: 0
+
+File: N4C2W1_M.txt
+Runtime: 202.846 s
+Calculated Optimal: Near-optimal solution found :| - 218
+Known Optimal: 0
+
+File: N3C2W4_M.txt
+Runtime: 10.591 s
+Calculated Optimal: Optimal solution found :) - 120
+Known Optimal: 0
+
+File: N4C1W2_O.txt
+Runtime: 291.613 s
+Calculated Optimal: Optimal solution found :) - 319
+Known Optimal: 0
+
+File: N1C1W4_Q.txt
+Runtime: 0.168051 s
+Calculated Optimal: Optimal solution found :) - 34
+Known Optimal: 0
+
+File: N1C1W4_F.txt
+Runtime: 0.159274 s
+Calculated Optimal: Optimal solution found :) - 32
+Known Optimal: 0
+
