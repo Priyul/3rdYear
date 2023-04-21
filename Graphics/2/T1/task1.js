@@ -4,29 +4,31 @@ const gl = canvas.getContext('webgl2');
 if (!gl) {
   alert('WebGL 2 is not supported by your browser!');
 }
+
 const baseVertices = [
-  -0.5, -0.5, // bottom left
-  0.5, -0.5, // bottom right
-  0.5, 0.3, // top right
-  -0.5, 0.3 // top left
-];
+    -0.5, -0.5, // bottom left
+    0.5, -0.5, // bottom right
+    0.5, 0.3, // top right
+    -0.5, 0.3 // top left
+  ];
+  
+  const roofVertices = [
+    -0.5, 0.3, // bottom left
+    0.5, 0.3, // bottom right
+    0.0, 0.7 // top
+  ];
+  
+  const doorVertices = [
+    -0.15, -0.5, // bottom left
+    0.15, -0.5, // bottom right
+    0.15, 0.0, // top right
+    -0.15, 0.0 // top left
+  ];
+  
+  const baseColor = [1.0, 0.0, 0.0, 1.0]; // Red
+  const roofColor = [0.0, 0.0, 1.0, 1.0]; // Blue
+  const doorColor = [0.0, 1.0, 0.0, 1.0]; // Green
 
-const roofVertices = [
-  -0.5, 0.3, // bottom left
-  0.5, 0.3, // bottom right
-  0.0, 0.7 // top
-];
-
-const doorVertices = [
-  -0.15, -0.5, // bottom left
-  0.15, -0.5, // bottom right
-  0.15, 0.0, // top right
-  -0.15, 0.0 // top left
-];
-
-const baseColor = [1.0, 0.0, 0.0, 1.0]; // Red
-const roofColor = [0.0, 0.0, 1.0, 1.0]; // Blue
-const doorColor = [0.0, 1.0, 0.0, 1.0]; // Green
 
 
 function createShader(gl, type, source) {
@@ -94,5 +96,3 @@ gl.useProgram(program);
 drawPart(gl, baseBuffer, baseVertices, baseColor); // Draw base
 drawPart(gl, roofBuffer, roofVertices, roofColor); // Draw roof
 drawPart(gl, doorBuffer, doorVertices, doorColor); // Draw door
-
-
