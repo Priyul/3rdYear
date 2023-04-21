@@ -86,6 +86,13 @@ const roof3Vertices = [ //right
 0.0, 0.7, -0.5 // updated top vertex to be above right wall vertices
 ];
 
+const baseVertices = [
+  -0.5, -0.5, 0.0,
+  0.5, -0.5, 0.0,
+  0.5, -0.5, -1.0,
+  -0.5, -0.5, -1.0
+];
+
   
   const doorVertices = [
     -0.15, -0.5, 0.01,
@@ -96,11 +103,11 @@ const roof3Vertices = [ //right
 
 
   
-  const baseColor = [1.0, 0.0, 0.0, 1.0]; // Red
-  const roof1Color = [0.0, 0.0, 1.0, 1.0]; // front
-  const roof2Color = [0.0, 1.0, 0.0, 1.0]; // left
-  const roof3Color = [0.0, 1.0, 0.0, 1.0]; // right
-  const roof4Color = [0.0, 0.0, 1.0, 1.0]; // back
+  const baseColor = [0.0, 0.0, 1.0, 1.0]; // BLUE
+  const roof1Color = [0.0, 0.0, 1.0, 1.0]; // front - BLUE
+  const roof2Color = [0.0, 1.0, 0.0, 1.0]; // left - green
+  const roof3Color = [0.0, 1.0, 0.0, 1.0]; // right - green
+  const roof4Color = [0.0, 0.0, 1.0, 1.0]; // back - blue
   const doorColor = [0.0, 1.0, 0.0, 1.0]; // Green
 
   const vertexShaderSource = `
@@ -202,6 +209,11 @@ const rightWindowBuffer = gl.createBuffer();
 gl.bindBuffer(gl.ARRAY_BUFFER, rightWindowBuffer);
 gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(rightWindowVertices), gl.STATIC_DRAW);
 
+const baseBuffer = gl.createBuffer();
+gl.bindBuffer(gl.ARRAY_BUFFER, baseBuffer);
+gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(baseVertices), gl.STATIC_DRAW);
+
+
 // const leftWallVAO = createVAO(gl, leftWallBuffer, program);
 // const rightWallVAO = createVAO(gl, rightWallBuffer, program);
 // const frontWallVAO = createVAO(gl, frontWallBuffer, program);
@@ -265,6 +277,8 @@ function drawScene(time) {
   drawPart(gl, doorBuffer, doorVertices, doorColor);
   drawPart(gl, leftWindowBuffer, leftWindowVertices, leftWindowColor);
   drawPart(gl, rightWindowBuffer, rightWindowVertices, rightWindowColor);
+
+  drawPart(gl, baseBuffer, baseVertices, baseColor);
 
   requestAnimationFrame(drawScene);
 
