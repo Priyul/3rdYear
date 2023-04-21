@@ -127,21 +127,36 @@ function mat3()
 
 //----------------------------------------------------------------------------
 
-function perspective( fovy, aspect, near, far )
+function mat4()
 {
-    var f = 1.0 / Math.tan( radians(fovy) / 2 );
-    var d = far - near;
+    var v = _argumentsToArray( arguments );
 
-    var result = mat4();
-    result[0][0] = f / aspect;
-    result[1][1] = f;
-    result[2][2] = -(near + far) / d;
-    result[2][3] = -2 * near * far / d;
-    result[3][2] = -1;
-    result[3][3] = 0.0;
+    var m = [];
+    switch ( v.length ) {
+    case 0:
+        v[0] = 1;
+    case 1:
+        m = [
+            vec4( v[0], 0.0,  0.0,   0.0 ),
+            vec4( 0.0,  v[0], 0.0,   0.0 ),
+            vec4( 0.0,  0.0,  v[0],  0.0 ),
+            vec4( 0.0,  0.0,  0.0,  v[0] )
+        ];
+        break;
 
-    return result;
+    default:
+        m.push( vec4(v) );  v.splice( 0, 4 );
+        m.push( vec4(v) );  v.splice( 0, 4 );
+        m.push( vec4(v) );  v.splice( 0, 4 );
+        m.push( vec4(v) );
+        break;
+    }
+
+    m.matrix = true;
+
+    return m;
 }
+
 //----------------------------------------------------------------------------
 //
 //  Generic Mathematical Operations for Vectors and Matrices
