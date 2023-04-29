@@ -1,25 +1,40 @@
-n1 := 1.23;
-s2 := "whuipsjeituysge";
-b3 := T
-*jsowiowpriwmcns*;
+h
+,p123 {
+	n11 := 10.21;
+	b2 := E(n2,n13);
+	s333 := "strinstrinstrin"
 
-i(^(b3, T)) t
-{
-  n1 := a(n1, -2.90)
-}
-e
-{
-  o n1
-};
+	,p456 {
+		n4 := 10.21;
+		b55 := E(n2,n13);
+		s6 := "strinstrinstrin"
 
-w(>(n1, 1.00))
-{
-  n1 := m(n1, n1)
-};
+        ,p789 {
+            n777 := 10.21;
+            b8 := E(n2,n13);
+            s9999 := "strinstrinstrin"
+	    }
+	}
 
-h,
+    ,p111 {
+        n111 := 10.21;
+        b111 := E(n2,n13);
+        s111 := "strinstrinstrin"
+        ,p222 {
+            n222 := 10.21;
+            b222 := E(n2,n13);
+            s222 := "strinstrinstrin"
+            ,p333 {
+                n333 := 10.21;
+                b333 := E(n2,n13);
+                s333 := "strinstrinstrin"
+            }
+        }
+    }
 
-p1
-{
-  n1 := 1.00
+    ,p444 {
+        n444 := 10.21;
+        b444 := E(n2,n13);
+        s444 := "strinstrinstrin"
+    }
 }

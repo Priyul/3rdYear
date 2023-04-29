@@ -1,20 +1,32 @@
 #pragma once
 
-#include <unordered_map>
-#include "ast_node.h"
+#include <map>
+#include <string>
+#include <optional>
+#include <functional>
+#include <stack>
+#include <iostream>
 
-struct Symbol {
-    int id;
-    int scope_id;
-    ASTNodeType type;
-    std::string name;
-};
+#include "ast_node.h"
+#include "symbol.h"
+
+using namespace std;
 
 class SymbolTable {
 public:
-    void insert(int node_id, int scope_id, ASTNodeType type, const std::string &name);
-    Symbol* find(int node_id);
 
-private:
-    std::unordered_map<int, Symbol> table;
+    std::map<int, Symbol> table;
+
+    void insert(int nodeId, int scopeId, const std::string &name);
+    Symbol lookup(int nodeId);
+    void initialize();
+
+    void traverseAST(ASTNode* node, int level, std::stack<int> &scopeStack, SymbolTable &symbolTable, ASTNodeType parentType); 
+
+    void printTable();
+
+    bool isVariableDeclaration(ASTNode* node);
+
+    void appendDigits(ASTNode* digitsNode, std::string& variableName);
+
 };

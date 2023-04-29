@@ -2,19 +2,23 @@
 #include <fstream>
 #include <vector>
 #include <string>
+#include <stack>
+#include <map>
 #include "lexer.h"
 #include "parser.h"
 #include "node.h"
 #include "ast_node.h"
 
 #include "symbol_table.h"
-#include "scope_analyzer.h"
+// #include "scope_analyzer.h"
 
 
 int main() {
     int count = 0;
     bool lexFail = false;
     bool parseSuccess = true;
+
+    ASTNode* finally = nullptr;
 
     /* START OF LEXER */
     std::ifstream inFile("*.txt");
@@ -58,7 +62,7 @@ int main() {
 
         if (parseSuccess) {
             // ast->printAST(ast);
-            ASTNode* finally = ast->buildAndPrintAST(ast);
+            finally = ast->buildAndPrintAST(ast);
 
             std::ofstream xmlFile("output.xml");
             xmlFile << "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
@@ -73,9 +77,12 @@ int main() {
     /* END OF PARSER */
     // finally = ABSTRACT SYNTAX TREE ROOT
 
-    SymbolTable symbol_table;
+    SymbolTable symbolTable;
+    std::stack<int> scopeStack;
 
-
-
+    if (finally) {
+        symbolTable.traverseAST(finally, 0, scopeStack, symbolTable, AST_PROGR);
+        symbolTable.printTable();
+    }
 
 }
