@@ -129,7 +129,6 @@ string Node::getType(ASTNodeType type) {
 }
 
 
-
 bool Node::isPermittedNonTerminal(NodeType type) {
     // Add the permitted non-terminal node types in this list
     std::vector<NodeType> permittedNonTerminals;
@@ -143,8 +142,16 @@ bool Node::isPermittedNonTerminal(NodeType type) {
     permittedNonTerminals.push_back(PROC);
     permittedNonTerminals.push_back(DIGITS);
 
-    return std::find(permittedNonTerminals.begin(), permittedNonTerminals.end(), type) != permittedNonTerminals.end();
+    // Iterate through the permittedNonTerminals vector using a for loop
+    for (size_t i = 0; i < permittedNonTerminals.size(); ++i) {
+        if (permittedNonTerminals[i] == type) {
+            return true;
+        }
+    }
+
+    return false;
 }
+
 
 ASTNodeType Node::getASTNodeType(NodeType type) {
     // Implement the mapping from NodeType to ASTNodeType
