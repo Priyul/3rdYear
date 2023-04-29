@@ -1,1 +1,25 @@
-c p12,p2{w(T){n3:=a(-11.12,n6)}*HelloWorld12345*;i(E(n7,n8))t{rs10}e{gn9}}
+n1 := 1.23;
+s2 := "whuipsjeituysge";
+b3 := T
+*jsowiowpriwmcns*;
+
+i(^(b3, T)) t
+{
+  n1 := a(n1, -2.90)
+}
+e
+{
+  o n1
+};
+
+w(>(n1, 1.00))
+{
+  n1 := m(n1, n1)
+};
+
+h,
+
+p1
+{
+  n1 := 1.00
+}
