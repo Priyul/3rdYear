@@ -71,28 +71,45 @@ int main() {
             ast->ASTtoXML(finally, xmlFile);
             // xmlFile << "</Root>" << endl;
             xmlFile.close();
-            
+            cout << "Parsing succesful and XML generated in output.xml" << endl;
         }
     }
     /* END OF PARSER */
     // finally = ABSTRACT SYNTAX TREE ROOT
 
+    /* START OF SCOPE ANALYSIS */
+    cout << endl;
     SymbolTable symbolTable;
     std::stack<int> scopeStack;
+    bool scopeSuccess = true;
 
     if (finally) {
         try {
             symbolTable.traverseAST(finally, 0, scopeStack, symbolTable, AST_PROGR);
-            symbolTable.printTable();
+
             symbolTable.analyzeScopes(finally, 0, scopeStack, symbolTable, AST_PROGR);
-            symbolTable.checkUncalledProcesses();
             
-            symbolTable.outputTableToHTML();
         } catch (const std::runtime_error& e) {
             std::cerr << "Caught exception: " << e.what() << std::endl << endl;
+            scopeSuccess = false;
         } catch (...) {
             std::cerr << "Caught an unknown exception" << std::endl;
+            scopeSuccess = false;
         }
+    }
+
+    if (scopeSuccess) {
+        symbolTable.checkUncalledProcesses();
+        cout << "Scope analysis successful" << endl;
+        
+        symbolTable.checkUncalledProcesses();
+        symbolTable.printTable();
+
+        symbolTable.outputTableToHTML();
+        cout << endl << "Symbol table output to HTML" << endl;
+        cout << "File can be found in the same directory as this program (index.html)" << endl;
+    } else {
+        cout << "Scope analysis failed" << endl;
     }
 
 }
