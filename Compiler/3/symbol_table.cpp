@@ -157,4 +157,36 @@ void SymbolTable::analyzeScopes(ASTNode* node, int level, std::stack<int> &scope
     }
 }
 
+void SymbolTable::outputTableToHTML() {
+    std::ofstream htmlFile("index.html");
+
+    std::stringstream htmlContent;
+    htmlContent << "<!DOCTYPE html>\n"
+                << "<html>\n"
+                << "<head>\n"
+                << "<title>Symbol Table</title>\n"
+                << "<style>\n"
+                << "table { border-collapse: collapse; width: 50%; }\n"
+                << "th, td { border: 1px solid black; padding: 8px; text-align: left; }\n"
+                << "th { background-color: #f2f2f2; }\n"
+                << "</style>\n"
+                << "</head>\n"
+                << "<body>\n"
+                << "<h1>Symbol Table</h1>\n"
+                << "<table>\n"
+                << "<tr><th>Node ID</th><th>Scope ID</th><th>Name</th></tr>\n";
+
+    for (const auto &entry : table) {
+        const Symbol &symbol = entry.second;
+        htmlContent << "<tr><td>" << symbol.nodeId << "</td><td>" << symbol.scopeId << "</td><td>" << symbol.name << "</td></tr>\n";
+    }
+
+    htmlContent << "</table>\n"
+                << "</body>\n"
+                << "</html>";
+
+    htmlFile << htmlContent.str();
+    htmlFile.close();
+}
+
 

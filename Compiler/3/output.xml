@@ -1528,7 +1528,7 @@
                     <ChildNodeID>310</ChildNodeID>
                   </ChildNodes>
                   <Node type="TERMINAL" id="309">
-                    <Contents>5</Contents>
+                    <Contents>4</Contents>
                   </Node>
                   <Node type="DIGITS" id="310">
                     <Contents></Contents>
@@ -1536,7 +1536,7 @@
                       <ChildNodeID>311</ChildNodeID>
                     </ChildNodes>
                     <Node type="TERMINAL" id="311">
-                      <Contents>6</Contents>
+                      <Contents>4</Contents>
                     </Node>
                   </Node>
                 </Node>

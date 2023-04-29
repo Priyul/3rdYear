@@ -6,6 +6,8 @@
 #include <functional>
 #include <stack>
 #include <iostream>
+#include <fstream>
+#include <sstream>
 
 #include "ast_node.h"
 #include "symbol.h"
@@ -31,4 +33,5 @@ public:
     void appendDigits(ASTNode* digitsNode, std::string& variableName);
 
     void analyzeScopes(ASTNode* node, int level, std::stack<int> &scopeStack, SymbolTable &symbolTable, ASTNodeType parentType);
+    void outputTableToHTML();
 };
