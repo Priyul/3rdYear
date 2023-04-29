@@ -9,10 +9,13 @@ After typing make, run the program using:
 ./main
 
 The program reads input from a file called '*.txt'
-The abstract syntax tree outputs into an xml file named 'output.xml'
-It also outputs in the terminal if the parse was successful.
+*PROGRAM READS FROM A TEXT FILE INPUT AS IS GIVEN IN P2, NOT FROM AN XML FILE*
 
-Appropriate errors are thrown, caught and displayed in the terminal if there are lexical or parse errors.
-Naturally, the xml file is not written if an error is caught.
+The symbol table outputs into an HTML file named 'index.html'
+It also outputs in the terminal if the scope analysis was successful.
+
+Appropriate errors are thrown, caught and displayed in the terminal if there are scoping errors. Warnings are also displayed in the terminal for uncalled processes.
+
+Naturally, the HTML file is not written if an error is caught.
 
 
