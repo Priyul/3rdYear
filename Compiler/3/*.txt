@@ -1,29 +1,29 @@
-o n123;
-r s999
+o n11;
+r s9999
 ,p123 {
 	n11 := 10.21;
-	b2 := E(n2,n13);
+	b444 := E(n2,n13);
     c p123;
-	s333 := "strinstrinstrin"
+	s9999 := "strinstrinstrin"
 
 	,p456 {
 		n11 := 10.21;
-		b55 := E(n2,n13);
+		b444 := E(n2,n13);
 		s6 := "strinstrinstrin";
         c p444  
 
         ,p789 {
             n777 := 10.21;
-            b8 := E(n2,n13);
+            b444 := E(n2,n13);
             s9999 := "strinstrinstrin";
             c p789
 	    }
 	}
 
-    ,p444 {
-        n444 := 10.21;
+    ,p456 {
+        n11 := 10.21;
         b444 := E(n2,n13);
-        s444 := "strinstrinstrin";
+        s9999 := "strinstrinstrin";
         c p444;
         c p456  
     }

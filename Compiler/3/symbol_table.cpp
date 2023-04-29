@@ -47,14 +47,56 @@ void SymbolTable::traverseAST(ASTNode* node, int level, std::stack<int> &scopeSt
         }
 
         int scopeId = scopeStack.empty() ? 0 : scopeStack.top();
-        //if (!search(node->id)) {
+
+        bool isDuplicate = false;
+        for (const auto &entry : table) {
+            const Symbol &symbol = entry.second;
+            if (symbol.name == variableName) {
+                isDuplicate = true;
+                break;
+            }
+        }
+
+        if (!isDuplicate) {
             symbolTable.insert(node->id, scopeId, variableName);
+        }
+
+
+        //if (!search(node->id)) {
+            // symbolTable.insert(node->id, scopeId, variableName);
         //}
         // symbolTable.insert(node->id, scopeId, variableName);
     } else if (node->type == AST_PROC) {
         int newScopeId = scopeStack.empty() ? 1 : scopeStack.top() + 1;
         scopeStack.push(newScopeId);
-        symbolTable.insert(node->id, newScopeId, ""); // We'll fill the name later
+        symbolTable.insert(node->id, newScopeId, ""); //  fill the name later
+
+        // Check for duplicate process names
+        std::string processName = "p";
+        for (const auto &child : node->children) {
+            if (child->type == AST_DIGITS) {
+                symbolTable.appendDigits(child, processName);
+            }
+        }
+
+        bool isDuplicate = false;
+        for (const auto &entry : table) {
+            const Symbol &symbol = entry.second;
+            if (symbol.scopeId == newScopeId && symbol.name == processName) {
+                isDuplicate = true;
+                break;
+            }
+        }
+
+        if (isDuplicate) {
+        
+            symbolTable.table.erase(node->id); // Remove the inserted empty-named process
+            throw std::runtime_error("Error : Duplicate process declaration for " + processName + " in the current scope!" );
+        } else {
+            auto symbol = symbolTable.lookup(node->id);
+            symbol.name = processName;
+            symbolTable.table[node->id] = symbol;
+        }
     }
 
     for (const auto &child : node->children) {
@@ -62,21 +104,6 @@ void SymbolTable::traverseAST(ASTNode* node, int level, std::stack<int> &scopeSt
     }
 
     if (node->type == AST_PROC) {
-        // Fill the name for the PROC
-        cout << "Node id: " << node->id << endl;
-        auto symbol = symbolTable.lookup(node->id);
-        if (symbol.name.empty()) {
-            symbol.name = "p";
-            for (const auto &child : node->children) {
-                if (child->type == AST_DIGITS) {
-                    symbolTable.appendDigits(child, symbol.name);
-                }
-            }
-            symbolTable.table[node->id] = symbol;
-        } else {
-            cout << "process not found in symbol table" << endl;
-        }
-
         scopeStack.pop();
     }
 }

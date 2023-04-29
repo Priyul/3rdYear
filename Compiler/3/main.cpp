@@ -81,10 +81,15 @@ int main() {
     std::stack<int> scopeStack;
 
     if (finally) {
-        symbolTable.traverseAST(finally, 0, scopeStack, symbolTable, AST_PROGR);
-        symbolTable.printTable();
-
-        symbolTable.analyzeScopes(finally, 0, scopeStack, symbolTable, AST_PROGR);
+        try {
+            symbolTable.traverseAST(finally, 0, scopeStack, symbolTable, AST_PROGR);
+            symbolTable.printTable();
+            symbolTable.analyzeScopes(finally, 0, scopeStack, symbolTable, AST_PROGR);
+        } catch (const std::runtime_error& e) {
+            std::cerr << "Caught exception: " << e.what() << std::endl << endl;
+        } catch (...) {
+            std::cerr << "Caught an unknown exception" << std::endl;
+        }
     }
 
 }
