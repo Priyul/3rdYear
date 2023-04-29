@@ -1,40 +1,30 @@
-h
+o n123;
+r s999
 ,p123 {
 	n11 := 10.21;
 	b2 := E(n2,n13);
+    c p123;
 	s333 := "strinstrinstrin"
 
 	,p456 {
-		n4 := 10.21;
+		n11 := 10.21;
 		b55 := E(n2,n13);
-		s6 := "strinstrinstrin"
+		s6 := "strinstrinstrin";
+        c p444  
 
         ,p789 {
             n777 := 10.21;
             b8 := E(n2,n13);
-            s9999 := "strinstrinstrin"
+            s9999 := "strinstrinstrin";
+            c p789
 	    }
 	}
-
-    ,p111 {
-        n111 := 10.21;
-        b111 := E(n2,n13);
-        s111 := "strinstrinstrin"
-        ,p222 {
-            n222 := 10.21;
-            b222 := E(n2,n13);
-            s222 := "strinstrinstrin"
-            ,p333 {
-                n333 := 10.21;
-                b333 := E(n2,n13);
-                s333 := "strinstrinstrin"
-            }
-        }
-    }
 
     ,p444 {
         n444 := 10.21;
         b444 := E(n2,n13);
-        s444 := "strinstrinstrin"
+        s444 := "strinstrinstrin";
+        c p444;
+        c p456  
     }
 }

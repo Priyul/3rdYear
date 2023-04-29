@@ -83,6 +83,8 @@ int main() {
     if (finally) {
         symbolTable.traverseAST(finally, 0, scopeStack, symbolTable, AST_PROGR);
         symbolTable.printTable();
+
+        symbolTable.analyzeScopes(finally, 0, scopeStack, symbolTable, AST_PROGR);
     }
 
 }

@@ -114,6 +114,7 @@ Node* Parser::proc() {
             node->children.push_back(new Node(TERMINAL, tokens[current].getValue()));;
             incCurrent();
         } else {
+            cout << "current token: " << current;
             report("PROC must end with a '}'");
         }
     } else {

@@ -21,6 +21,7 @@ Symbol SymbolTable::lookup(int nodeId) {
     return s;
 }
 
+
 void SymbolTable::initialize() {
     table.clear();
 }
@@ -46,7 +47,10 @@ void SymbolTable::traverseAST(ASTNode* node, int level, std::stack<int> &scopeSt
         }
 
         int scopeId = scopeStack.empty() ? 0 : scopeStack.top();
-        symbolTable.insert(node->id, scopeId, variableName);
+        //if (!search(node->id)) {
+            symbolTable.insert(node->id, scopeId, variableName);
+        //}
+        // symbolTable.insert(node->id, scopeId, variableName);
     } else if (node->type == AST_PROC) {
         int newScopeId = scopeStack.empty() ? 1 : scopeStack.top() + 1;
         scopeStack.push(newScopeId);
@@ -86,3 +90,44 @@ void SymbolTable::printTable()  {
         cout << symbol.nodeId << " | " << symbol.scopeId << " | " << symbol.name << endl;
     }
 }
+
+void SymbolTable::analyzeScopes(ASTNode* node, int level, std::stack<int> &scopeStack, SymbolTable &symbolTable, ASTNodeType parentType) {
+    if (node->type == AST_TERMINAL && node->value == "c" && !node->children.empty() && node->children[0]->value == "p") {
+        // Found a procedure call
+        std::string calledProcedureName = "p";
+        for (const auto &child : node->children) {
+            if (child->type == AST_DIGITS) {
+                symbolTable.appendDigits(child, calledProcedureName);
+            }
+        }
+
+        int currentScopeId = scopeStack.empty() ? 0 : scopeStack.top();
+        bool isCalledProcedureValid = false;
+
+        // Check if the called procedure is in the current scope or in the child scope
+        for (const auto &entry : table) {
+            const Symbol &symbol = entry.second;
+            if (symbol.name == calledProcedureName && (symbol.scopeId == currentScopeId || symbol.scopeId == currentScopeId + 1)) {
+                isCalledProcedureValid = true;
+                break;
+            }
+        }
+
+        if (!isCalledProcedureValid) {
+            std::cout << "Error: The procedure called here (" << calledProcedureName << ") has no corresponding declaration in this scope!" << std::endl;
+        }
+    } else if (node->type == AST_PROC) {
+        int newScopeId = scopeStack.empty() ? 1 : scopeStack.top() + 1;
+        scopeStack.push(newScopeId);
+    }
+
+    for (const auto &child : node->children) {
+        analyzeScopes(child, level + 1, scopeStack, symbolTable, node->type); // Pass the current node type as parentType
+    }
+
+    if (node->type == AST_PROC) {
+        scopeStack.pop();
+    }
+}
+
+
