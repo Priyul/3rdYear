@@ -34,4 +34,6 @@ public:
 
     void analyzeScopes(ASTNode* node, int level, std::stack<int> &scopeStack, SymbolTable &symbolTable, ASTNodeType parentType);
     void outputTableToHTML();
+
+    void checkUncalledProcesses();
 };

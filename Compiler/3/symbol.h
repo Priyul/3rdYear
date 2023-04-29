@@ -14,4 +14,5 @@ public:
     int nodeId;
     int scopeId;
     std::string name;
+    bool isCalled;
 };

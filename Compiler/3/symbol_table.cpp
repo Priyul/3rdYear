@@ -140,7 +140,15 @@ void SymbolTable::analyzeScopes(ASTNode* node, int level, std::stack<int> &scope
             }
         }
 
-        if (!isCalledProcedureValid) {
+        if (isCalledProcedureValid) {
+            for (auto &entry : table) {
+                Symbol &symbol = entry.second;
+                if (symbol.name == calledProcedureName && (symbol.scopeId == currentScopeId || symbol.scopeId == currentScopeId + 1)) {
+                    symbol.isCalled = true;
+                    break;
+                }
+            }
+        } else {
             std::cout << "Error: The procedure called here (" << calledProcedureName << ") has no corresponding declaration in this scope!" << std::endl;
         }
     } else if (node->type == AST_PROC) {
@@ -156,6 +164,17 @@ void SymbolTable::analyzeScopes(ASTNode* node, int level, std::stack<int> &scope
         scopeStack.pop();
     }
 }
+
+void SymbolTable::checkUncalledProcesses() {
+    for (const auto &entry : table) {
+        const Symbol &symbol = entry.second;
+        if (symbol.name[0] == 'p' && !symbol.isCalled) { // Check if it's a process declaration and if it's not called
+            std::cout << "Warning: The process " << symbol.name << " is declared but never called!" << std::endl;
+        }
+    }
+}
+
+
 
 void SymbolTable::outputTableToHTML() {
     std::ofstream htmlFile("index.html");
