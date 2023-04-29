@@ -6,7 +6,10 @@
 #include "parser.h"
 #include "node.h"
 #include "ast_node.h"
-#include "scope.h"
+
+#include "symbol_table.h"
+#include "scope_analyzer.h"
+
 
 int main() {
     int count = 0;
@@ -60,21 +63,19 @@ int main() {
             std::ofstream xmlFile("output.xml");
             xmlFile << "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
             xmlFile << "<?xml-stylesheet type=\"text/xsl\" href=\"stylesheet.xsl\"?>\n";
-
+            // xmlFile << "<Root>" << endl;
             ast->ASTtoXML(finally, xmlFile);
-
+            // xmlFile << "</Root>" << endl;
             xmlFile.close();
             
         }
     }
-
     /* END OF PARSER */
+    // finally = ABSTRACT SYNTAX TREE ROOT
 
-    /* START OF SCOPE ANALYSER */
-    std::vector<Scope> scopeStack;
-    scopeStack.push_back(Scope("global"));
+    SymbolTable symbol_table;
 
-    dfs_recursive(finally, scopeStack);
+
 
 
 }
