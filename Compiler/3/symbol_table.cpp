@@ -149,7 +149,7 @@ void SymbolTable::analyzeScopes(ASTNode* node, int level, std::stack<int> &scope
                 }
             }
         } else {
-            std::cout << "Error: The procedure called here (" << calledProcedureName << ") has no corresponding declaration in this scope!" << std::endl;
+            throw std::runtime_error("Error: The procedure called here (" + calledProcedureName + ") has no corresponding declaration in this scope!");
         }
     } else if (node->type == AST_PROC) {
         int newScopeId = scopeStack.empty() ? 1 : scopeStack.top() + 1;
