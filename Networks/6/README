@@ -1,0 +1,2 @@
+Open terminal in this directory and run:
+python3 send_reminders.py input_file.txt
