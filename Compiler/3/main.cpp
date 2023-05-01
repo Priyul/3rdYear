@@ -91,10 +91,10 @@ int main() {
             
         } catch (const std::runtime_error& e) {
             std::cerr << "Caught exception: " << e.what() << std::endl << endl;
-            // scopeSuccess = false;
+            scopeSuccess = false;
         } catch (...) {
             std::cerr << "Caught an unknown exception" << std::endl;
-            // scopeSuccess = false;
+            scopeSuccess = false;
         }
     }
 
