@@ -58,7 +58,7 @@ void SymbolTable::traverseAST(ASTNode* node, int level, std::stack<int> &scopeSt
         }
 
         if (!isDuplicate) {
-            symbolTable.insert(node->id, scopeId, variableName);
+            symbolTable.insert(node->id, 0, variableName);
         }
 
 
