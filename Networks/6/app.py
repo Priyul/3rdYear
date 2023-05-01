@@ -1,44 +1,52 @@
-import os
-import sys
 import datetime
+import pexpect
+
+def read_events(file_name):
+    with open(file_name, 'r') as f:
+        lines = f.readlines()
+    events = [line.strip().split(' ', 1) for line in lines]
+    return events
+
+def check_event_in_six_days(events):
+    today = datetime.date.today()
+    target_date = today + datetime.timedelta(days=6)
+    target_date_str = target_date.strftime('%d/%m')
+
+    for date, event in events:
+        if date == target_date_str:
+            return event
+    return None
+
+def send_email(event):
+    sender_email = "priyul20@gmail.com"
+    recipient_email = "priyul20@gmail.com"
+
+    # Start telnet connection
+    telnet = pexpect.spawn("telnet localhost 25")
+
+    # Send SMTP commands
+    telnet.expect("Connected")
+    telnet.sendline("HELO mytestserver.local")
+    telnet.expect("250")
+    telnet.sendline(f"MAIL FROM: {sender_email}")
+    telnet.expect("250")
+    telnet.sendline(f"RCPT TO: {recipient_email}")
+    telnet.expect("250")
+    telnet.sendline("DATA")
+    telnet.expect("354")
+    telnet.sendline(f"Subject: Reminder - {event} in 6 days\r\n\r\nDear user,\r\n\r\nThis is a reminder that {event} is occurring in 6 days.\r\nBest regards,\r\nYour Reminder Bot")
+    telnet.sendline(".")
+    telnet.expect("250")
+    telnet.sendline("QUIT")
+    telnet.expect("221")
+    telnet.close()
 
 def main():
-    # Check if the input file is provided
-    if len(sys.argv) != 2:
-        print("Usage: python send_reminders.py input_file")
-        return
+    events = read_events('events.txt')
+    event = check_event_in_six_days(events)
+    
+    if event:
+        send_email(event)
 
-    input_file = sys.argv[1]
-
-    # Read the input file
-    with open(input_file, 'r') as file:
-        events = file.readlines()
-
-    # Get today's date
-    today = datetime.date.today()
-
-    # Calculate the target date
-    target_date = today + datetime.timedelta(days=6)
-
-    # Filter the events that match the target date
-    matching_events = []
-    for event in events:
-        event_date, event_name = event.strip().split(' ', 1)
-        day, month = event_date.split('/')
-        event_date = datetime.date(today.year, int(month), int(day))
-
-        if event_date == target_date:
-            matching_events.append(event_name)
-
-    # Send an email if there are matching events
-    if matching_events:
-        email_subject = "Upcoming events reminder"
-        email_body = "Upcoming events in 6 days:\n\n" + '\n'.join(matching_events)
-        send_email(email_subject, email_body, "priyul20@gmail.com")
-
-def send_email(subject, body, recipient):
-    cmd = f'echo "{body}" | mail -s "{subject}" {recipient}'
-    os.system(cmd)
-
-if __name__ == '__main__':
-    main() 
+if __name__ == "__main__":
+    main()

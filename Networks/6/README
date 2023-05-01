@@ -1,2 +1,4 @@
-Open terminal in this directory and run:
-python3 send_reminders.py input_file.txt
+1. Open the terminal.
+2. Start postfix by running 'sudo postfix start' in the command line.
+3. Run the program by running 'python3 app.py' in the command line.
+4. Program sends an email automatically if a birthday occurs within 6 days from the current date.
