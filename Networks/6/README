@@ -1,4 +1,19 @@
+This Python script reads a list of events from a text file and sends an email reminder for any event occurring in 6 days. The script uses the Simple Mail Transfer Protocol (SMTP) to send email notifications. SMTP, as defined in RFC 5321, is a protocol for sending email messages between servers. Most email systems that send mail over the Internet use SMTP to send messages from one server to another. 
+
+In our script, we establish an SMTP session with the local email server by using the Telnet command on port 25. The script uses the pexpect library to interact with the Telnet session and send SMTP commands. The SMTP commands used in this script include:
+
+1. HELO: This command initiates an SMTP session by identifying the client to the server.
+2. MAIL FROM: This command specifies the sender's email address.
+3. RCPT TO: This command specifies the recipient's email address.
+4. DATA: This command initiates the transfer of the email message content.
+5. QUIT: This command closes the SMTP session.
+
+The email message format adheres to the Internet Message Format defined in RFC 5322. The script sends a minimal email message containing only the "Subject" header followed by the message body. The message body is separated from the headers by an empty line.
+
+To run:
+
 1. Open the terminal.
 2. Start postfix by running 'sudo postfix start' in the command line.
 3. Run the program by running 'python3 app.py' in the command line.
 4. Program sends an email automatically if a birthday occurs within 6 days from the current date.
+
