@@ -1,15 +1,28 @@
-#include <vector>
+#include "ant_colony_optimization.h"
+#include <iostream>
+#include <algorithm>
 #include <cmath>
 #include <limits>
 #include <random>
-#include <string>
-#include <iostream>
-#include "ant_colony_optimization.h"
-#include "bin.h"
 
 AntColonyOptimization::AntColonyOptimization(const std::vector<Bin> &items, int capacity, int num_ants, int num_iterations, double alpha, double beta, double rho, double q)
     : items(items), capacity(capacity), num_ants(num_ants), num_iterations(num_iterations), alpha(alpha), beta(beta), rho(rho), q(q) {
-    pheromone.resize(items.size(), std::vector<double>(2, 1.0));
+    initialize_pheromone_trails();
+    initialize_heuristic_information();
+}
+
+void AntColonyOptimization::initialize_pheromone_trails() {
+    pheromone_trails_.resize(items.size(), std::vector<double>(items.size(), 1.0));
+}
+
+void AntColonyOptimization::initialize_heuristic_information() {
+    heuristic_information_.resize(items.size(), std::vector<double>(items.size()));
+
+    for (size_t i = 0; i < items.size(); ++i) {
+        for (size_t j = 0; j < items.size(); ++j) {
+            heuristic_information_[i][j] = static_cast<double>(items[j].value) / items[j].weight;
+        }
+    }
 }
 
 void AntColonyOptimization::print_progress_bar(double progress) {
@@ -28,52 +41,96 @@ void AntColonyOptimization::print_progress_bar(double progress) {
     std::cout << "] " << static_cast<int>(progress * 100.0) << " %\r";
     std::cout.flush();
 }
+
+// int AntColonyOptimization::solve(int iteration, int total_iterations) {
+//     int best_value = std::numeric_limits<int>::min();
+
+//     for (int iter = 0; iter < num_iterations; ++iter) {
+//         int iter_best_value = std::numeric_limits<int>::min();
+
+//         for (int ant = 0; ant < num_ants; ++ant) {
+//             int solution_value = construct_solution();
+//             iter_best_value = std::max(iter_best_value, solution_value);
+//         }
+
+//         best_value = std::max(best_value, iter_best_value);
+//         update_pheromone_trails(iter_best_value);
+//         print_progress_bar(static_cast<double>(iter) / num_iterations);
+//     }
+
+//     return best_value;
+// }
+
+int AntColonyOptimization::construct_solution() {
+    std::vector<bool> used_items(items.size(), false);
+    int current_capacity = capacity;
+    int current_value = 0;
+    
+    while (true) {
+        double sum_prob = 0.0;
+        std::vector<double> probabilities(items.size(), 0.0);
+        
+        for (size_t i = 0; i < items.size(); ++i) {
+            if (!used_items[i] && items[i].weight <= current_capacity) {
+                probabilities[i] = pow(pheromone_trails_[i][1], alpha) * pow(heuristic_information_[i][1], beta);
+                sum_prob += probabilities[i];
+            }
+        }
+        
+        if (sum_prob == 0.0) {
+            break;
+        }
+        
+        for (size_t i = 0; i < items.size(); ++i) {
+            probabilities[i] /= sum_prob;
+        }
+        
+        std::discrete_distribution<size_t> dist(probabilities.begin(), probabilities.end());
+        std::random_device rd;
+        std::mt19937 gen(rd());
+        size_t selected_item = dist(gen);
+        
+        used_items[selected_item] = true;
+        current_value += items[selected_item].value;
+        current_capacity -= items[selected_item].weight;
+    }
+    
+    return current_value;
+}
+
+void AntColonyOptimization::update_pheromone_trails(int best_value) {
+    for (size_t i = 0; i < pheromone_trails_.size(); ++i) {
+        for (size_t j = 0; j < pheromone_trails_[i].size(); ++j) {
+            pheromone_trails_[i][j] *= (1 - rho);
+        }
+    }
+
+    double delta_tau = q / best_value;
+
+    for (size_t i = 0; i < items.size(); ++i) {
+        pheromone_trails_[i][1] += delta_tau;
+    }
+}
+
 int AntColonyOptimization::solve(int iteration, int total_iterations) {
+    initialize_pheromone_trails();
+    initialize_heuristic_information();
+
     int best_value = 0;
-    std::vector<int> best_solution(items.size(), 0);
-    std::default_random_engine generator;
-    std::uniform_real_distribution<double> distribution(0.0, 1.0);
 
     for (int iter = 0; iter < num_iterations; ++iter) {
-        for (int ant = 0; ant < num_ants; ++ant) {
-            int current_weight = 0;
-            int current_value = 0;
-            std::vector<int> solution(items.size(), 0);
-
-            for (int i = 0; i < items.size(); ++i) {
-                double p = distribution(generator);
-                double probability_sum = 0.0;
-                for (int j = 0; j < 2; ++j) {
-                    probability_sum += pow(pheromone[i][j], alpha) * pow((1.0 - static_cast<double>(j)), beta);
-                }
-                double probability = (pow(pheromone[i][1], alpha) * pow((1.0 - static_cast<double>(1)), beta)) / probability_sum;
-
-                if (p < probability && current_weight + items[i].weight <= capacity) {
-                    solution[i] = 1;
-                    current_weight += items[i].weight;
-                    current_value += items[i].value;
-                }
-            }
-
-            if (current_value > best_value) {
-                best_value = current_value;
-                best_solution = solution;
-            }
-
-            for (int i = 0; i < items.size(); ++i) {
-                if (solution[i] == 1) {
-                    pheromone[i][1] += q / current_value;
-                } else {
-                    pheromone[i][0] += q / (capacity - current_weight);
-                }
-            }
+        int iteration_best_value = 0;
+        
+        for (int k = 0; k < num_ants; ++k) {
+            int ant_value = construct_solution();
+            iteration_best_value = std::max(iteration_best_value, ant_value);
         }
 
-        for (int i = 0; i < items.size(); ++i) {
-            for (int j = 0; j < 2; ++j) {
-                pheromone[i][j] *= (1.0 - rho);
-            }
-        }
+        best_value = std::max(best_value, iteration_best_value);
+        update_pheromone_trails(iteration_best_value);
+
+        double progress = static_cast<double>(iter) / num_iterations;
+        print_progress_bar((iteration * num_iterations + iter) / static_cast<double>(total_iterations * num_iterations));
     }
 
     return best_value;

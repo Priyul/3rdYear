@@ -20,5 +20,11 @@ private:
     double rho;
     double q;
 
-    std::vector<std::vector<double>> pheromone;
+    std::vector<std::vector<double>> pheromone_trails_;
+    std::vector<std::vector<double>> heuristic_information_;
+
+    void initialize_pheromone_trails();
+    void initialize_heuristic_information();
+    int construct_solution();
+    void update_pheromone_trails(int best_value);
 };

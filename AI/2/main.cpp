@@ -55,14 +55,14 @@ void solve_knapsack_problem(const std::vector<Bin> &items, int capacity, int ite
     int num_ants = 10; // Number of ants
     int num_iterations = 100; // Number of iterations
     double alpha = 1.0; // Pheromone importance
-    double beta = 2.0; // Greedy heuristic importance
+    double beta = 1.0; // Greedy heuristic importance
     double rho = 0.5; // Pheromone evaporation rate
     double q = 100.0; // Pheromone update constant
 
     AntColonyOptimization aco(items, capacity, num_ants, num_iterations, alpha, beta, rho, q);
     int best_value = aco.solve(iteration, total_iterations);
 
-    std::cout << "Best value: " << best_value << std::endl;
+    std::cout << "Best value: " << best_value << std::endl << std::endl;
 }
 
 
