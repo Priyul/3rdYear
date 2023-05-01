@@ -5,14 +5,14 @@
 
 class AntColonyOptimization {
 public:
-    AntColonyOptimization(const std::vector<Bin> &items, int capacity, int num_ants, int num_iterations, double alpha, double beta, double rho, double q);
+    AntColonyOptimization(const std::vector<Bin> &items, double capacity, int num_ants, int num_iterations, double alpha, double beta, double rho, double q);
 
-    int solve(int iteration, int total_iterations);
+    double solve(int iteration, int total_iterations);
     void print_progress_bar(double progress);
 
 private:
     const std::vector<Bin> &items;
-    int capacity;
+    double capacity;
     int num_ants;
     int num_iterations;
     double alpha;
@@ -25,6 +25,6 @@ private:
 
     void initialize_pheromone_trails();
     void initialize_heuristic_information();
-    int construct_solution();
+    double construct_solution();
     void update_pheromone_trails(int best_value);
 };

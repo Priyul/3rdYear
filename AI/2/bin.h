@@ -2,8 +2,8 @@
 
 class Bin {
 public:
-    int value;
-    int weight;
+    double value;
+    double weight;
 
-    Bin(int value, int weight);
+    Bin(double value, double weight);
 };

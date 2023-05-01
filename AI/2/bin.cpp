@@ -1,3 +1,3 @@
 #include "bin.h"
 
-Bin::Bin(int value, int weight) : value(value), weight(weight) {}
+Bin::Bin(double value, double weight) : value(value), weight(weight) {}

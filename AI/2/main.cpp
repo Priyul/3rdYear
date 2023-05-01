@@ -60,7 +60,7 @@ void solve_knapsack_problem(const std::vector<Bin> &items, int capacity, int ite
     double q = 100.0; // Pheromone update constant
 
     AntColonyOptimization aco(items, capacity, num_ants, num_iterations, alpha, beta, rho, q);
-    int best_value = aco.solve(iteration, total_iterations);
+    double best_value = aco.solve(iteration, total_iterations);
 
     std::cout << "Best value: " << best_value << std::endl << std::endl;
 }
@@ -80,13 +80,13 @@ int main() {
             return 1;
         }
 
-        int num_items, capacity;
+        double num_items, capacity;
         file >> num_items >> capacity;
 
         std::vector<Bin> items;
 
         for (int i = 0; i < num_items; ++i) {
-            int value, weight;
+            double value, weight;
             file >> value >> weight;
             items.emplace_back(value, weight);
         }

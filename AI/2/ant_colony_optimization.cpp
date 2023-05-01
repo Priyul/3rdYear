@@ -5,7 +5,7 @@
 #include <limits>
 #include <random>
 
-AntColonyOptimization::AntColonyOptimization(const std::vector<Bin> &items, int capacity, int num_ants, int num_iterations, double alpha, double beta, double rho, double q)
+AntColonyOptimization::AntColonyOptimization(const std::vector<Bin> &items, double capacity, int num_ants, int num_iterations, double alpha, double beta, double rho, double q)
     : items(items), capacity(capacity), num_ants(num_ants), num_iterations(num_iterations), alpha(alpha), beta(beta), rho(rho), q(q) {
     initialize_pheromone_trails();
     initialize_heuristic_information();
@@ -61,10 +61,10 @@ void AntColonyOptimization::print_progress_bar(double progress) {
 //     return best_value;
 // }
 
-int AntColonyOptimization::construct_solution() {
+double AntColonyOptimization::construct_solution() {
     std::vector<bool> used_items(items.size(), false);
-    int current_capacity = capacity;
-    int current_value = 0;
+    double current_capacity = capacity;
+    double current_value = 0;
     
     while (true) {
         double sum_prob = 0.0;
@@ -98,6 +98,7 @@ int AntColonyOptimization::construct_solution() {
     return current_value;
 }
 
+
 void AntColonyOptimization::update_pheromone_trails(int best_value) {
     for (size_t i = 0; i < pheromone_trails_.size(); ++i) {
         for (size_t j = 0; j < pheromone_trails_[i].size(); ++j) {
@@ -112,7 +113,7 @@ void AntColonyOptimization::update_pheromone_trails(int best_value) {
     }
 }
 
-int AntColonyOptimization::solve(int iteration, int total_iterations) {
+double AntColonyOptimization::solve(int iteration, int total_iterations) {
     initialize_pheromone_trails();
     initialize_heuristic_information();
 
