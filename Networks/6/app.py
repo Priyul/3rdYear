@@ -21,10 +21,8 @@ def send_email(event):
     sender_email = "priyul20@gmail.com"
     recipient_email = "priyul20@gmail.com"
 
-    # Start telnet connection
     telnet = pexpect.spawn("telnet localhost 25")
 
-    # Send SMTP commands
     telnet.expect("Connected")
     telnet.sendline("HELO mytestserver.local")
     telnet.expect("250")
@@ -34,7 +32,7 @@ def send_email(event):
     telnet.expect("250")
     telnet.sendline("DATA")
     telnet.expect("354")
-    telnet.sendline(f"Subject: Reminder - {event} in 6 days\r\n\r\nDear user,\r\n\r\nThis is a reminder that {event} is occurring in 6 days.\r\nBest regards,\r\nYour Reminder Bot")
+    telnet.sendline(f"Subject: Reminder - {event} in 6 days\r\n\r\nDear user,\r\n\r\nThis is a reminder that {event} is occurring in 6 days.\r\nBest regards,\r\nPriyul u20421169")
     telnet.sendline(".")
     telnet.expect("250")
     telnet.sendline("QUIT")

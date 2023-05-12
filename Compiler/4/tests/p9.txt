@@ -1,0 +1,63 @@
+r s22 *respon90678fse0*;
+o n22 *outpu89ngcj;t0!*;
+h
+,p420 {
+    g n123 *userinpubcfglt@*;
+    o n456 *o8bfjkutput2#nn*;
+    g n4 *vgyhtyvdfe4578l*;
+    g n5 *nmjfnjfgtrawq2w*;
+    g n6 *,nppbghyrwwfgrh*;
+    r s99 *responsnjswefe1*
+
+    ,p789{
+        n123 := a(n4,n5) *assigbhyrewqdn1*;
+        n123 := m(n5,n6) *multiplbhoi78y1*;
+        n4 := d(n4,n6) *di67bhj0o8vide1*;
+        c p789 *ca12dft789hn0ll*;
+        
+        b7 := T *boo1vd46yu9op0l*;
+        b8 := F *bool2890hgt5/.,*;
+        b9 := ^(b7,b8) *bool assi789gn1*;
+        b9 := v(b7,b8) *bool assignbnh2*;
+        b9 := !(b8) *bool[]\ no67ght*;
+
+        w(T){
+            i(F)t{
+                h *halthalthalthal*
+            } e {
+                h *halthalthalthal*
+            } *if1bbyhfgyuio09*
+        } *while178hdghjvh*;
+
+        w(b7){
+            i(b8)t{
+                h *halthalthalthal*
+            } e {
+                h
+            } *if2gghawdertyui*
+        } *while2nyuioplhg*;
+
+        b8 := E(n4,n5) *equal test 7890*;
+        b7 := <(n6,n4) *less than 90hut*;
+        b9 := >(n4,n5) *greaterthan 111*;
+
+        b9 := E(0.00, -11.22) *hectic 67ghjlo0*;  
+        b9 := E(0.00, -1233423424.22) *hectic28fgthjlu*;  
+
+        b8 := >(a(n4,n5),a(n5,n6)) *nestedbhgtrewqs*;
+        b9 := <(m(n4,n5),a(n5,n6)) *nested2kloputtt*;
+        b19 := E(d(n4,n5),a(n5,n6)) *nested3bhusergy*;
+
+        s12 := "abcdefghijklmno" *string1mkopoiuy*;
+        s13 := "n13:=1!89hjko2#" *weirdstring2hju*;
+	s192018298 := "a k w k a c w d" *mixedstnnnnnnr3*;
+	s999 := "a k wk a c w d " ;
+	h
+
+	,p800219 {
+		b8 := >(a(n4,n5),a(n5,n6)) *nested bh h b  *;
+        	b9 := <(m(n4,n5),a(n5,n6)) *nested2 909 hyt*;
+        	c p420
+	}
+    }
+}
