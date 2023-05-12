@@ -15,10 +15,10 @@
 using namespace std;
 
 class Parser {
-public:
+public: 
     Parser(std::vector<Token> tokens);
 
-    Node* parse(); 
+    Node* parse();
     Node* progr(); 
     Node* procdefs(); 
     Node* proc(); 

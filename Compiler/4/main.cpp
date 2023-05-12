@@ -108,7 +108,7 @@ int main() {
         cout << endl << "Symbol table output to HTML" << endl;
         cout << "File can be found in the same directory as this program (index.html)" << endl;
     } else {
-        cout << "Scope analysis failed" << endl;
+        cout << "Scope analysis faileddd" << endl;
     }
 
 }

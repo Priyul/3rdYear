@@ -1,37 +1,29 @@
-CC=g++
-CFLAGS=-c -Wall
+# Compiler
+CXX = g++
 
-all: main
+# Compiler flags
+CXXFLAGS = -std=c++17 -Wall -Wextra -O2
 
-main: lexer.o token.o parser.o node.o ast_node.o symbol.o symbol_table.o main.o
-	$(CC) lexer.o token.o parser.o node.o ast_node.o symbol.o symbol_table.o main.o -o main
+# Source files
+SOURCES = $(wildcard *.cpp)
 
-lexer.o: lexer.cpp
-	$(CC) $(CFLAGS) lexer.cpp
+# Object files
+OBJECTS = $(SOURCES:.cpp=.o)
 
-token.o: token.cpp
-	$(CC) $(CFLAGS) token.cpp
+# Executable name
+EXECUTABLE = program
 
-parser.o: parser.cpp
-	$(CC) $(CFLAGS) parser.cpp
+# Default target
+all: $(EXECUTABLE)
 
-node.o: node.cpp
-	$(CC) $(CFLAGS) node.cpp
+# Rule to link object files and create the executable
+$(EXECUTABLE): $(OBJECTS)
+	$(CXX) $(CXXFLAGS) $^ -o $@
 
-ast_node.o: ast_node.cpp
-	$(CC) $(CFLAGS) ast_node.cpp
+# Rule to compile source files into object files
+%.o: %.cpp
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
-symbol.o: symbol.cpp
-	$(CC) $(CFLAGS) symbol.cpp
-
-symbol_table.o: symbol_table.cpp
-	$(CC) $(CFLAGS) symbol_table.cpp
-
-main.o: main.cpp
-	$(CC) $(CFLAGS) main.cpp
-
-run:
-	./main
-
+# Clean rule
 clean:
-	rm -rf *o main
+	rm -f $(OBJECTS) $(EXECUTABLE)

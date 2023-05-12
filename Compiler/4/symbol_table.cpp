@@ -193,11 +193,11 @@ void SymbolTable::outputTableToHTML() {
                 << "<body>\n"
                 << "<h1>Symbol Table</h1>\n"
                 << "<table>\n"
-                << "<tr><th>Node ID</th><th>Scope ID</th><th>Name</th></tr>\n";
+                << "<tr><th>Node ID</th><th>Scope ID</th><th>Name</th><th>Is Called?</th><th>Has Value?</th></tr>\n"; // Added headers
 
     for (const auto &entry : table) {
         const Symbol &symbol = entry.second;
-        htmlContent << "<tr><td>" << symbol.nodeId << "</td><td>" << symbol.scopeId << "</td><td>" << symbol.name << "</td></tr>\n";
+        htmlContent << "<tr><td>" << symbol.nodeId << "</td><td>" << symbol.scopeId << "</td><td>" << symbol.name << "</td><td>" << (symbol.isCalled ? "Yes" : "No") << "</td><td>" << (symbol.hasValue ? "Yes" : "No") << "</td></tr>\n"; // Added fields
     }
 
     htmlContent << "</table>\n"
@@ -207,5 +207,3 @@ void SymbolTable::outputTableToHTML() {
     htmlFile << htmlContent.str();
     htmlFile.close();
 }
-
-

@@ -15,7 +15,7 @@ void ScopeAnalyzer::traverse(ASTNode* node, int current_scope) {
         current_scope = ++current_scope_id;
     }
 
-    symbol_table.insert(node->id, current_scope, node->type, node->value);
+    symbol_table.insert(node->id, current_scope, node->value);
 
     for (ASTNode* child : node->children) {
         traverse(child, current_scope);
