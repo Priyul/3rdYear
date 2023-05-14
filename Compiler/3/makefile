@@ -11,7 +11,7 @@ SOURCES = $(wildcard *.cpp)
 OBJECTS = $(SOURCES:.cpp=.o)
 
 # Executable name
-EXECUTABLE = program
+EXECUTABLE = main
 
 # Default target
 all: $(EXECUTABLE)

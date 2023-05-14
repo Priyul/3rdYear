@@ -183,7 +183,7 @@ void SymbolTable::outputTableToHTML() {
     htmlContent << "<!DOCTYPE html>\n"
                 << "<html>\n"
                 << "<head>\n"
-                << "<title>Symbol Table</title>\n"
+                << "<title>Symbol Tableee</title>\n"
                 << "<style>\n"
                 << "table { border-collapse: collapse; width: 50%; }\n"
                 << "th, td { border: 1px solid black; padding: 8px; text-align: left; }\n"
