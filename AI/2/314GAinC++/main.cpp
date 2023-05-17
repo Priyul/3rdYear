@@ -8,7 +8,6 @@
 
 using namespace std;
 
-// Step 1: Parse the file and load data
 pair<vector<pair<double, double> >, double> parse_file(const string& filename) {
     ifstream file(filename);
     double n_items, capacity;
@@ -21,7 +20,6 @@ pair<vector<pair<double, double> >, double> parse_file(const string& filename) {
     return make_pair(items, capacity);
 }
 
-// Step 2: Define the chromosome structure and population
 vector<vector<int> > generate_population(int n_items, int pop_size) {
     vector<vector<int> > population(pop_size, vector<int>(n_items));
     for (auto& chromosome : population)
@@ -30,7 +28,6 @@ vector<vector<int> > generate_population(int n_items, int pop_size) {
     return population;
 }
 
-// Step 3: Define fitness function
 double calculate_fitness(const vector<int>& chromosome, const vector<pair<double, double> >& items, double capacity) {
     double total_value = 0;
     double total_weight = 0;
@@ -43,7 +40,6 @@ double calculate_fitness(const vector<int>& chromosome, const vector<pair<double
     return total_weight <= capacity ? total_value : -1e9;
 }
 
-// Step 4: Define selection, crossover, and mutation operations
 vector<int> tournament_selection(const vector<vector<int> >& population, const vector<pair<double, double> > &items, double capacity, int tournament_size) {
     vector<vector<int> > tournament;
     for (int i = 0; i < tournament_size; i++)
@@ -70,7 +66,6 @@ void bit_flip_mutation(vector<int>& chromosome, double mutation_rate) {
             gene = 1 - gene;
 }
 
-// Step 5: Implement the main genetic algorithm loop
 pair<vector<int>, double> genetic_algorithm(const vector<pair<double, double> >& items, double capacity, int pop_size = 100, int generations = 1000,
     int tournament_size = 5, double mutation_rate = 0.01) {
     int n_items = items.size();
@@ -100,7 +95,7 @@ pair<vector<int>, double> genetic_algorithm(const vector<pair<double, double> >&
 }
 
 int main() {
-    srand(time(0)); // Initialize random seed
+    srand(time(0)); 
     vector<string> file_names = {"f1_l-d_kp_10_269.txt", "f2_l-d_kp_20_878.txt", "f3_l-d_kp_4_20.txt", "f4_l-d_kp_4_11.txt", "f5_l-d_kp_15_375.txt", "f6_l-d_kp_10_60.txt", "f7_l-d_kp_7_50.txt", "knapPI_1_100_1000_1.txt", "f8_l-d_kp_23_10000.txt", "f9_l-d_kp_5_80.txt", "f10_l-d_kp_20_879.txt"};
 
     for (const auto& file_name : file_names) {
