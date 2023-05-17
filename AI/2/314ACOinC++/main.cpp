@@ -61,7 +61,7 @@ void update_pheromone(vector<double>& pheromones, const Ant& ant, double best_va
     }
 }
 
-double ant_colony_optimization(vector<Item>& items, double capacity, int n_ants = 90, int n_iterations = 800, double decay = 0.75, double alpha = 1, double beta = 1.3, double rho = 0.5) {
+double ant_colony_optimization(vector<Item>& items, double capacity, int n_ants = 5, int n_iterations = 60, double decay = 0.75, double alpha = 0.1, double beta = 2.0, double rho = 0.5) {
     srand(time(0));
     int n_items = items.size();
     vector<double> pheromones(n_items, 1);
