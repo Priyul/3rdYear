@@ -1,0 +1,10 @@
+To compile on windows:
+1. Open WSL
+2. Run 'make clean'
+3. Run 'make'
+4. Run ./main
+
+To compile on Mac/Linux:
+1. Run 'make clean'
+2. Run 'make'
+3. Run ./main
