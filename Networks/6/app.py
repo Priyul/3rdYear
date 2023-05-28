@@ -32,7 +32,7 @@ def send_email(event):
     telnet.expect("250")
     telnet.sendline("DATA")
     telnet.expect("354")
-    telnet.sendline(f"Subject: Reminder - {event} in 6 days\r\n\r\nDear user,\r\n\r\nThis is a reminder that {event} is occurring in 6 days.\r\nBest regards,\r\nPriyul u20421169")
+    telnet.sendline(f"Subject: Out of office\r\n\r\nDear user,\r\n\r\nI am out of office.\r\nBest regards,\r\nPriyul u20421169")
     telnet.sendline(".")
     telnet.expect("250")
     telnet.sendline("QUIT")
