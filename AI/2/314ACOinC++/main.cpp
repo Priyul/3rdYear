@@ -15,12 +15,16 @@ struct Item {
 
 pair<vector<Item>, double> parse_file(const string& filename) {
     ifstream file(filename);
+    int counter = 0;
     double n_items, capacity;
     file >> n_items >> capacity;
 
     vector<Item> items(n_items);
-    for (int i = 0; i < n_items; i++)
+    for (int i = 0; i < n_items; i++) {
         file >> items[i].value >> items[i].weight;
+   
+    }
+   
 
     return make_pair(items, capacity);
 }

@@ -66,7 +66,7 @@ void bit_flip_mutation(vector<int>& chromosome, double mutation_rate) {
             gene = 1 - gene;
 }
 
-pair<vector<int>, double> genetic_algorithm(const vector<pair<double, double> >& items, double capacity, int pop_size = 100, int generations = 1000,
+pair<vector<int>, double> genetic_algorithm(const vector<pair<double, double> >& items, double capacity, int pop_size = 200, int generations = 1200,
     int tournament_size = 5, double mutation_rate = 0.01) {
     int n_items = items.size();
     auto population = generate_population(n_items, pop_size);
