@@ -1,50 +1,63 @@
 import datetime
 import pexpect
+from base64 import b64decode, b64encode
 
-def read_events(file_name):
-    with open(file_name, 'r') as f:
-        lines = f.readlines()
-    events = [line.strip().split(' ', 1) for line in lines]
-    return events
+# def modify_payload(part: EmailMessage):
+#     content_transfer_encoding = part.get('Content-Transfer-Encoding', '').lower()
+#     payload = part.get_payload()
 
-def check_event_in_six_days(events):
-    today = datetime.date.today()
-    target_date = today + datetime.timedelta(days=6)
-    target_date_str = target_date.strftime('%d/%m')
+#     if content_transfer_encoding == 'base64':
+#         decoded_payload = b64decode(payload).decode('utf-8')
+#     elif content_transfer_encoding == 'quoted-printable':
+#         decoded_payload = quopri.decodestring(payload).decode('utf-8')
+#     else:
+#         decoded_payload = payload
 
-    for date, event in events:
-        if date == target_date_str:
-            return event
-    return None
+#     # Apply your modifications to the decoded payload here...
 
-def send_email(event):
+#     if content_transfer_encoding == 'base64':
+#         part.set_payload(b64encode(decoded_payload.encode()).decode())
+#     elif content_transfer_encoding == 'quoted-printable':
+#         part.set_payload(quopri.encodestring(decoded_payload.encode()).decode())
+
+def send_email(data):
     sender_email = "priyul20@gmail.com"
     recipient_email = "priyul20@gmail.com"
 
-    telnet = pexpect.spawn("telnet localhost 25")
+    telnet = pexpect.spawn("telnet localhost 54321")
 
     telnet.expect("Connected")
     telnet.sendline("HELO mytestserver.local")
-    telnet.expect("250")
+    telnet.expect("220")
+    print('recieved 220')
+
     telnet.sendline(f"MAIL FROM: {sender_email}")
     telnet.expect("250")
+    print('recieved 250 again ')
+
     telnet.sendline(f"RCPT TO: {recipient_email}")
     telnet.expect("250")
+    print('recieved 250 2nd time')
+
     telnet.sendline("DATA")
     telnet.expect("354")
-    telnet.sendline(f"Subject: Out of office\r\n\r\nDear user,\r\n\r\nI am out of office.\r\nBest regards,\r\nPriyul u20421169")
+    print('recieved 354')
+
+    telnet.sendline(f"{data}")
     telnet.sendline(".")
     telnet.expect("250")
+    print('recieved 250 3rd time')
+
     telnet.sendline("QUIT")
     telnet.expect("221")
+    print('recieved 221')
     telnet.close()
 
+
 def main():
-    events = read_events('events.txt')
-    event = check_event_in_six_days(events)
-    
-    if event:
-        send_email(event)
+    #data = "fast rapid quick test slow ran stole test better best test very good very fast very bad tes test "
+    data = "fast rapid quick test5 slow ran stole test6 better illuminati best test7 very good very fast very bad test8 test9 "
+    send_email(data)
 
 if __name__ == "__main__":
     main()
