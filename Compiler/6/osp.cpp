@@ -7,7 +7,7 @@
 using namespace std;
 
 // global
-string s = "The input string will be inserted here by Prof.G.";
+string s = "ACACACBAACBAB";
 
 string matchPattern(string& s, int start = 0);
 
@@ -41,11 +41,13 @@ string matchPattern(string& s, int start) {
 
 int main()
 {
-    //s = "ACACACBAACBAB" input string
-    cout << "Enter a string: " << endl;
-    cin >> s;
-    string result = matchPattern(s);
-    cout << result;
+    if (s == "") {
+        cout << "mapping not possible";
+        return 0;
+    }
+
+    s = matchPattern(s);
+    cout << s << endl;
 
     return 0;
 }
