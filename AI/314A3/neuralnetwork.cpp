@@ -1,11 +1,16 @@
 #include "neuralnetwork.h"
-NeuralNetwork::NeuralNetwork(vector<Layer> layers, pair<vector<vector<double>>, vector<int>> trainingdata, double learningRate, int epochs) : learningRate(learningRate), epochs(epochs) {
+NeuralNetwork::NeuralNetwork(vector<Layer> layers, pair<vector<vector<double>>, vector<double>> trainingdata, double learningRate, int epochs) : learningRate(learningRate), epochs(epochs) {
     for (const Layer &layer : layers) {
         this->layers.push_back(layer);
     }
 
     this->input = trainingdata.first;
     this->expectedOutput = trainingdata.second;
+}
+
+
+double NeuralNetwork::binaryCrossEntropy(double expected, double output) {
+    return -expected * log(output) - (1 - expected) * log(1 - output);
 }
 
 double NeuralNetwork::max(double x, double y) {
@@ -17,30 +22,64 @@ double NeuralNetwork::max(double x, double y) {
     return 0;
 }
 
+void NeuralNetwork::setLearningRate(double rate) {
+    this->learningRate = rate;
+}
+
 double NeuralNetwork::ReLU(double x) {
    return max(0,x); 
 }
 
-double NeuralNetwork::sigmoid(double x) {
-    return 1.0 / (1.0 + exp(-x));
+double NeuralNetwork::leakyReLU(double x) {
+    double alpha = 0.01;
+    return x >= 0 ? x : alpha * x;
 }
 
+
+double NeuralNetwork::sigmoid(double x) {
+    double result = 1.0 / (1.0 + exp(-x));
+    double min_val = 0.00001;
+    double max_val = 0.99999;
+    if (result < min_val) {
+        return min_val;
+    } else if (result > max_val) {
+        return max_val;
+    } else {
+        return result;
+    }
+}
+
+
 void NeuralNetwork::train() {
-    //  cout << "train entered" << endl;
+    const int patience = 100;  // number of epochs to wait before stopping if no improvement
+    int wait = 0;
+    double bestError = std::numeric_limits<double>::max(); // best error so far
+
     for (int epoch = 0; epoch < epochs; epoch++) {
         double totalError = 0;
         for (int i = 0; i < input.size(); i++) {
             feedforward(input[i]);
-            // cout << "Feed forward done" << endl;
             backpropagate(expectedOutput[i]);
-            // cout << "backpropagate done" << endl;
             for (Neuron& neuron : layers.back().neurons) {
-                totalError += pow((expectedOutput[i] - neuron.output), 2) / 2; //squared error cost function. 
+                totalError += binaryCrossEntropy(expectedOutput[i], neuron.output);
             }
         }
+
+        // Early stopping check
+        // if (totalError < bestError) {
+        //     bestError = totalError;
+        //     wait = 0; // reset waiting counter
+        // } else {
+        //     if (++wait >= patience) {
+        //         cout << "Early stopping at epoch " << epoch << ", best error: " << bestError << endl;
+        //         return; // stop training
+        //     }
+        // }
+        // this->learningRate *= (1 - this->learningRateDecay);
         cout << "Error at the end of epoch " << epoch << " = " << totalError << endl;
     }
 }
+
 
 void NeuralNetwork::feedforward(vector<double>& instance) {
     for (int j = 0; j < layers[0].neurons.size(); j++) {
@@ -56,8 +95,9 @@ void NeuralNetwork::feedforward(vector<double>& instance) {
                 sum += layers[i-1].neurons[k].output * layers[i].neurons[j].weights[k];
             }
             sum+= layers[i].neurons[j].bias;
+            // cout << "Sum at layer " << i << " on epoch " << epochs << ": " << sum << endl; 
             if (i != layers.size() - 1) {  // if not output layer
-                layers[i].neurons[j].output = ReLU(sum);
+                layers[i].neurons[j].output = leakyReLU(sum);
             } else {
                 layers[i].neurons[j].output = sigmoid(sum);
             }
@@ -65,21 +105,23 @@ void NeuralNetwork::feedforward(vector<double>& instance) {
     }
 }
 
-void NeuralNetwork::backpropagate(int expectedOutput) {
-    //error = (expected output - actual output) * derivative of the activation function value
+void NeuralNetwork::backpropagate(double expectedOutput) {
     Layer& outputLayer = layers.back();
     for (int i = 0; i < outputLayer.neurons.size(); i++) {
         double output = outputLayer.neurons[i].output;
-        double sigmoid_derivative = output * (1 - output);
-        outputLayer.neurons[i].error = (expectedOutput - output)*sigmoid_derivative;
+        //double sigmoid_derivative = output * (1 - output);
+        // outputLayer.neurons[i].error = (output - expectedOutput) / (output * (1 - output));
+        outputLayer.neurons[i].error = (output - expectedOutput);
+
     }
 
-    for (int i = layers.size()-(layers.size()-1); i >= 0; i--) {
+    for (int i = layers.size()-2; i > 0; i--) { 
         Layer& currentLayer = layers[i];
         Layer& nextLayer = layers[i+1];
         for (int j = 0; j < currentLayer.neurons.size(); j++) {
             double output = currentLayer.neurons[j].output;
-            double relu_derivative = output > 0 ? 1 : 0;
+            // double relu_derivative = output > 0 ? 1 : 0;
+            double relu_derivative = output > 0 ? 1 : 0.01;
             double errorSum = 0;
             for (int k = 0; k < nextLayer.neurons.size(); k++) {
                 errorSum += nextLayer.neurons[k].weights[j] * nextLayer.neurons[k].error;
@@ -93,22 +135,9 @@ void NeuralNetwork::backpropagate(int expectedOutput) {
         Layer& prevLayer = layers[i-1];
         for (int j = 0; j < currentLayer.neurons.size(); j++) {
             for (int k = 0; k < currentLayer.neurons[j].weights.size(); k++) {
-                // cout << "old weights: " << currentLayer.neurons[j].weights[k] << endl;
-                /*  
-                
-
-
-                WEIGHT UPDATES ARE WRONG :(
-
-
-
-                */
-                double x = learningRate * currentLayer.neurons[j].error * prevLayer.neurons[k].output;
-                cout << "x: " << x << endl;
-                currentLayer.neurons[j].weights[k] += learningRate * currentLayer.neurons[j].error * prevLayer.neurons[k].output;
-                //cout << "new weights: " << currentLayer.neurons[j].weights[k] << endl;
+                currentLayer.neurons[j].weights[k] -= learningRate * currentLayer.neurons[j].error * prevLayer.neurons[k].output;
             }
-            currentLayer.neurons[j].bias += learningRate * currentLayer.neurons[j].error;
+            currentLayer.neurons[j].bias -= learningRate * currentLayer.neurons[j].error;
         }
     }
 }

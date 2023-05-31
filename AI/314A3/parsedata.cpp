@@ -20,10 +20,10 @@ vector<string> Parser::split(const string &s, char delimiter) {
     return tokens;
 }
 
-pair<vector<vector<double>>, vector<int>> Parser::process_data(const string &filename) {
+pair<vector<vector<double>>, vector<double>> Parser::process_data(const string &filename) {
     ifstream file(filename);
     vector<vector<double>> instances;
-    vector<int> labels;
+    vector<double> labels;
 
     if (file.is_open()) {
         string line;
@@ -143,9 +143,9 @@ pair<vector<vector<double>>, vector<int>> Parser::process_data(const string &fil
                 instance[50] = 1;
 
             if (tokens[9] == "yes") {
-                labels.push_back(1);
+                labels.push_back(0.99);
             } else if (tokens[9] == "no") {
-                labels.push_back(0);
+                labels.push_back(0.01);
             }
 
             instances.push_back(instance);

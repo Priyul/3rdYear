@@ -12,20 +12,25 @@ using namespace std;
 
 class NeuralNetwork {
 public:    
-    NeuralNetwork(vector<Layer> layers, pair<vector<vector<double>>, vector<int>> trainingdata, double learningRate, int epochs);
+    NeuralNetwork(vector<Layer> layers, pair<vector<vector<double>>, vector<double>> trainingdata, double learningRate, int epochs);
+
     void train();
+    void setLearningRate(double rate);
 private:
     void feedforward(vector<double>& instance);
-    void backpropagate(int expectedOutput);
+    void backpropagate(double expectedOutput);
 
     double max(double x, double y);
     double ReLU(double x);
+    double leakyReLU(double x);
     double sigmoid(double x);
+    double binaryCrossEntropy(double expected, double output);
 
     vector<Layer> layers;
     vector<vector<double>> input;
-    vector<int> expectedOutput;
+    vector<double> expectedOutput;
     // double sigmoid_derivative;
     double learningRate;
+    double learningRateDecay;
     int epochs;
 };
