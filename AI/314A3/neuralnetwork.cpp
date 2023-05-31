@@ -6,6 +6,7 @@ NeuralNetwork::NeuralNetwork(vector<Layer> layers, pair<vector<vector<double>>, 
 
     this->input = trainingdata.first;
     this->expectedOutput = trainingdata.second;
+    bestEpoch = 0;
 }
 
 
@@ -77,6 +78,10 @@ double NeuralNetwork::train() {
         //     }
         // }
         // this->learningRate *= (1 - this->learningRateDecay);
+        if (totalError < bestError) {
+            bestError = totalError;
+            bestEpoch = epoch;
+        }
         cout << "Error at the end of epoch " << epoch << " = " << totalError << endl;
     }
     return totalError;
@@ -147,4 +152,8 @@ void NeuralNetwork::backpropagate(double expectedOutput) {
             currentLayer.neurons[j].bias -= learningRate * currentLayer.neurons[j].error;
         }
     }
+}
+
+double NeuralNetwork::getBestEpoch() {
+    return bestEpoch;
 }

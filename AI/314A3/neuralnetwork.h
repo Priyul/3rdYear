@@ -16,6 +16,8 @@ public:
 
     double train();
     void setLearningRate(double rate);
+    double getBestEpoch();
+
 private:
     void feedforward(vector<double>& instance);
     void backpropagate(double expectedOutput);
@@ -33,4 +35,5 @@ private:
     double learningRate;
     double learningRateDecay;
     int epochs;
+    int bestEpoch;
 };
