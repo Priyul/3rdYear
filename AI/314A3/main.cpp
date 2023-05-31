@@ -59,10 +59,10 @@ int main() {
     //cout << "lowest possible error:" << lowestError << endl << "ideal number of hidden layers nodes:" << hiddenNum << endl;
     /* driver code!!! */
         layers.push_back(Layer(51,0)); //input layer, 51 nodes with no weights
-        layers.push_back(Layer(34,51)); //hidden layer 1, 25 nodes each connecting to all 51 nodes so each have 51 weights
+        layers.push_back(Layer(34,51)); //hidden layer 1, 34 nodes each connecting to all 51 nodes so each have 51 weights
         layers.push_back(Layer(34,34)); //hidden layer 2
         // layers.push_back(Layer(34,34)); //hidden layer 3
-        layers.push_back(Layer(1,34)); //output layer, 1 node connecting to all 25 nodes in the hidden layer so 25 weights
+        layers.push_back(Layer(1,34)); //output layer, 1 node connecting to all 34 nodes in the hidden layer so 34 weights
 
         double initialLearningRate = 0.04;
         double finalLearningRate = 0.01; // Or whatever lower bound 
