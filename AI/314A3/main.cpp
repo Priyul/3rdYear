@@ -3,6 +3,7 @@
 #include <vector>
 #include <string>
 #include <iostream>
+#include <cstdlib>
 #include "parsedata.h"
 
 // #include "layer.h"
@@ -41,32 +42,36 @@ int main() {
     }
 
     int curious = 0;
+    double bestLearningRate = 99999;
 
-    for (int hidden = 0; hidden < 50; hidden++) {
-        double initialLearningRate = 0.04;
-        double finalLearningRate = 0.01; // Or whatever lower bound 
-        vector<Layer> currLayer = allLayers.at(hidden);
-        int epochs = 10000;
-        double learningRateDecay = (initialLearningRate - finalLearningRate) / epochs;
-        double learningRate = initialLearningRate;
-        
-        NeuralNetwork* neuralNetwork = new NeuralNetwork(currLayer, trainingdata, learningRate, epochs);
-        double error = neuralNetwork->train();
-        double currBestEpoch = neuralNetwork->getBestEpoch();
+    for (double learningRate = 0.01; learningRate < 0.1; learningRate+0.01) {
+        for (int hidden = 0; hidden < 50; hidden++) {
+            double initialLearningRate = 0.04;
+            double finalLearningRate = 0.01; // Or whatever lower bound 
+            vector<Layer> currLayer = allLayers.at(hidden);
+            int epochs = 10000;
+            double learningRateDecay = (initialLearningRate - finalLearningRate) / epochs;
+            //double learningRate = initialLearningRate;
+            
+            NeuralNetwork* neuralNetwork = new NeuralNetwork(currLayer, trainingdata, learningRate, epochs);
+            double error = neuralNetwork->train();
+            double currBestEpoch = neuralNetwork->getBestEpoch();
 
-        curious+=neuralNetwork->curious;
+            curious+=neuralNetwork->curious;
 
-        if (error < lowestError ) {
-            lowestError = error;
-            hiddenNum = hidden;
-            bestEpoch = currBestEpoch;
+            if (error < lowestError ) {
+                lowestError = error;
+                hiddenNum = hidden;
+                bestEpoch = currBestEpoch;
+                bestLearningRate = learningRate;
+            }
+            // cout << "lowest error:" << lowestError << endl << "hidden layers nodes:" << hiddenNum+1 << endl;
         }
-
-        // cout << "lowest error:" << lowestError << endl << "hidden layers nodes:" << hiddenNum+1 << endl;
     }
 
     cout << "lowest possible error:" << lowestError << endl << "ideal number of hidden layers nodes:" << hiddenNum << endl;
     cout << "optimal number of epochs: " << bestEpoch << endl;
+    // cout << "best learning rate: " << bestLearningRate << endl;
     cout << "Number of runs over neural network: " << curious << endl;
     /* driver code!!! */
         // layers.push_back(Layer(51,0)); //input layer, 51 nodes with no weights
