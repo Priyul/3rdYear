@@ -65,7 +65,7 @@ void NeuralNetwork::train() {
             }
         }
 
-        // Early stopping check
+        //Early stopping check
         // if (totalError < bestError) {
         //     bestError = totalError;
         //     wait = 0; // reset waiting counter
@@ -109,9 +109,11 @@ void NeuralNetwork::backpropagate(double expectedOutput) {
     Layer& outputLayer = layers.back();
     for (int i = 0; i < outputLayer.neurons.size(); i++) {
         double output = outputLayer.neurons[i].output;
+        // output = round(output * 100.0) / 100.0;
         //double sigmoid_derivative = output * (1 - output);
         // outputLayer.neurons[i].error = (output - expectedOutput) / (output * (1 - output));
         outputLayer.neurons[i].error = (output - expectedOutput);
+        // cout << "output: " << output << endl;
 
     }
 

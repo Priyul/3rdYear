@@ -12,4 +12,5 @@ public:
     pair<vector<vector<double>>, vector<double>> process_data(const string &filename);
 private:
     vector<string> split(const string &s, char delimiter);
+    int counter = 0;
 };

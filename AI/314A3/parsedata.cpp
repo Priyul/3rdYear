@@ -11,11 +11,12 @@ vector<string> Parser::split(const string &s, char delimiter) {
     while (getline(tokenStream, token, delimiter)) {
         tokens.push_back(token);
     }
-
+    counter++;
     // for (int i = 0; i < tokens.size(); i++) {
     //     cout << tokens[i] << endl;
     // }
     // cout << endl; // data read correctly
+    // cout << "Number of data: " << counter << endl;
 
     return tokens;
 }
@@ -24,17 +25,23 @@ pair<vector<vector<double>>, vector<double>> Parser::process_data(const string &
     ifstream file(filename);
     vector<vector<double>> instances;
     vector<double> labels;
+    int i = 0;
 
     if (file.is_open()) {
         string line;
         while (getline(file, line)) {
             vector<string> tokens = split(line, ',');
             vector<double> instance(51, 0);
+            bool missing = false;
 
             if (tokens[0] == "no-recurrence-events")
                 instance[0] = 1;
             else if (tokens[0] == "recurrence-events")
                 instance[1] = 1;
+            else {
+                cout << "Missing data for attribute 0" << endl;
+                missing = true;
+            }
 
             if (tokens[1] == "10-19") 
                 instance[2] = 1;
@@ -54,6 +61,10 @@ pair<vector<vector<double>>, vector<double>> Parser::process_data(const string &
                 instance[9] = 1;
             else if (tokens[1] == "90-99") 
                 instance[10] = 1;
+            else {
+                cout << "Missing data for attribute 1" << endl;
+                missing = true;
+            }
 
             if (tokens[2] == "lt40") 
                 instance[11] = 1;
@@ -61,6 +72,11 @@ pair<vector<vector<double>>, vector<double>> Parser::process_data(const string &
                 instance[12] = 1;
             else if (tokens[2] == "premeno") 
                 instance[13] = 1;
+            else {
+                cout << "Missing data for attribute 2" << endl;
+                missing = true;
+            }
+            
 
             if (tokens[3] == "0-4") 
                 instance[14] = 1;
@@ -86,6 +102,10 @@ pair<vector<vector<double>>, vector<double>> Parser::process_data(const string &
                 instance[24] = 1;
             else if (tokens[3] == "55-59")
                 instance[25] = 1;    
+            else {
+                cout << "Missing data for attribute 3" << endl;
+                missing = true;
+            }
 
             if (tokens[4] == "0-2") 
                 instance[26] = 1;
@@ -113,11 +133,19 @@ pair<vector<vector<double>>, vector<double>> Parser::process_data(const string &
                 instance[37] = 1;
             else if (tokens[4] == "36-39") 
                 instance[38] = 1;
+            else {
+                cout << "Missing data for attribute 4" << endl;
+                missing = true;
+            }
 
             if (tokens[5] == "yes") 
                 instance[39] = 1;
             else if (tokens[5] == "no") 
                 instance[40] = 1;
+            else {
+                cout << "Missing data for attribute 5" << endl;
+                missing = true;
+            }
 
             if (tokens[6] == "1") 
                 instance[41] = 1;
@@ -125,42 +153,66 @@ pair<vector<vector<double>>, vector<double>> Parser::process_data(const string &
                 instance[42] = 1;
             else if (tokens[6] == "3") 
                 instance[43] = 1;
+            else {
+                cout << "Missing data for attribute 6" << endl;
+                missing = true;
+            }
 
             if (tokens[7] == "left") 
                 instance[44] = 1;
             else if (tokens[7] == "right")
                 instance[45] = 1;
+            else {
+                cout << "Missing data for attribute 7" << endl;
+                missing = true;
+            }
 
-            if (tokens[8] == "left-up") 
+            // cout << "tokens[8] value: " << tokens[8] << endl;
+            if (tokens[8] == "left_up") 
                 instance[46] = 1;
-            else if (tokens[8] == "left-low") 
+            else if (tokens[8] == "left_low") 
                 instance[47] = 1;
-            else if (tokens[8] == "right-up") 
+            else if (tokens[8] == "right_up") 
                 instance[48] = 1;
-            else if (tokens[8] == "right-low") 
+            else if (tokens[8] == "right_low") 
                 instance[49] = 1;
             else if (tokens[8] == "central") 
                 instance[50] = 1;
+            else {
+                cout << "Missing data for attribute 8" << endl;
+                missing = true;
+            }
 
+        
             if (tokens[9] == "yes") {
-                labels.push_back(0.99);
+                labels.push_back(1);
             } else if (tokens[9] == "no") {
-                labels.push_back(0.01);
+                labels.push_back(0);
+            } else {
+                cout << "Missing data for attribute 8" << endl;
+                missing = true;
             }
 
-            instances.push_back(instance);
-            string istring = "";
-            for (int i = 0; i < instance.size(); i++) {
-                if (instance[i] == 0) {
-                    istring += "0";
-                } else {
-                    istring+="1";
+            if (!missing) {
+                instances.push_back(instance);
+                i++;
+                string istring = "";
+                for (int i = 0; i < instance.size(); i++) {
+                    if (instance[i] == 0) {
+                        istring += "0";
+                    } else {
+                        istring+="1";
+                    }
                 }
+                cout << "Instance " << i << ": " << istring << endl;
+            } else {
+                missing = false;
+                cout << "missing data, instance " << i << " removed." << endl;
             }
-            cout << "Instance " << istring << endl;
         }
         file.close();
     }
+    cout << "Number of data: " << counter << endl;
 
     return make_pair(instances, labels);
 }

@@ -23,12 +23,14 @@ int main() {
     layers.push_back(Layer(51,0)); //input layer, 51 nodes with no weights
     layers.push_back(Layer(25,51)); //hidden layer 1, 25 nodes each connecting to all 51 nodes so each have 51 weights
     layers.push_back(Layer(25,25));
-    // layers.push_back(Layer(25,25));
-    layers.push_back(Layer(1,25)); //output layer, 1 node connecting to all 25 nodes in the hidden layer so 25 weights
+    layers.push_back(Layer(25,25));
+    layers.push_back(Layer(25,25));
+  
+    layers.push_back(Layer(2,25)); //output layer, 1 node connecting to all 25 nodes in the hidden layer so 25 weights
 
-    double initialLearningRate = 0.01;
+    double initialLearningRate = 0.04;
     double finalLearningRate = 0.01; // Or whatever lower bound you want
-    int epochs = 100000;
+    int epochs = 10000;
     double learningRateDecay = (initialLearningRate - finalLearningRate) / epochs;
     double learningRate = initialLearningRate;
     
