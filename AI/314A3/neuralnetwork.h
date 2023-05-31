@@ -18,6 +18,8 @@ public:
     void setLearningRate(double rate);
     double getBestEpoch();
 
+    int curious;
+
 private:
     void feedforward(vector<double>& instance);
     void backpropagate(double expectedOutput);

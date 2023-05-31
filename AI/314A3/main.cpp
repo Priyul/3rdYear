@@ -54,7 +54,7 @@ int main() {
         double error = neuralNetwork->train();
         double currBestEpoch = neuralNetwork->getBestEpoch();
 
-        curious++;
+        curious+=neuralNetwork->curious;
 
         if (error < lowestError ) {
             lowestError = error;

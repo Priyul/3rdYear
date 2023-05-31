@@ -7,6 +7,8 @@ NeuralNetwork::NeuralNetwork(vector<Layer> layers, pair<vector<vector<double>>, 
     this->input = trainingdata.first;
     this->expectedOutput = trainingdata.second;
     bestEpoch = 0;
+
+    curious = 0;
 }
 
 
@@ -65,6 +67,7 @@ double NeuralNetwork::train() {
             for (Neuron& neuron : layers.back().neurons) {
                 totalError += binaryCrossEntropy(expectedOutput[i], neuron.output);
             }
+            curious++;
         }
 
         //Early stopping check
