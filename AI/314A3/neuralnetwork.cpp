@@ -50,13 +50,14 @@ double NeuralNetwork::sigmoid(double x) {
 }
 
 
-void NeuralNetwork::train() {
+double NeuralNetwork::train() {
     const int patience = 100;  // number of epochs to wait before stopping if no improvement
     int wait = 0;
     double bestError = std::numeric_limits<double>::max(); // best error so far
-
+    double totalError = 0;
     for (int epoch = 0; epoch < epochs; epoch++) {
-        double totalError = 0;
+        // double totalError = 0;
+        totalError = 0;
         for (int i = 0; i < input.size(); i++) {
             feedforward(input[i]);
             backpropagate(expectedOutput[i]);
@@ -78,6 +79,7 @@ void NeuralNetwork::train() {
         // this->learningRate *= (1 - this->learningRateDecay);
         cout << "Error at the end of epoch " << epoch << " = " << totalError << endl;
     }
+    return totalError;
 }
 
 
@@ -109,11 +111,12 @@ void NeuralNetwork::backpropagate(double expectedOutput) {
     Layer& outputLayer = layers.back();
     for (int i = 0; i < outputLayer.neurons.size(); i++) {
         double output = outputLayer.neurons[i].output;
-        // output = round(output * 100.0) / 100.0;
+        //output = round(output * 100.0) / 100.0;
         //double sigmoid_derivative = output * (1 - output);
         // outputLayer.neurons[i].error = (output - expectedOutput) / (output * (1 - output));
         outputLayer.neurons[i].error = (output - expectedOutput);
         // cout << "output: " << output << endl;
+        // cout << "output layer error" << outputLayer.neurons[i].error << endl;
 
     }
 
@@ -126,6 +129,8 @@ void NeuralNetwork::backpropagate(double expectedOutput) {
             double relu_derivative = output > 0 ? 1 : 0.01;
             double errorSum = 0;
             for (int k = 0; k < nextLayer.neurons.size(); k++) {
+                // cout << "layer no:" << i << endl << "node number:" << k << endl << endl;
+                // cout << "actual node error: " << nextLayer.neurons[k].weights[j] * nextLayer.neurons[k].error << endl;
                 errorSum += nextLayer.neurons[k].weights[j] * nextLayer.neurons[k].error;
             }
             currentLayer.neurons[j].error = errorSum * relu_derivative;

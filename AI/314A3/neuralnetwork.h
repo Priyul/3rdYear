@@ -14,7 +14,7 @@ class NeuralNetwork {
 public:    
     NeuralNetwork(vector<Layer> layers, pair<vector<vector<double>>, vector<double>> trainingdata, double learningRate, int epochs);
 
-    void train();
+    double train();
     void setLearningRate(double rate);
 private:
     void feedforward(vector<double>& instance);
