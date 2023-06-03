@@ -5,6 +5,9 @@
 #include <string>
 #include <iostream>
 #include <cmath>
+#include <vector>
+#include <algorithm>
+#include <random>
 
 #include "layer.h"
 
