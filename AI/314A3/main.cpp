@@ -15,17 +15,19 @@ using namespace std;
 int main() {
     string filename = "breast-cancer.data";
     
-    Parser* parser = new Parser();
-
-    pair<vector<vector<double>>, vector<double>> trainingdata;
-    pair<vector<vector<double>>, vector<double>> testingData;
-    parser->shuffle(filename);
-    trainingdata = parser->process_training_data(filename);
-    testingData = parser->process_testing_data(filename);
+    Parser* parser = new Parser(filename);
+    parser->inputData();
+    parser->removeIncompleteData();
+    parser->shuffleData();
+    parser->parseTrainingData();
+    parser->parseTestData();
+    pair<vector<vector<double>>, vector<double>> trainingdata = parser->getTrainingData();
+    pair<vector<vector<double>>, vector<double>> testingData = parser->getTestingData();
+    
 
     vector<vector<Layer>> allLayers;
-
     vector<Layer> layers;
+
     double lowestError = 99999;
     int hiddenNum = 99999;
     int bestEpoch = 99999;
@@ -33,7 +35,7 @@ int main() {
         vector<Layer> tempLayer;
         tempLayer.push_back(Layer(51,0, "input"));
         tempLayer.push_back(Layer(hidden, 51, "hidden 1")); //hidden layer 1
-        // tempLayer.push_back(Layer(hidden, hidden, "hidden 2")); //hidden layer 2
+        tempLayer.push_back(Layer(hidden, hidden, "hidden 2")); //hidden layer 2
         // tempLayer.push_back(Layer(hidden, hidden, "hidden 3")); //hidden layer 3
         // tempLayer.push_back(Layer(hidden, hidden)); //hidden layer 4
         // tempLayer.push_back(Layer(hidden, hidden)); //hidden layer 5
@@ -46,19 +48,17 @@ int main() {
     double bestLearningRate = 99999;
     int bestCorrectCount = 0;
     int bestWrongCount = 99999;
+    double currBestEpoch = 99999;
 
     //for (double learningRate = 0.1; learningRate < 1.0; learningRate+0.1) {
         // for (int hidden = 0; hidden < 50; hidden++) {
         //     double learningRate = 0.08;
-        //     // double finalLearningRate = 0.01; // Or whatever lower bound 
         //     vector<Layer> currLayer = allLayers.at(hidden);
-        //     int epochs = 4500;
-        //     // double learningRateDecay = (initialLearningRate - finalLearningRate) / epochs;
-        //     // double learningRate = initialLearningRate;
+        //     int epochs = 500;
             
         //     NeuralNetwork* neuralNetwork = new NeuralNetwork(currLayer, trainingdata, learningRate, epochs);
         //     double error = neuralNetwork->train();
-        //     double currBestEpoch = neuralNetwork->getBestEpoch();
+        //     currBestEpoch = neuralNetwork->getBestEpoch();
 
         //     curious+=neuralNetwork->curious;
 
@@ -68,44 +68,41 @@ int main() {
         //         bestEpoch = currBestEpoch;
         //         bestLearningRate = learningRate;
 
-        //         neuralNetwork->testNetwork(testingData);
-        //         bestWrongCount = neuralNetwork->wrongCount;
-        //         bestCorrectCount = neuralNetwork->correctCount;
+        //         // bestWrongCount = neuralNetwork->wrongCount;
+        //         // bestCorrectCount = neuralNetwork->correctCount;
         //     }
-            // neuralNetwork->testNetwork(testingData);
+                //// neuralNetwork->testNetwork(testingData);
+        //     //     if (neuralNetwork->wrongCount < bestWrongCount) {
+        //     //         bestWrongCount = neuralNetwork->wrongCount;
+        //     //         bestCorrectCount = neuralNetwork->correctCount;
+        //     //         lowestError = error;
+        //     //         hiddenNum = hidden;
+        //     //         bestEpoch = currBestEpoch;
+        //     //         bestLearningRate = learningRate;
+        //     //     }
 
-            // if (neuralNetwork->wrongCount < bestWrongCount) {
-            //     bestWrongCount = neuralNetwork->wrongCount;
-            //     bestCorrectCount = neuralNetwork->correctCount;
-            //     lowestError = error;
-            //     hiddenNum = hidden;
-            //     bestEpoch = currBestEpoch;
-            //     bestLearningRate = learningRate;
-            // }
-            // cout << "lowest error:" << lowestError << endl << "hidden layers nodes:" << hiddenNum+1 << endl;
+        //     //cout << "lowest error:" << lowestError << endl << "hidden layers nodes:" << hiddenNum+1 << endl;
         // }
     //}
     cout << endl;
     cout << "lowest possible error:" << lowestError << endl << "ideal number of hidden layers nodes:" << hiddenNum << endl;
-    cout << "optimal number of epochs: " << bestEpoch << endl;
+    cout << "optimal number of epochs: " << currBestEpoch << endl;
     cout << "best learning rate: " << bestLearningRate << endl;
-    cout << "Number of runs over neural network: " << curious << endl;
     cout << "Best correct count:" << bestCorrectCount << endl;
     cout << "Best wrong count:" << bestWrongCount << endl;
     /* driver code!!! */
         layers.push_back(Layer(51,0, "input")); //input layer, 51 nodes with no weights
-        layers.push_back(Layer(24,51, "hidden 1")); //hidden layer 1, 29 nodes each connecting to all 51 nodes so each have 51 weights
-        // layers.push_back(Layer(29,29, "hidden 2")); //hidden layer 2
-        // layers.push_back(Layer(34,34)); //hidden layer 3
-        layers.push_back(Layer(1,24, "output")); //output layer, 1 node connecting to all 29 nodes in the hidden layer so 29 weights
+        layers.push_back(Layer(29,51, "hidden 1")); //hidden layer 1, 29 nodes each connecting to all 51 nodes so each have 51 weights
+        layers.push_back(Layer(29,29, "hidden 2")); //hidden layer 2
+        // layers.push_back(Layer(23,23, "hidden 3")); //hidden layer 3
+        layers.push_back(Layer(1,29, "output")); //output layer, 1 node connecting to all 29 nodes in the hidden layer so 29 weights
 
         double initialLearningRate = 0.08;
-        // double finalLearningRate = 0.01; // Or whatever lower bound 
-        int epochs = 10000;
-        // double learningRateDecay = (initialLearningRate - finalLearningRate) / epochs;
+        int epochs = 3000;
+
         double learningRate = initialLearningRate;
         
-        NeuralNetwork* neuralNetwork = new NeuralNetwork(layers, trainingdata, 0.08, epochs);
+        NeuralNetwork* neuralNetwork = new NeuralNetwork(layers, trainingdata, initialLearningRate, epochs);
         double finalError = neuralNetwork->train();
         cout << "Final error: " << finalError << endl;
         cout << endl;

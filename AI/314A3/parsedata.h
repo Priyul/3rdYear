@@ -3,37 +3,32 @@
 #include <vector>
 #include <string>
 #include <iostream>
+#include <chrono>
 
 #include <vector>
 #include <algorithm>
 #include <random>
-
+#include <utility>
 
 using namespace std;
-
 class Parser {
 public:    
-    Parser();
-    void inputData(const string &filename);
+    Parser(const string &filename);
+    void inputData();
     void removeIncompleteData();
     void shuffleData();
-    void processData();
+    void parseTrainingData();
+    void parseTestData();
+
+    pair<vector<vector<double>>, vector<double>> getTrainingData();
+    pair<vector<vector<double>>, vector<double>> getTestingData();
 private:
     const string& filename;
-    vector<string> split(const string &s, char delimiter);
+    vector<string> instances;
 
-    pair<vector<vector<double>>, vector<double>> all_data;
     pair<vector<vector<double>>, vector<double>> training_data;
     pair<vector<vector<double>>, vector<double>> testing_data;
-};
 
-write me a small program of class Parser with that will parse the data inside of a textfile for me in c++. Here is the class definition:
-#include <fstream>
-#include <sstream>
-#include <vector>
-#include <string>
-#include <iostream>
-#include <vector>
-#include <algorithm>
-#include <random>
-using namespace std;
+    vector<string> split(const string &s, char delimiter);
+    vector<double> processInstance(const vector<string>& tokens);
+};

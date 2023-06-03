@@ -26,8 +26,8 @@ public:
 
     int curious;
 
-    int correctCount;
-    int wrongCount;
+    float correctCount;
+    float wrongCount;
 
 private:
     void feedforward(vector<double>& instance);
@@ -39,6 +39,8 @@ private:
     double sigmoid(double x);
     double binaryCrossEntropy(double expected, double output);
     void outputLayerData(int c);
+    double ReLU_derivative(double x);
+    double sigmoid_derivative(double x);
 
     vector<Layer> layers;
     vector<vector<double>> input;

@@ -16,8 +16,10 @@ NeuralNetwork::NeuralNetwork(vector<Layer> layers, pair<vector<vector<double>>, 
 
 
 double NeuralNetwork::binaryCrossEntropy(double expected, double output) {
-    return -expected * log(output) - (1 - expected) * log(1 - output);
+    const double epsilon = 1e-10;
+    return -expected * log(output + epsilon) - (1 - expected) * log(1 - output + epsilon);
 }
+
 
 double NeuralNetwork::max(double x, double y) {
     if (x > y) {
@@ -41,6 +43,15 @@ double NeuralNetwork::leakyReLU(double x) {
     return x >= 0 ? x : alpha * x;
 }
 
+double NeuralNetwork::ReLU_derivative(double x) {
+    return x > 0 ? 1 : 0.000001;
+}
+
+double NeuralNetwork::sigmoid_derivative(double x) {
+    double sigmoid_x = sigmoid(x);
+    return sigmoid_x * (1 - sigmoid_x);
+}
+
 
 double NeuralNetwork::sigmoid(double x) {
     double result = 1.0 / (1.0 + exp(-x));
@@ -56,45 +67,100 @@ double NeuralNetwork::sigmoid(double x) {
 }
 
 
+
 double NeuralNetwork::train() {
-    const int patience = 100;  // number of epochs to wait before stopping if no improvement
-    int wait = 0;
-    double bestError = std::numeric_limits<double>::max(); // best error so far
     double totalError = 0;
+    double minError = std::numeric_limits<double>::max(); // Initialize with the maximum value
+    int epochsWithoutImprovement = 0;
+
     for (int epoch = 0; epoch < epochs; epoch++) {
-        // double totalError = 0;
         totalError = 0;
         for (int i = 0; i < input.size(); i++) {
             feedforward(input[i]);
-            backpropagate(expectedOutput[i]);
+
             for (Neuron& neuron : layers.back().neurons) {
-                // cout << "layer name " << layers.back().getName() << endl;
-                // cout << binaryCrossEntropy(expectedOutput[i], neuron.output) << endl << endl;
                 totalError += binaryCrossEntropy(expectedOutput[i], neuron.output);
+                //loss function
             }
-            curious++;
+
+            backpropagate(expectedOutput[i]);
         }
 
-        //Early stopping check
-        // if (totalError < bestError) {
-        //     bestError = totalError;
-        //     wait = 0; // reset waiting counter
-        // } else {
-        //     if (++wait >= patience) {
-        //         cout << "Early stopping at epoch " << epoch << ", best error: " << bestError << endl;
-        //         return; // stop training
-        //     }
-        // }
-        // this->learningRate *= (1 - this->learningRateDecay);
-        if (totalError < bestError) {
-            bestError = totalError;
+        // If the error reduces, update the minimum error and best epoch
+        if (totalError < minError) {
+            minError = totalError;
             bestEpoch = epoch;
         }
-        cout << "Error at the end of epoch " << epoch << " = " << totalError << endl;
+        std::cout << "Error at the end of epoch " << epoch << " = " << totalError << std::endl;
     }
-    return totalError;
+    return minError;
 }
 
+// void NeuralNetwork::feedforward(vector<double>& instance) {
+//     for (int j = 0; j < layers[0].neurons.size(); j++) {
+//         layers[0].neurons[j].output = instance[j];  //for input layer
+//     }
+
+//     for (int layer_index = 1; layer_index < layers.size(); layer_index++) {
+//         Layer& current_layer = layers[layer_index];
+//         Layer& previous_layer = layers[layer_index - 1];
+//         for (Neuron& neuron : current_layer.neurons) {
+//             double n = neuron.bias;
+//             for (int input_index = 0; input_index < previous_layer.neurons.size(); input_index++) {
+//                 n += previous_layer.neurons[input_index].output * neuron.weights[input_index];
+//             }
+//             if (layer_index < layers.size() - 1) { // hidden layers
+//                 neuron.output = leakyReLU(n);
+//             } else { // output layer
+//                 neuron.output = sigmoid(n);
+//             }
+//         }
+//     }
+
+// }
+
+// void NeuralNetwork::backpropagate(double expectedOutput) {
+//     // calculate error information term for each node in the output layer
+//     Layer& outputLayer = layers.back();
+//     for (Neuron& neuron : outputLayer.neurons) {
+//         double output = neuron.output;
+//         neuron.error = (expectedOutput - output) ;
+//     }
+
+//     // calculate the sum of delta inputs for each node in the hidden layer
+//     // calculate the error information term for each node in the hidden layer
+//     for (int i = layers.size()-2; i > 0; i--) { 
+//         Layer& currentLayer = layers[i];
+//         Layer& nextLayer = layers[i+1];
+//         for (int j = 0; j < currentLayer.neurons.size(); j++) {
+//             double output = currentLayer.neurons[j].output;
+//             double relu_derivative = output > 0 ? 1 : 0.01;
+//             double sumDelta = 0;
+
+//             for (int k = 0; k < nextLayer.neurons.size(); k++) {
+//                 // cout << "layer no:" << i << endl << "node number:" << k << endl << endl;
+//                 // cout << "actual node error: " << nextLayer.neurons[k].weights[j] * nextLayer.neurons[k].error << endl;
+//                 sumDelta += nextLayer.neurons[k].weights[j] * nextLayer.neurons[k].error;
+//             }
+//             currentLayer.neurons[j].error = sumDelta * relu_derivative;
+//         }
+//     }
+
+
+//     // calculate the weight correction term for each node in the output layer
+//     // calculate the weight correction term for each node in the hidden layer
+//     for (int i = 1; i < layers.size(); i++) {
+//         Layer& currentLayer = layers[i];
+//         Layer& prevLayer = layers[i-1];
+//         for (int j = 0; j < currentLayer.neurons.size(); j++) {
+//             for (int k = 0; k < currentLayer.neurons[j].weights.size(); k++) {
+//                 currentLayer.neurons[j].weights[k] -= learningRate * currentLayer.neurons[j].error * prevLayer.neurons[k].output;
+//             }
+//             // cout << currentLayer.neurons[j].bias << endl;
+//             // currentLayer.neurons[j].bias += learningRate * currentLayer.neurons[j].error; //add or -=
+//         }
+//     }
+// }
 
 void NeuralNetwork::feedforward(vector<double>& instance) {
     for (int j = 0; j < layers[0].neurons.size(); j++) {
@@ -112,13 +178,58 @@ void NeuralNetwork::feedforward(vector<double>& instance) {
             sum+= layers[i].neurons[j].bias;
             // cout << "Sum at layer " << i << " on epoch " << epochs << ": " << sum << endl; 
             if (i != layers.size() - 1) {  // if not output layer
-                layers[i].neurons[j].output = leakyReLU(sum);
+                layers[i].neurons[j].output = ReLU(sum);
             } else {
                 layers[i].neurons[j].output = sigmoid(sum);
+    
             }
         }
     }
 }
+
+// void NeuralNetwork::backpropagate(double expectedOutput) {
+//     Layer& outputLayer = layers.back();
+
+//     for (int i = 0; i < outputLayer.neurons.size(); i++) {
+//         double output = outputLayer.neurons[i].output;
+//        //delta k -> step 1
+//         outputLayer.neurons[i].error = (expectedOutput-sigmoid(output))*sigmoid_derivative(output);
+//     }
+
+//     for (int i = layers.size()-2; i > 0; i--) { 
+//         Layer& currentLayer = layers[i];
+//         Layer& nextLayer = layers[i+1];
+//         for (int j = 0; j < currentLayer.neurons.size(); j++) {
+//             double output = currentLayer.neurons[j].output;
+
+//             double relu_derivative = output > 0 ? 1 : 0;
+//             double errorSum = 0;
+//             for (int k = 0; k < nextLayer.neurons.size(); k++) {
+//                 //step 4
+//                 errorSum += nextLayer.neurons[k].weights[j] * nextLayer.neurons[k].error;
+//             }
+//             //step 5
+//             currentLayer.neurons[j].error = errorSum * relu_derivative; //delta i
+//         }
+//     }
+
+//     for (int i = 1; i < layers.size(); i++) {
+//         Layer& currentLayer = layers[i];
+//         Layer& prevLayer = layers[i-1];
+//         for (int j = 0; j < currentLayer.neurons.size(); j++) {
+//             for (int k = 0; k < currentLayer.neurons[j].weights.size(); k++) {
+//                 //step 6 
+//                 currentLayer.neurons[j].weights[k] = currentLayer.neurons[j].weights[k]-(learningRate * currentLayer.neurons[j].error * prevLayer.neurons[k].output);
+//             }
+//             //step 7
+//             currentLayer.neurons[j].bias -= learningRate * currentLayer.neurons[j].error; 
+//         }
+//     }
+//     //step 2 and 3
+//     // Layer& prevLayer = layers[layers.size()-1];
+//     // outputLayer.weights[0] = (outputLayer.weights[0]) - (learningRate*outputLayer.neurons[0].error*sigmoid());
+
+// }
 
 void NeuralNetwork::backpropagate(double expectedOutput) {
     Layer& outputLayer = layers.back();
@@ -178,6 +289,9 @@ void NeuralNetwork::testNetwork(pair<vector<vector<double>>, vector<double>> tes
     }
     cout << "Correct count:" << this->correctCount << endl;
     cout << "Wrong count:" << this->wrongCount << endl;
+    int totalTestSet = correctCount + wrongCount;
+    float errorMargin = (correctCount/totalTestSet)*100;
+    cout << "accuracy: " << errorMargin << "%"<< endl;
 }
 void NeuralNetwork::feedforwardTestData(vector<double>& instance, int c) {
     for (int j = 0; j < layers[0].neurons.size(); j++) {
@@ -199,7 +313,7 @@ void NeuralNetwork::feedforwardTestData(vector<double>& instance, int c) {
                 layers[i].neurons[j].output = leakyReLU(sum);
             } else {
                 layers[i].neurons[j].output = sigmoid(sum);
-                // cout << layers[i].neurons[j].output << endl;
+                // cout << "sigmoid sum:" << layers[i].neurons[j].output << endl;
             }
         }
     }
@@ -208,9 +322,17 @@ void NeuralNetwork::feedforwardTestData(vector<double>& instance, int c) {
 
 void NeuralNetwork::outputLayerData(int c) {
     for (int i = layers.size()-1; i == layers.size()-1; i++) {
-        cout << "Expected output: " << this->expectedOutput[c] << endl;
-        cout << "Output: " << round(layers[i].neurons[0].output) << endl;
-        if (round(layers[i].neurons[0].output) == this->expectedOutput[c]) {
+        // cout << "Expected output: " << this->expectedOutput[c] << endl;
+
+        int output = 999;
+        if (layers[i].neurons[0].output < 0.5) {
+            output = 0;
+        } else {
+            output = 1;
+        }
+        // cout << "Output: " << round(layers[i].neurons[0].output) << endl << endl;
+
+        if (output == this->expectedOutput[c]) {
             this->correctCount++;
         } else {
             this->wrongCount++;
