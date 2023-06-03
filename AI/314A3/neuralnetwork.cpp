@@ -65,6 +65,8 @@ double NeuralNetwork::train() {
             feedforward(input[i]);
             backpropagate(expectedOutput[i]);
             for (Neuron& neuron : layers.back().neurons) {
+                // cout << "layer name " << layers.back().getName() << endl;
+                // cout << binaryCrossEntropy(expectedOutput[i], neuron.output) << endl << endl;
                 totalError += binaryCrossEntropy(expectedOutput[i], neuron.output);
             }
             curious++;
@@ -159,4 +161,33 @@ void NeuralNetwork::backpropagate(double expectedOutput) {
 
 double NeuralNetwork::getBestEpoch() {
     return bestEpoch;
+}
+
+void NeuralNetwork::feedforwardTestData(vector<double>& instance) {
+    for (int j = 0; j < layers[0].neurons.size(); j++) {
+        layers[0].neurons[j].output = instance[j]; //instance[i][j] // each neuron in the input layer 
+                                                   //gets a feature from the attributes
+    }
+
+    for (int i = 1; i < layers.size(); i++) {
+        for (int j = 0; j < layers[i].neurons.size(); j++) {
+            double sum = 0;
+            for (int k = 0; k < layers[i-1].neurons.size(); k++) {
+                sum += layers[i-1].neurons[k].output * layers[i].neurons[j].weights[k];
+            }
+            sum+= layers[i].neurons[j].bias;
+            
+            if (i == layers.size()-1) {
+                cout << "Sum at layer " << layers[i].getName() << " on epoch " << epochs << ": " << sum << endl; 
+            }
+
+            if (i != layers.size() - 1) {  // if not output layer
+                layers[i].neurons[j].output = leakyReLU(sum);
+            } else {
+                layers[i].neurons[j].output = sigmoid(sum);
+            }
+        }
+    }
+
+
 }

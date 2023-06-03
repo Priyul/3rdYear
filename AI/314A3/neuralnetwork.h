@@ -18,6 +18,8 @@ public:
     void setLearningRate(double rate);
     double getBestEpoch();
 
+    void feedforwardTestData(vector<double>& instance);
+
     int curious;
 
 private:
@@ -38,4 +40,5 @@ private:
     double learningRateDecay;
     int epochs;
     int bestEpoch;
+
 };
