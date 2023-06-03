@@ -43,13 +43,15 @@ int main() {
 
     int curious = 0;
     double bestLearningRate = 99999;
+    int bestCorrectCount = 0;
+    int bestWrongCount = 99999;
 
-    for (double learningRate = 0.01; learningRate < 0.1; learningRate+0.01) {
+    // for (double learningRate = 0.1; learningRate < 1.0; learningRate+0.1) {
         for (int hidden = 0; hidden < 50; hidden++) {
-            double initialLearningRate = 0.1;
+            double initialLearningRate = 0.01;
             double finalLearningRate = 0.01; // Or whatever lower bound 
             vector<Layer> currLayer = allLayers.at(hidden);
-            int epochs = 1000;
+            int epochs = 10000;
             double learningRateDecay = (initialLearningRate - finalLearningRate) / epochs;
             double learningRate = initialLearningRate;
             
@@ -59,7 +61,17 @@ int main() {
 
             curious+=neuralNetwork->curious;
 
-            if (error < lowestError ) {
+            // if (error < lowestError ) {
+            //     lowestError = error;
+            //     hiddenNum = hidden;
+            //     bestEpoch = currBestEpoch;
+            //     bestLearningRate = learningRate;
+            // }
+            neuralNetwork->testNetwork(testingData);
+
+            if (neuralNetwork->wrongCount < bestWrongCount) {
+                bestWrongCount = neuralNetwork->wrongCount;
+                bestCorrectCount = neuralNetwork->correctCount;
                 lowestError = error;
                 hiddenNum = hidden;
                 bestEpoch = currBestEpoch;
@@ -67,16 +79,18 @@ int main() {
             }
             // cout << "lowest error:" << lowestError << endl << "hidden layers nodes:" << hiddenNum+1 << endl;
         }
-    }
+    // }
     cout << endl;
     cout << "lowest possible error:" << lowestError << endl << "ideal number of hidden layers nodes:" << hiddenNum << endl;
     cout << "optimal number of epochs: " << bestEpoch << endl;
     cout << "best learning rate: " << bestLearningRate << endl;
     cout << "Number of runs over neural network: " << curious << endl;
+    cout << "Best correct count:" << bestCorrectCount << endl;
+    cout << "Best wrong count:" << bestWrongCount << endl;
     /* driver code!!! */
         // layers.push_back(Layer(51,0, "input")); //input layer, 51 nodes with no weights
-        // layers.push_back(Layer(29,51, "")); //hidden layer 1, 29 nodes each connecting to all 51 nodes so each have 51 weights
-        // // layers.push_back(Layer(29,29)); //hidden layer 2
+        // layers.push_back(Layer(29,51, "hidden 1")); //hidden layer 1, 29 nodes each connecting to all 51 nodes so each have 51 weights
+        // // layers.push_back(Layer(29,29, "hidden 2")); //hidden layer 2
         // // layers.push_back(Layer(34,34)); //hidden layer 3
         // layers.push_back(Layer(1,29, "output")); //output layer, 1 node connecting to all 29 nodes in the hidden layer so 29 weights
 
@@ -89,13 +103,19 @@ int main() {
         // NeuralNetwork* neuralNetwork = new NeuralNetwork(layers, trainingdata, learningRate, epochs);
         // double finalError = neuralNetwork->train();
         // cout << "Final error: " << finalError << endl;
-        //add training data feedforward function and output...
+        // cout << endl;
+
+        // cout << "Training data feedforward:" << endl;
+        // neuralNetwork->testNetwork(testingData);
+
 
 // for (int i = 0; i < epochs; i++) {
 //     neuralNetwork->train();
 //     // learningRate -= learningRateDecay;
 //     // neuralNetwork->setLearningRate(learningRate);
 // }
+
+
 
 
     return 0;

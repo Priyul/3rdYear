@@ -9,6 +9,9 @@ NeuralNetwork::NeuralNetwork(vector<Layer> layers, pair<vector<vector<double>>, 
     bestEpoch = 0;
 
     curious = 0;
+
+    this->correctCount = 0;
+    this->wrongCount = 0;
 }
 
 
@@ -124,6 +127,7 @@ void NeuralNetwork::backpropagate(double expectedOutput) {
         //output = round(output * 100.0) / 100.0;
         //double sigmoid_derivative = output * (1 - output);
         // outputLayer.neurons[i].error = (output - expectedOutput) / (output * (1 - output));
+        // outputLayer.neurons[i].error = output*(1-output)*(expectedOutput-output);
         outputLayer.neurons[i].error = (output - expectedOutput);
         // cout << "output: " << output << endl;
         // cout << "output layer error" << outputLayer.neurons[i].error << endl;
@@ -154,7 +158,8 @@ void NeuralNetwork::backpropagate(double expectedOutput) {
             for (int k = 0; k < currentLayer.neurons[j].weights.size(); k++) {
                 currentLayer.neurons[j].weights[k] -= learningRate * currentLayer.neurons[j].error * prevLayer.neurons[k].output;
             }
-            currentLayer.neurons[j].bias -= learningRate * currentLayer.neurons[j].error;
+            // cout << currentLayer.neurons[j].bias << endl;
+            currentLayer.neurons[j].bias += learningRate * currentLayer.neurons[j].error; //add or -=
         }
     }
 }
@@ -163,10 +168,22 @@ double NeuralNetwork::getBestEpoch() {
     return bestEpoch;
 }
 
-void NeuralNetwork::feedforwardTestData(vector<double>& instance) {
+void NeuralNetwork::testNetwork(pair<vector<vector<double>>, vector<double>> testingData) {
+    this->input = testingData.first;
+    this->expectedOutput = testingData.second;
+    int c = 0;
+    for (int i = 0; i < input.size(); i++) {
+        c++;
+        feedforwardTestData(input[i], c);
+    }
+    cout << "Correct count:" << this->correctCount << endl;
+    cout << "Wrong count:" << this->wrongCount << endl;
+}
+void NeuralNetwork::feedforwardTestData(vector<double>& instance, int c) {
     for (int j = 0; j < layers[0].neurons.size(); j++) {
+        //for input layer
         layers[0].neurons[j].output = instance[j]; //instance[i][j] // each neuron in the input layer 
-                                                   //gets a feature from the attributes
+                                                    //gets a feature from the attributes
     }
 
     for (int i = 1; i < layers.size(); i++) {
@@ -175,19 +192,28 @@ void NeuralNetwork::feedforwardTestData(vector<double>& instance) {
             for (int k = 0; k < layers[i-1].neurons.size(); k++) {
                 sum += layers[i-1].neurons[k].output * layers[i].neurons[j].weights[k];
             }
-            sum+= layers[i].neurons[j].bias;
-            
-            if (i == layers.size()-1) {
-                cout << "Sum at layer " << layers[i].getName() << " on epoch " << epochs << ": " << sum << endl; 
-            }
+            sum += layers[i].neurons[j].bias;
+            // cout << "Sum at layer " << i << " on epoch " << epochs << ": " << sum << endl; 
 
             if (i != layers.size() - 1) {  // if not output layer
                 layers[i].neurons[j].output = leakyReLU(sum);
             } else {
                 layers[i].neurons[j].output = sigmoid(sum);
+                // cout << layers[i].neurons[j].output << endl;
             }
         }
     }
+    outputLayerData(c);
+}
 
-
+void NeuralNetwork::outputLayerData(int c) {
+    for (int i = layers.size()-1; i == layers.size()-1; i++) {
+        cout << "Expected output: " << this->expectedOutput[c] << endl;
+        cout << "Output: " << round(layers[i].neurons[0].output) << endl;
+        if (round(layers[i].neurons[0].output) == this->expectedOutput[c]) {
+            this->correctCount++;
+        } else {
+            this->wrongCount++;
+        }
+    }
 }

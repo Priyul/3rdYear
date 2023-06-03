@@ -17,10 +17,14 @@ public:
     double train();
     void setLearningRate(double rate);
     double getBestEpoch();
-
-    void feedforwardTestData(vector<double>& instance);
+    
+    void testNetwork(pair<vector<vector<double>>, vector<double>> testingData);
+    void feedforwardTestData(vector<double>& instance, int c);
 
     int curious;
+
+    int correctCount;
+    int wrongCount;
 
 private:
     void feedforward(vector<double>& instance);
@@ -31,6 +35,7 @@ private:
     double leakyReLU(double x);
     double sigmoid(double x);
     double binaryCrossEntropy(double expected, double output);
+    void outputLayerData(int c);
 
     vector<Layer> layers;
     vector<vector<double>> input;
@@ -40,5 +45,7 @@ private:
     double learningRateDecay;
     int epochs;
     int bestEpoch;
+
+    int count;
 
 };
