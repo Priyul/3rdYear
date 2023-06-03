@@ -48,12 +48,12 @@ int main() {
 
     // for (double learningRate = 0.1; learningRate < 1.0; learningRate+0.1) {
         for (int hidden = 0; hidden < 50; hidden++) {
-            double initialLearningRate = 0.01;
-            double finalLearningRate = 0.01; // Or whatever lower bound 
+            double learningRate = 0.09;
+            // double finalLearningRate = 0.01; // Or whatever lower bound 
             vector<Layer> currLayer = allLayers.at(hidden);
-            int epochs = 10000;
-            double learningRateDecay = (initialLearningRate - finalLearningRate) / epochs;
-            double learningRate = initialLearningRate;
+            int epochs = 4500;
+            // double learningRateDecay = (initialLearningRate - finalLearningRate) / epochs;
+            // double learningRate = initialLearningRate;
             
             NeuralNetwork* neuralNetwork = new NeuralNetwork(currLayer, trainingdata, learningRate, epochs);
             double error = neuralNetwork->train();
@@ -66,6 +66,10 @@ int main() {
             //     hiddenNum = hidden;
             //     bestEpoch = currBestEpoch;
             //     bestLearningRate = learningRate;
+
+            //     neuralNetwork->testNetwork(testingData);
+            //     bestWrongCount = neuralNetwork->wrongCount;
+            //     bestCorrectCount = neuralNetwork->correctCount;
             // }
             neuralNetwork->testNetwork(testingData);
 
@@ -77,7 +81,7 @@ int main() {
                 bestEpoch = currBestEpoch;
                 bestLearningRate = learningRate;
             }
-            // cout << "lowest error:" << lowestError << endl << "hidden layers nodes:" << hiddenNum+1 << endl;
+            cout << "lowest error:" << lowestError << endl << "hidden layers nodes:" << hiddenNum+1 << endl;
         }
     // }
     cout << endl;

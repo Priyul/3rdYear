@@ -159,7 +159,7 @@ void NeuralNetwork::backpropagate(double expectedOutput) {
                 currentLayer.neurons[j].weights[k] -= learningRate * currentLayer.neurons[j].error * prevLayer.neurons[k].output;
             }
             // cout << currentLayer.neurons[j].bias << endl;
-            currentLayer.neurons[j].bias += learningRate * currentLayer.neurons[j].error; //add or -=
+            // currentLayer.neurons[j].bias += learningRate * currentLayer.neurons[j].error; //add or -=
         }
     }
 }
