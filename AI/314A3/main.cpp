@@ -48,7 +48,7 @@ int main() {
 
     // for (double learningRate = 0.1; learningRate < 1.0; learningRate+0.1) {
         for (int hidden = 0; hidden < 50; hidden++) {
-            double learningRate = 0.09;
+            double learningRate = 0.07;
             // double finalLearningRate = 0.01; // Or whatever lower bound 
             vector<Layer> currLayer = allLayers.at(hidden);
             int epochs = 4500;
