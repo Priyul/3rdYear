@@ -1,4 +1,11 @@
 #include "parsedata.h"
+#include <cstdlib>
+#include <ctime>
+#include <fstream>
+#include <vector>
+#include <string>
+#include <algorithm>
+#include <random>
 
 Parser::Parser(const string &filename) : filename(filename) {}
 
@@ -37,19 +44,35 @@ void Parser::removeIncompleteData() {
     }
 }
 
-void Parser::shuffleData() {
-    // cout << "data before shuffle:" << endl;
-    // for (int i = 0; i < instances.size(); i++) {
-    //     cout << instances[i] << endl;
-    // } cout << endl;
-    auto rng = default_random_engine{};
-    std::shuffle(std::begin(instances), std::end(instances), rng);
+void Parser::replaceIncompleteDataWithRandomBinary() {
+    std::srand(std::time(0));
 
-    // cout << "data AFTER shuffle:" << endl;
-    // for (int i = 0; i < instances.size(); i++) {
-    //     cout << instances[i] << endl;
-    // } cout << endl;
+    for (auto& instance : instances) {
+        size_t pos = 0;
+        while ((pos = instance.find("?", pos)) != std::string::npos) {
+            // Replace "?" with a random 0 or 1
+            instance.replace(pos, 1, std::to_string(std::rand() % 2));
+        }
+    }
 }
+
+void Parser::shuffleData() {
+    std::vector<int> indices(instances.size());
+    for (size_t i = 0; i < indices.size(); ++i) {
+        indices[i] = i;
+    }
+
+    std::random_device rd;
+    std::mt19937 g(rd());
+    std::shuffle(indices.begin(), indices.end(), g);
+
+    std::vector<string> shuffled_instances(instances.size());
+    for (size_t i = 0; i < indices.size(); ++i) {
+        shuffled_instances[i] = instances[indices[i]];
+    }
+    instances.swap(shuffled_instances);
+}
+
 
 vector<double> Parser::processInstance(const vector<string>& tokens) {
     vector<double> instance(51, 0);
@@ -156,8 +179,20 @@ vector<double> Parser::processInstance(const vector<string>& tokens) {
     else if (tokens[5] == "no") 
         instance[38] = 1;
     else {
-        cout << "Missing data for attribute 5" << endl;
-        missing = true;
+        cout << "Missing data for attribute 5, data replaced" << endl;
+        std::srand(1234);
+        int random_binary = std::rand() % 2;
+        
+        std::random_device rd;
+        std::mt19937 gen(rd());
+        std::uniform_int_distribution<> distr(37, 38);
+        int random_index = distr(gen);
+
+        instances[38] = 1;
+
+        cout << "instance[" << random_index << "] replaced with " << "1" << endl << endl;
+
+        // missing = true;
     }
 
     if (tokens[6] == "1") 
@@ -168,7 +203,14 @@ vector<double> Parser::processInstance(const vector<string>& tokens) {
         instance[41] = 1;
     else {
         cout << "Missing data for attribute 6" << endl;
-        missing = true;
+        // missing = true;
+        std::srand(1234);
+        int random_binary = std::rand() % 2;
+        
+        int random_index = std::rand() % 3;
+        instance[random_index] = random_binary;
+
+        cout << "instance[" << random_index << "] replaced with " << random_binary << endl << endl;
     }
 
     if (tokens[7] == "left") 
@@ -192,8 +234,18 @@ vector<double> Parser::processInstance(const vector<string>& tokens) {
     else if (tokens[8] == "central") 
         instance[48] = 1;
     else {
-        cout << "Missing data for attribute 8" << endl;
-        missing = true;
+        cout << "Missing data for attribute 8, data replaced" << endl;
+        // missing = true;
+        std::srand(1234);
+        int random_binary = std::rand() % 2;
+
+        std::random_device rd;
+        std::mt19937 gen(rd());
+        std::uniform_int_distribution<> distr(44, 48);
+        int random_index = distr(gen);
+        random_binary = 1;
+        instance[46] = 1;
+        cout << "instance[" << random_index << "] replaced with " << "1" << endl << endl;
     }
 
 
@@ -210,6 +262,8 @@ vector<double> Parser::processInstance(const vector<string>& tokens) {
 }
 
 void Parser::parseTrainingData() {
+    // shuffleData();
+
     int training_size = instances.size() * 0.8;
 
     // cout << "Training data content:" << endl;
@@ -220,27 +274,6 @@ void Parser::parseTrainingData() {
     for (int i = 0; i < training_size; i++) {
         vector<string> tokens = split(instances[i], ',');
         vector<double> instance = processInstance(tokens);
-
-        // for (int i = 0; i < instance.size(); i++) {
-        //     cout << instance[i];
-        //     if (i == 8) {
-        //         cout << "-";
-        //     } else if (i == 11) {
-        //         cout << "-";
-        //     } else if (i == 23) {
-        //         cout << "-";
-        //     } else if (i == 36) {
-        //         cout << "-";
-        //     } else if (i == 38) {
-        //         cout << "-";
-        //     } else if (i == 41) {
-        //         cout << "-";
-        //     } else if (i == 43) {
-        //         cout << "-";
-        //     } else if (i == 48) {
-        //         cout << "-";
-        //     }
-        // } cout << endl;
 
         training_data.first.push_back(instance);
         training_data.second.push_back(tokens[0] == "no-recurrence-events" ? 0 : 1);

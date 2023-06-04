@@ -9,6 +9,7 @@
 #include <algorithm>
 #include <random>
 #include <utility>
+#include <numeric>
 
 using namespace std;
 class Parser {
@@ -16,7 +17,9 @@ public:
     Parser(const string &filename);
     void inputData();
     void removeIncompleteData();
+    void replaceIncompleteDataWithRandomBinary();
     void shuffleData();
+
     void parseTrainingData();
     void parseTestData();
 
