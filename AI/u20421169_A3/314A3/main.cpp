@@ -178,9 +178,10 @@ int main() {
         cout << "False negative:" << neuralNetwork->FN << endl;
 
         double precision = neuralNetwork->TP/(neuralNetwork->TP+neuralNetwork->FP);
-        float recall = neuralNetwork->TP/(neuralNetwork->TP+neuralNetwork->FN);
+        double recall = neuralNetwork->TP/(neuralNetwork->TP+neuralNetwork->FN);
+        double fscore = 2*(precision*recall)/(precision+recall);
         cout << "precision: " << precision << endl << "recall: " << recall << endl;
-
+        cout << "f-score:" << fscore << endl;
 // for (int i = 0; i < epochs; i++) {
 //     neuralNetwork->train();
 //     // learningRate -= learningRateDecay;
