@@ -158,8 +158,8 @@ int main() {
         // layers.push_back(Layer(37,37, "hidden 3")); //hidden layer 3
         layers.push_back(Layer(1,37, "output")); //output layer, 1 node connecting to all 29 nodes in the hidden layer so 29 weights
 
-        double initialLearningRate = 0.07;
-        int epochs = 700; //1736
+        double initialLearningRate = 0.06;
+        int epochs = 750; //1736
 
         double learningRate = initialLearningRate;
         
@@ -172,7 +172,15 @@ int main() {
 
         cout << "Testing data feedforward:" << endl;
         neuralNetwork->testNetwork(testingData);
+        cout << endl;
+        cout << "True positive:" << neuralNetwork->TP << endl;
+        cout << "True negative:" << neuralNetwork->TN << endl;
+        cout << "False positive:" << neuralNetwork->FP << endl;
+        cout << "False negative:" << neuralNetwork->FN << endl;
 
+        double precision = neuralNetwork->TP/(neuralNetwork->TP+neuralNetwork->FP);
+        float recall = neuralNetwork->TP/(neuralNetwork->TP+neuralNetwork->FN);
+        cout << "precision: " << precision << endl << "recall: " << recall << endl;
 
 // for (int i = 0; i < epochs; i++) {
 //     neuralNetwork->train();

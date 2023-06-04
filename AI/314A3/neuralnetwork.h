@@ -29,6 +29,9 @@ public:
     float correctCount;
     float wrongCount;
 
+    float TP, TN, FP, FN;
+    int tCount;
+
 private:
     void feedforward(vector<double>& instance);
     void backpropagate(double expectedOutput);

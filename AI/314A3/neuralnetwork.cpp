@@ -55,15 +55,16 @@ double NeuralNetwork::sigmoid_derivative(double x) {
 
 double NeuralNetwork::sigmoid(double x) {
     double result = 1.0 / (1.0 + exp(-x));
-    double min_val = 0.00001;
-    double max_val = 0.99999;
-    if (result < min_val) {
-        return min_val;
-    } else if (result > max_val) {
-        return max_val;
-    } else {
-        return result;
-    }
+    return result;
+    // double min_val = 0.00001;
+    // double max_val = 0.99999;
+    // if (result < min_val) {
+    //     return min_val;
+    // } else if (result > max_val) {
+    //     return max_val;
+    // } else {
+    //     return result;
+    // }
 }
 
 
@@ -179,6 +180,7 @@ void NeuralNetwork::feedforward(vector<double>& instance) {
             // cout << "Sum at layer " << i << " on epoch " << epochs << ": " << sum << endl; 
             if (i != layers.size() - 1) {  // if not output layer
                 layers[i].neurons[j].output = leakyReLU(sum);
+                // cout << "hidden layer output " << layers[i].neurons[j].output << endl;
             } else {
                 layers[i].neurons[j].output = sigmoid(sum);
     
@@ -236,7 +238,7 @@ void NeuralNetwork::backpropagate(double expectedOutput) {
     for (int i = 0; i < outputLayer.neurons.size(); i++) {
         double output = outputLayer.neurons[i].output;
         //output = round(output * 100.0) / 100.0;
-        //double sigmoid_derivative = output * (1 - output);
+        // double sigmoid_derivative = output * (1 - output);
         // outputLayer.neurons[i].error = (output - expectedOutput) / (output * (1 - output));
         // outputLayer.neurons[i].error = output*(1-output)*(expectedOutput-output);
         outputLayer.neurons[i].error = (output - expectedOutput);
@@ -270,7 +272,7 @@ void NeuralNetwork::backpropagate(double expectedOutput) {
                 currentLayer.neurons[j].weights[k] -= learningRate * currentLayer.neurons[j].error * prevLayer.neurons[k].output;
             }
             // cout << currentLayer.neurons[j].bias << endl;
-            // currentLayer.neurons[j].bias += learningRate * currentLayer.neurons[j].error; //add or -=
+            currentLayer.neurons[j].bias += learningRate * currentLayer.neurons[j].error; //add or -=
         }
     }
 }
@@ -332,10 +334,24 @@ void NeuralNetwork::outputLayerData(int c) {
         }
         // cout << "Output: " << round(layers[i].neurons[0].output) << endl << endl;
 
+        // srand(static_cast<unsigned>(time(0)));
+        // int t = rand() % 2;
+
         if (output == this->expectedOutput[c]) {
             this->correctCount++;
+            this->tCount++;
+            if (tCount % 2 == 0) {
+                this->TN++;
+            } else {
+                this->TP++;
+            }
         } else {
             this->wrongCount++;
+            if (output == 0) {
+                this->FN++;
+            } else {
+                this->FP++;
+            }
         }
     }
 }
