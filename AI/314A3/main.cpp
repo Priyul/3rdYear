@@ -154,12 +154,11 @@ int main() {
         layers.push_back(Layer(51,0, "input")); //input layer, 51 nodes with no weights
         layers.push_back(Layer(37,51, "hidden 1")); //hidden layer 1, 29 nodes each connecting to all 51 nodes so each have 51 weights
         layers.push_back(Layer(37,37, "hidden 2")); //hidden layer 2
-
         // layers.push_back(Layer(37,37, "hidden 3")); //hidden layer 3
         layers.push_back(Layer(1,37, "output")); //output layer, 1 node connecting to all 29 nodes in the hidden layer so 29 weights
 
         double initialLearningRate = 0.06;
-        int epochs = 750; //1736
+        int epochs = 749; //1736
 
         double learningRate = initialLearningRate;
         
@@ -168,7 +167,7 @@ int main() {
         double finalError = neuralNetwork->train();
         cout << "Final error: " << finalError << endl;
         cout << endl;
-        // cout << neuralNetwork->getBestEpoch() << endl;
+        // cout << "best epoch:" << neuralNetwork->getBestEpoch() << endl;
 
         cout << "Testing data feedforward:" << endl;
         neuralNetwork->testNetwork(testingData);

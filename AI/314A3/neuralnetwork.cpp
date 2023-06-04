@@ -73,6 +73,7 @@ double NeuralNetwork::train() {
     double totalError = 0;
     double minError = std::numeric_limits<double>::max(); // Initialize with the maximum value
     int epochsWithoutImprovement = 0;
+    int finalError = 0;
 
     for (int epoch = 0; epoch < epochs; epoch++) {
         totalError = 0;
@@ -92,9 +93,11 @@ double NeuralNetwork::train() {
             minError = totalError;
             bestEpoch = epoch;
         }
+
         std::cout << "Error at the end of epoch " << epoch << " = " << totalError << std::endl;
     }
-    return minError;
+
+    return totalError;
 }
 
 // void NeuralNetwork::feedforward(vector<double>& instance) {

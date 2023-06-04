@@ -61,7 +61,7 @@ int main() {
             selected.push_back(selected_tree);
             cout << "Generation " << generation << "; Population no:" << i << endl; 
             cout << "Best fitness = " << max_fitness << endl << endl;
-            // selected_tree->root->printTree(selected_tree->root, "");
+            selected_tree->root->printTree(selected_tree->root, "");
         }
         // cout << "Generation " << generation << ": best fitness = " << max_fitness << endl;
         // Perform crossover and mutation to generate offspring
