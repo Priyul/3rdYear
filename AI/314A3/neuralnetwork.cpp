@@ -178,7 +178,7 @@ void NeuralNetwork::feedforward(vector<double>& instance) {
             sum+= layers[i].neurons[j].bias;
             // cout << "Sum at layer " << i << " on epoch " << epochs << ": " << sum << endl; 
             if (i != layers.size() - 1) {  // if not output layer
-                layers[i].neurons[j].output = ReLU(sum);
+                layers[i].neurons[j].output = leakyReLU(sum);
             } else {
                 layers[i].neurons[j].output = sigmoid(sum);
     

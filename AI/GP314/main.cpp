@@ -13,6 +13,8 @@
 
 using namespace std;
 
+double bestFitness = 0;
+
 int main() {
     string filename = "breast-cancer.data";
     Parser* parser = new Parser(filename);
@@ -42,20 +44,26 @@ int main() {
         }
         // Select fit individuals for reproduction -> tournament selection
         vector<Tree*> selected;
+        // tree->root->printTree(tree->root, "");
         int tournament_size = 5;
+        // double max_fitness = -1;
         for (int i = 0; i < populationSize; i++) {
-            double max_fitness = -1;
             Tree* selected_tree = nullptr;
+            double max_fitness = -1;
             for (int j = 0; j < tournament_size; j++) {
                 int index = rand() % populationSize;
                 if (fitnesses[index] > max_fitness) {
                     max_fitness = fitnesses[index];
+                    bestFitness = max_fitness;
                     selected_tree = population[index];
                 }
             }
-            cout << "Generation " << generation << ": best fitness = " << max_fitness << endl;
             selected.push_back(selected_tree);
+            cout << "Generation " << generation << "; Population no:" << i << endl; 
+            cout << "Best fitness = " << max_fitness << endl << endl;
+            // selected_tree->root->printTree(selected_tree->root, "");
         }
+        // cout << "Generation " << generation << ": best fitness = " << max_fitness << endl;
         // Perform crossover and mutation to generate offspring
         // crossoverAndMutate(selected);
         vector<Tree*> offspring;

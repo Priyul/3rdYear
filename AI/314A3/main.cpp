@@ -158,7 +158,7 @@ int main() {
         // layers.push_back(Layer(37,37, "hidden 3")); //hidden layer 3
         layers.push_back(Layer(1,37, "output")); //output layer, 1 node connecting to all 29 nodes in the hidden layer so 29 weights
 
-        double initialLearningRate = 0.05;
+        double initialLearningRate = 0.07;
         int epochs = 700; //1736
 
         double learningRate = initialLearningRate;

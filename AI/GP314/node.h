@@ -19,6 +19,6 @@ public:
     Node* left_child;
     Node* right_child;
 
-
+    void printTree(Node* node, string indent);
     Node();
 };
